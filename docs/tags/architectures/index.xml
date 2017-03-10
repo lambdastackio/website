@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architectures on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/architectures/index.xml</link>
+    <description>Recent content in Architectures on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/tags/architectures/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ceph Object Store for Development</title>
+      <link>http://lambdastack.io/architectures/objectstore/</link>
+      <pubDate>Sun, 01 Jan 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/architectures/objectstore/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://ceph.com&#34;&gt;Ceph.com&lt;/a&gt; talks about several Reference Architectures. The default Reference Architecture defined in &lt;a href=&#34;https://github.com/bloomberg/chef-bcs&#34;&gt;Chef-BCS&lt;/a&gt; shows how to build out a Ceph Object Store similar to the one we built at Bloomberg. The default Vagrant/VirtualBox version represents the following:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;3 RGW (Radosgw - S3) Nodes&lt;/p&gt;
+
+&lt;p&gt;3 Ceph Mon Nodes&lt;/p&gt;
+
+&lt;p&gt;3 Ceph OSD Nodes&lt;/p&gt;
+
+&lt;p&gt;2 HAProxy Nodes (can use Bootstrap as a failover)&lt;/p&gt;
+
+&lt;p&gt;1 Bootstrap Node&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The bootstrap node is used as a centralize launchpad so to speak where the Chef Server, Cobbler, ISO Linux Images, etc are installed and maintained. The bootstrap node is built first and it drives the building of all of the other nodes in the Ceph cluster. The bootstrap can also be used for other things as well if needed.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://lambdastack.io/img/ObjectStoreRefArch.svg&#34;&gt;&lt;img src=&#34;http://lambdastack.io/img/ObjectStoreRefArch.svg&#34; height=&#34;50%&#34; width=&#34;50%&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

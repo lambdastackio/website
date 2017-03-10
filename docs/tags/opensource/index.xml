@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opensource on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/opensource/index.xml</link>
+    <description>Recent content in Opensource on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Which open source software license should I use?</title>
+      <link>http://lambdastack.io/blog/2017/02/23/opensource-license/</link>
+      <pubDate>Thu, 23 Feb 2017 06:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/02/23/opensource-license/</guid>
+      <description>&lt;p&gt;&lt;em&gt;NB: This article is from Opensource.com. I also use Apache 2 for my projects.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve recently been involved in several discussions that are variations on, &amp;ldquo;Which open source or free software license should I choose for my project?&amp;rdquo; Here is my way of looking at the large and growing collection of licenses in the wild. First, let&amp;rsquo;s make sure we all understand that I Am Not A Lawyer. This is not legal advice. Depending upon your needs and your comfort with risk around your software, you&amp;rsquo;ll want to confirm your legal choices with counsel in your jurisdiction.&lt;/p&gt;
+
+&lt;p&gt;The first and obvious consideration is whether or not the license is approved as an open source license by the Open Source Initiative (OSI). The OSI created the Open Source Definition in the late 1990s as a set of attributes that a software license must support to be considered &amp;ldquo;open source.&amp;rdquo; Anyone can take a license to the OSI for debate and discussion and if approved as meeting the OSD, then the license is added to the canonical list.&lt;/p&gt;
+
+&lt;p&gt;While this seems an obvious place to start, I was recently surprised to discover a license called the &amp;ldquo;Clear BSD License.&amp;rdquo; It attempts to clarify explicitly that patents are not being discussed in the license. It is not on the OSI list (while the New BSD and Simplified BSD licenses are) and is therefore not worth considering. Inventing new licenses as small derivatives of existing licenses is not helpful and creates costly legal busy work. There exists a broad collection of OSI-approved licenses today. These licenses cover millions of lines of software involved in billions of dollars in procurement. One would be hard pressed to describe a serious set of circumstances that isn’t already covered by an OSI-approved license.&lt;/p&gt;
+
+&lt;p&gt;There are several big levers available when considering an open source license:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;How much license reciprocity is required with respect to the software, modifications, and any derivatives someone develops?&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;What is said about patent licensing and litigation?&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;What legal jurisdiction covers the license?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The reciprocity issue is all about &lt;a href=&#34;http://www.gnu.org/copyleft/&#34;&gt;&amp;ldquo;copyleft&amp;rdquo;&lt;/a&gt; and whether or not using the software source code attaches the license to the modifications and derivatives, and whether the source code to those modifications and derivatives needs to be published.&lt;/p&gt;
+
+&lt;p&gt;On one end of the spectrum are licenses that have no copyleft requirements. These licenses essentially allow anyone to use the software in anyway without requiring much more than maintaining copyrights. Licenses that fall into this set include the New and Simplified BSD licenses, the MIT license, and the Apache 2.0 and Microsoft Permissive licenses.&lt;/p&gt;
+
+&lt;p&gt;There are a set of licenses that maintain a sense of copyleft around the software itself but support the use of the software in larger works of software which may contain software that is licensed differently (e.g. closed and proprietary). These licenses include the Eclipse Public License, the newer Mozilla Public License 2.0, and the Microsoft Reciprocal License.&lt;/p&gt;
+
+&lt;p&gt;On the other end of the copyleft spectrum are strong copyleft licenses. &lt;a href=&#34;http://www.gnu.org/philosophy/free-sw.html&#34;&gt;Software freedom&lt;/a&gt; is defined by the Free Software Foundation in terms of the freedoms a user of software must have. Strong copyleft supports software freedom. Many developers support software freedom, and demonstrate this support using one of the family of GPL licenses (GPL2.0, GPL3.0, and the Affero GPL3.0) as a way to ensure the strongest copyleft and strongest license attachment when the software in question is used in building and distributing other software.&lt;/p&gt;
+
+&lt;p&gt;Software patents weren’t really an issue when software was beginning to be widely shared on the early Internet and so weren’t mentioned in the early licenses. By the late 1990s, software patents were on the rise and corporate legal teams were becoming more involved in the writing of open source licenses as they became more involved with open source software and developing the open source foundations around evolving projects. The Apache 2.0 License, Mozilla Public License 2.0, Eclipse Public License, the newer GPL licenses, and both Microsoft licenses reflect this shift in language. Each license explicitly talks about patent licenses. Each license has language that covers patent litigation to varying degrees.&lt;/p&gt;
+
+&lt;p&gt;I mention legal jurisdiction in the big levers category because some licenses explicitly mention it and this can be a real show stopper for some people. For that reason alone I treat it as a Big Lever. (The Mozilla Public License 2.0 specifically tries to deal with jurisdiction as one of changes from the original MPL, as that was often a criticism of the earlier license.)&lt;/p&gt;
+
+&lt;p&gt;Other considerations in license choice include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Are there project specific affinities?&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;History of the license and foundation/corporate/commercial involvement?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The &amp;ldquo;language&amp;rdquo; projects (Perl, PHP, Python) each have their own licenses (Artistic License 2.0, PHP License 3.0, and Python License 2.0 respectively). If you are working on a project that closely ties to a specific open source programming language community then you should obviously consider that community’s license as the question of mixing modules and dependencies will be simplified with respect to open source licenses.&lt;/p&gt;
+
+&lt;p&gt;As software IP law has evolved and the Internet has become an enormous space for people to collaborate on software development, commercial organizations became involved. We have seen the creation of open source software foundations with specific licenses associated with them. Corporate legal teams have become involved in authoring open source licenses, and the language and structure of these licenses (e.g. terminology and definitions) reflect this involvement. Lawyers without a lot of experience in open source licenses may feel more comfortable reviewing these newer licenses.&lt;/p&gt;
+
+&lt;p&gt;So to recap, presuming that your primary motivation is to co-develop and collaborate on an open source project, in my way of looking at open source licenses your choices break down roughly as follows. (I&amp;rsquo;m keeping the discussion here to widely used licenses and/or licenses where large commercial organizations with conservative counsel or neutral non-profit open source foundations had a hand in their creation.)&lt;/p&gt;
+
+&lt;p&gt;If you want to allow anyone to do anything at any time with the software, use the MIT or new (3-clause) BSD license, i.e. no copyleft and no discussion of patents. Both of these licenses came from the academic world, and both from a period of time where software patents were not a focus.&lt;/p&gt;
+
+&lt;p&gt;If you want to allow anyone to do anything with the software (so no copyleft), but feel something needs to be said about patents and license termination in the face of litigation, and/or you want a license that corporate counsel is more comfortable reading then look at either the Apache 2.0 license or possibly the Microsoft Permissive License. These licenses were written to continue to encourage a completely open sharing environment but were written with a more corporate view (note the structure and language), and both begin to cover patents with varying (and subtly different) degrees of patent retaliation built into them.&lt;/p&gt;
+
+&lt;p&gt;If you feel others should be able to build [possibly product] around your software, but want to ensure changes to the core software project itself remain open source (i.e. the changes must be published), you likely want to look to either the Eclipse Public License, the newer Mozilla Public License 2.0, or the Microsoft Reciprocal License. These are modern licenses developed from commercial/corporate perspectives supporting &amp;ldquo;weak&amp;rdquo; copyleft. [N.B. The EPL does name NY State as the jurisdiction.] Pay attention to patent statements in each.&lt;/p&gt;
+
+&lt;p&gt;If you are a firm supporter of software freedom or want to ensure that if your software source is used anywhere that the resulting derivatives are maximally published as open source ensuring software freedom, then you should look to GPL2.0 or GPL3.0 depending upon your needs.&lt;/p&gt;
+
+&lt;p&gt;There are a couple of interesting side ideas I’ve come across in the open source licensing space as different projects wrestled with how best to create the &amp;ldquo;right&amp;rdquo; licensing for their software.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Many companies are concerned about their patent portfolios when creating open source projects. Google took an interesting approach to the problem when they released the WebM project. They chose the New BSD license and then created a very specific &amp;ldquo;Additional IP Rights Grant&amp;rdquo; to cover the patent language they needed.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;It is the nature of IP law that the owner of the property can license it as many ways to as many people as they choose. This is why the Microsoft EULA for a personal copy of the Windows operating system is different from an Enterprise License Agreement and how MySQL AB developed a line of business around closed software licensing as well as their GPL-licensed project. In the early days (up through PHP3), the software from the PHP project was similarly &amp;ldquo;dual&amp;rdquo; licensed under both the GPL2.0 and an earlier PHP license to allow the software to be included in as many places as possible because the GPL was not directly compatible with the PHP license of the time.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have deliberately not tried to create a table or decision tree for license choice here. I believe there are sufficient edges and nuances to license choice that it can never be properly &amp;ldquo;automated&amp;rdquo; with the licenses we have today that reflect their rich background of needs and history. There is always one more legal question of &amp;ldquo;what about the situation when&amp;hellip;?&amp;rdquo; Such questions will likely involve legal counsel and may be very jurisdiction sensitive.&lt;/p&gt;
+
+&lt;p&gt;Likewise, open source software licenses don’t simply reflect a set of legal choices. In the early stage of an open source project when the author or authors are first publishing the software, the choice of license reflects as much of the social contract that is being made for the project as any legal requirements. It is the first governance document of the early possible community that comes into play long before formal governance, mission statements, and codes of conduct may be created around growing community.&lt;/p&gt;
+
+&lt;p&gt;Full text of all the licenses can be found on the Open Source Initiative at: &lt;a href=&#34;http://opensource.org/licenses/alphabetical&#34;&gt;http://opensource.org/licenses/alphabetical&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Excellent information on how to consider various software licenses in combination with the GPL can be found here: &lt;a href=&#34;http://www.gnu.org/licenses/license-list.html#SoftwareLicenses&#34;&gt;http://www.gnu.org/licenses/license-list.html#SoftwareLicenses&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you need to get a lawyer up to speed, consider pointing them to: &lt;a href=&#34;http://www.ifosslr.org/ifosslr&#34;&gt;http://www.ifosslr.org/ifosslr&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Originally posted on the Outercurve Foundation Blog. Reposted with permission.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This blog was originally published by Stephen R. Walli at &lt;a href=&#34;https://opensource.com/law/13/1/which-open-source-software-license-should-i-use&#34;&gt;https://opensource.com/law/13/1/which-open-source-software-license-should-i-use&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;All content licensed under the &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/3.0/us/&#34;&gt;Creative Commons Attribution-Share Alike 3.0 United States&lt;/a&gt; License (CC BY-SA 3.0 US).&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aws on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/aws/index.xml</link>
+    <description>Recent content in Aws on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AWS S3 vs On-Premises</title>
+      <link>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</link>
+      <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</guid>
+      <description>
+
+&lt;h2 id=&#34;aws-s3-vs-on-premises&#34;&gt;AWS S3 vs On-Premises&lt;/h2&gt;
+
+&lt;p&gt;When you own Enterprise Storage or are asked to build enterprise class storage you find yourself more frequently having to cost justify against outside Cloud Storage vendors like AWS S3, GCE or Azure. So, how will you do that since you have to make capital expenditures vs OpEx that these providers discuss so much?&lt;/p&gt;
+
+&lt;p&gt;When you break down the pricing of AWS S3 and others you find that the actual storage cost is not too bad (depending on amount of stored data). What you don&amp;rsquo;t realize is the network transfer rate is where they get you. I have heard stories of small firms having bet pools going just to see who is closer at guessing a given days AWS cost. The same can be said for enterprises but the stakes are much higher!&lt;/p&gt;
+
+&lt;h4 id=&#34;sidebar&#34;&gt;Sidebar&lt;/h4&gt;
+
+&lt;p&gt;I like AWS, Azure and Google. They serve a good purpose of helping you get started on projects at a low entry cost and the &amp;ldquo;pay-as-you-go&amp;rdquo; model is very compelling. This model changes over time for some enterprises especially when it comes to storage. I just recently had a Senior level &amp;ldquo;Amazonian&amp;rdquo; (that&amp;rsquo;s what they call themselves) say &amp;ldquo;AWS is the world largest startup and that&amp;rsquo;s how we operate.&amp;rdquo; That sounds kinda cool but when I pressed him on enterprise like questions, his story fell flat. AWS seems to believe everything should run in a public cloud but that&amp;rsquo;s just not wise (in a general sense - some enterprises can&amp;rsquo;t allow their data outside their datacenters for many reasons).  Azure actually understands this and has &amp;ldquo;on-premises&amp;rdquo; versions of some of their offerings. They seem to have more of an understanding of the enterprise than the others.&lt;/p&gt;
+
+&lt;p&gt;Again, I like AWS. I wrote the Rust AWS-SDK-RUST SDK and other S3 tools. I&amp;rsquo;m simply making honest comparisons of cloud providers for enterprises. I have also used Google on past contracts and they are very good but I don&amp;rsquo;t have an enterprise reference to compare against.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Also, don&amp;rsquo;t get confused by AWS&amp;rsquo; &amp;ldquo;manage your on-premises via AWS.&amp;rdquo; It&amp;rsquo;s only their console that you can plug some data into and not a true on-premises solution.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;how-to-cost-justify&#34;&gt;How to cost justify&lt;/h4&gt;
+
+&lt;p&gt;Back from my sidebar. How do we cost justify on-premises S3 and compare it to AWS S3? The first thing is &lt;strong&gt;DO NOT&lt;/strong&gt; use a tradition enterprise storage vendor - you gain nothing. You need a solid open source solution using COTS (Common Off The Shelf) hardware such as Ceph on any hardware platform that meets your budget and minimum requirements to run a good S3 Object Store.&lt;/p&gt;
+
+&lt;p&gt;Cost Example (deep storage): (NB: These are conservative costs. You will need to plug in your costs. This also assumes you use all of the storage and most of data is machine generated as in Big Data. Also, no operating labor cost is factored in since that is so variable [see summary].)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Single datacenter. Would impact if disaster struck the datacenter itself. Data is very durable otherwise.&lt;/p&gt;
+
+&lt;p&gt;5 Racks ($300K each) - $1,500,000 (assumes your own datacenters with power/cooling - cost factors in ~10 spare storage nodes and additional 10TB HDD for replacements). Also these figures are high so your real figures should be a good bit less depending on your hardware vendor and even lower if you don&amp;rsquo;t have to use outside vendors and contractors.&lt;/p&gt;
+
+&lt;p&gt;Includes racks, high-density storage, network spines, 20Gbs NICs, TORs, software load-balancers (HAProxy), install labor, spares, etc&lt;/p&gt;
+
+&lt;p&gt;Ceph S3, Erasure Coding &lt;sup&gt;8&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; (11 shards - &lt;a href=&#34;http://lambdastack.io/blog/2017/02/26/erasure-coding/&#34;&gt;see other article on EC calculations&lt;/a&gt;) - tuned for larger objects&lt;/p&gt;
+
+&lt;p&gt;10TB HDD x 204 (drives per rack) x 5 (racks) = 10.2PB raw storage / 1.375 (EC factor - see EC article) = 7,418TB (7.4PB) usable. Using EC instead of replica for better storage utilization. ~3% write overhead and ~1.2% read overhead for EC as compared to replicas. The big penalty will come on a rebuild of an object if required due to data failure etc.&lt;/p&gt;
+
+&lt;p&gt;$1,500,000 (total cost) / 7,418TB (usable) = $202.21 per TB (internally price this one-time, annually or however you like. This example will be one-time (1 year) divided into monthly)&lt;/p&gt;
+
+&lt;p&gt;Operational costs (power/cooling/space density) are standardize (PUE). A normal rack uses less than ~5kW on average and I will use $.10 kW/h cost (change to your areas average): 8,760 (annual hours) * $.10 * 5 = $4,104.06 * 5 (racks) = $20,520.30 (annual) / 7,418TB (usable) = $2.77TB for OpEx (annual)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;$202.21 + $2.77 = $204.98TB (first year). $2.77TB annual after first year plus operational labor&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;NB: If you use commercial hardware load-balancers then your cost will increase. These do not usually gain you performance over HAProxy in this scenario. However, you can always add them and repurpose the HAProxy nodes included above.&lt;/p&gt;
+
+&lt;p&gt;Network traffic - ~15Gbs sustained (give or take) split with &lt;sup&gt;70&lt;/sup&gt;&amp;frasl;&lt;sub&gt;30&lt;/sub&gt; read/write (change based on your assumptions but these values are used for standard benchmarking). Since a high-speed network is part of a normal enterprise (large), there are no additional costs for network usage in this scenario beyond purchasing additional spines which are factored into the cost. (Internal only)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;AWS S3 (published pricing):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Store 7,418TB to be equal with above&lt;/p&gt;
+
+&lt;p&gt;Multiple datacenters (standard)&lt;/p&gt;
+
+&lt;p&gt;Transfer In &lt;a href=&#34;https://aws.amazon.com/snowmobile/&#34;&gt;(Would take a &amp;ldquo;snowmobile&amp;rdquo; - Big semi-tractor and trailer rigs)&lt;/a&gt;. This scenario doesn&amp;rsquo;t even cover that cost but it&amp;rsquo;s expensive and takes a long time.&lt;/p&gt;
+
+&lt;p&gt;Transfer Out - 70TB monthly (for this simple low cost example) - This applies to everything including EC2, Direct Connect etc.&lt;/p&gt;
+
+&lt;p&gt;Direct Connect - Would need 2 LAG 10Gbs circuits plus additional equipment to sustain internal rate above. The cost is not reported here and much higher (setup, monthly and long-term contract)!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;$176,110.98 (monthly) * 12 = $2,113,331.76 (annual) / 7,418TB = $284.89TB (annual) PLUS costs not reported!!&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/aws-s3-worksheet.png&#34; style=&#34;max-width: 100%&#34;&gt;
+&lt;strong&gt;AWS online worksheet - &lt;a href=&#34;https://calculator.s3.amazonaws.com/index.html&#34;&gt;https://calculator.s3.amazonaws.com/index.html&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/aws-s3-detail.png&#34; style=&#34;max-width: 100%&#34;&gt;
+&lt;strong&gt;AWS detail&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
+
+&lt;p&gt;If you are a startup and only using a small amount of storage then you can easily cost justify using a public cloud provider. However, if you are an enterprise and own datacenters then it&amp;rsquo;s far better from a cost stand point to build your own S3 on-premises and maintain control (even with added operational labor costs). The above scenario takes into consideration only one datacenter for the on-premises so the cost look very good for it even starting in the first year. However, if you factor in a second datacenter, just double the cost to keep it easy, then you see that year one (only) is better (from a cash outlay) for AWS S3 (w/o high transfer rate and Direct Connect costs).&lt;/p&gt;
+
+&lt;p&gt;Second datacenter factored in for on-premises:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$3,000,000 for 2 datacenters with ~10 spare servers and drives per datacenter.&lt;/p&gt;
+
+&lt;p&gt;$204.98TB x 2 = $409.96TB (annual) or $409.96TB / 3 (3 years) = $136.65TB annually over 3 year period.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Using the above cost figures, the AWS S3 cost will remain annual while the on-premises&amp;rsquo; cost go down annually due to many factors but mainly due to shelf life of 3-5yrs of equipment. Of course, there will be the annual OpEx costs mentioned plus drive and server replacement costs (some were already factored into the initial cost). The on-premises version also does not include operational labor costs (important). However, the labor cost would most likely only get you closer on year one using the single datacenter scenario.&lt;/p&gt;
+
+&lt;p&gt;The point is, there are many ways to approach the cost points. If you have a lot of data and it continues to grow at an exponential rate and you continue to find more ways to process (analyze) the data then your transfer out of storage rates will increase (same transfer costs apply to EC2 and Direct Connect) and thus your real cost of AWS S3. This can also be applied to AWS Glacier as well.&lt;/p&gt;
+
+&lt;p&gt;Again, AWS S3 is great but it is more expensive than you think when you have a lot of data and need access to it frequently. But if you&amp;rsquo;re a small shop or just want someone else to manage things for you, it&amp;rsquo;s a good option. Just don&amp;rsquo;t assume it&amp;rsquo;s cheaper because it&amp;rsquo;s not especially when you get into PB range which is now becoming a norm.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;Tested S3 from EC2 large in us-east-1 (same) region using JMeter and used same EC2 JMeter tests against Ceph in DMZ (owned datacenter - not close to region) and Ceph won in performance in most tests. Was not testing for performances between the two but was testing to establish a base line. Results were very surprising! Take away - do a lot of tests because results can be counter intuitive.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>S3LSIO - S3 Utility</title>
+      <link>http://lambdastack.io/blog/2016/10/05/s3lsio_s3/</link>
+      <pubDate>Wed, 05 Oct 2016 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2016/10/05/s3lsio_s3/</guid>
+      <description>&lt;p&gt;The initial release of s3lsio has been released for both MacOSX and Linux (RHEL/Fedora/CentOS). Ubuntu will be released soon. In theory Windows should work but OpenSSL can cause initial setup of the Rust build environment for s3lsio.&lt;/p&gt;
+
+&lt;p&gt;There are constant enhancements being made on a weekly basis. S3lsio is a command line tool that can work within a script, called from an app or ran stand alone to easily manipulate your AWS S3 and Ceph Rados Gateway (S3) environments. In addition to plain output you can specify JSON, pretty-json, serialize or quiet mode (only return codes are output) . Pretty-json is the default.&lt;/p&gt;
+
+&lt;p&gt;Credentials:&lt;/p&gt;
+
+&lt;p&gt;AWS supports a credentials file in the home directory of a given user such as:
+~/.aws/credentials&lt;/p&gt;
+
+&lt;p&gt;This file is a standard INI file format. So, if you don&amp;rsquo;t want to enter your credentials via the command line then you can place them in the aws credentials file.&lt;/p&gt;
+
+&lt;p&gt;API Signatures:&lt;/p&gt;
+
+&lt;p&gt;By default AWS uses API Signature V4 however, Ceph (Hammer and below) uses V2 but Ceph (Jewel and higher) supports V4. S3lsio supports both. The default signature is V4 for S3lsio. You can change that by passing in -s V2 or setting &amp;lsquo;signature=V2&amp;rsquo; in the config file.&lt;/p&gt;
+
+&lt;p&gt;Proxies:&lt;/p&gt;
+
+&lt;p&gt;S3lsio supports proxies in 3 ways: 1. Pass in -p &lt;whatever your proxy url:port&gt;, 2. Add to config file, 3. Set http_proxy, https_proxy and no_proxy environment variables. By default proxies are not used.&lt;/p&gt;
+
+&lt;p&gt;Example to create an S3 bucket:&lt;/p&gt;
+
+&lt;p&gt;./s3lsio bucket create mynewbucket&lt;/p&gt;
+
+&lt;p&gt;You can download and more instructions here: &lt;a href=&#34;http://www.lambdastack.io/s3lsio&#34;&gt;http://www.lambdastack.io/s3lsio&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust AWS S3 SDK</title>
+      <link>http://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</link>
+      <pubDate>Tue, 20 Sep 2016 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</guid>
+      <description>&lt;p&gt;The aws-sdk-rust library is officially released which allows both V2 and V4 API signatures. This is import for those that wish to use the SDK to access storage products that implement the S3 Interface such as Ceph&amp;rsquo;s Rados Gateway (RGW). Ceph Hammer release only uses V2 while the Jewel and higher releases support V4.&lt;/p&gt;
+
+&lt;p&gt;Enterprise level proxy support has also been added. So, if http_proxy, https_proxy and no_proxy environment variables are in use, aws-sdk-rust will use them to access the S3 resource.&lt;/p&gt;
+
+&lt;p&gt;Aws-sdk-rust can be found on crates.io and &lt;a href=&#34;https://github.com/lambdastackio/aws-sdk-rust&#34;&gt;https://github.com/lambdastackio/aws-sdk-rust&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Keep track of the crate. The library is under heavy development.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>S3 on The LambdaStack Project</title>
+    <link>http://lambdastack.io/categories/s3/index.xml</link>
+    <description>Recent content in S3 on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/categories/s3/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AWS S3 vs On-Premises</title>
+      <link>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</link>
+      <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</guid>
+      <description>
+
+&lt;h2 id=&#34;aws-s3-vs-on-premises&#34;&gt;AWS S3 vs On-Premises&lt;/h2&gt;
+
+&lt;p&gt;When you own Enterprise Storage or are asked to build enterprise class storage you find yourself more frequently having to cost justify against outside Cloud Storage vendors like AWS S3, GCE or Azure. So, how will you do that since you have to make capital expenditures vs OpEx that these providers discuss so much?&lt;/p&gt;
+
+&lt;p&gt;When you break down the pricing of AWS S3 and others you find that the actual storage cost is not too bad (depending on amount of stored data). What you don&amp;rsquo;t realize is the network transfer rate is where they get you. I have heard stories of small firms having bet pools going just to see who is closer at guessing a given days AWS cost. The same can be said for enterprises but the stakes are much higher!&lt;/p&gt;
+
+&lt;h4 id=&#34;sidebar&#34;&gt;Sidebar&lt;/h4&gt;
+
+&lt;p&gt;I like AWS, Azure and Google. They serve a good purpose of helping you get started on projects at a low entry cost and the &amp;ldquo;pay-as-you-go&amp;rdquo; model is very compelling. This model changes over time for some enterprises especially when it comes to storage. I just recently had a Senior level &amp;ldquo;Amazonian&amp;rdquo; (that&amp;rsquo;s what they call themselves) say &amp;ldquo;AWS is the world largest startup and that&amp;rsquo;s how we operate.&amp;rdquo; That sounds kinda cool but when I pressed him on enterprise like questions, his story fell flat. AWS seems to believe everything should run in a public cloud but that&amp;rsquo;s just not wise (in a general sense - some enterprises can&amp;rsquo;t allow their data outside their datacenters for many reasons).  Azure actually understands this and has &amp;ldquo;on-premises&amp;rdquo; versions of some of their offerings. They seem to have more of an understanding of the enterprise than the others.&lt;/p&gt;
+
+&lt;p&gt;Again, I like AWS. I wrote the Rust AWS-SDK-RUST SDK and other S3 tools. I&amp;rsquo;m simply making honest comparisons of cloud providers for enterprises. I have also used Google on past contracts and they are very good but I don&amp;rsquo;t have an enterprise reference to compare against.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Also, don&amp;rsquo;t get confused by AWS&amp;rsquo; &amp;ldquo;manage your on-premises via AWS.&amp;rdquo; It&amp;rsquo;s only their console that you can plug some data into and not a true on-premises solution.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;how-to-cost-justify&#34;&gt;How to cost justify&lt;/h4&gt;
+
+&lt;p&gt;Back from my sidebar. How do we cost justify on-premises S3 and compare it to AWS S3? The first thing is &lt;strong&gt;DO NOT&lt;/strong&gt; use a tradition enterprise storage vendor - you gain nothing. You need a solid open source solution using COTS (Common Off The Shelf) hardware such as Ceph on any hardware platform that meets your budget and minimum requirements to run a good S3 Object Store.&lt;/p&gt;
+
+&lt;p&gt;Cost Example (deep storage): (NB: These are conservative costs. You will need to plug in your costs. This also assumes you use all of the storage and most of data is machine generated as in Big Data. Also, no operating labor cost is factored in since that is so variable [see summary].)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Single datacenter. Would impact if disaster struck the datacenter itself. Data is very durable otherwise.&lt;/p&gt;
+
+&lt;p&gt;5 Racks ($300K each) - $1,500,000 (assumes your own datacenters with power/cooling - cost factors in ~10 spare storage nodes and additional 10TB HDD for replacements). Also these figures are high so your real figures should be a good bit less depending on your hardware vendor and even lower if you don&amp;rsquo;t have to use outside vendors and contractors.&lt;/p&gt;
+
+&lt;p&gt;Includes racks, high-density storage, network spines, 20Gbs NICs, TORs, software load-balancers (HAProxy), install labor, spares, etc&lt;/p&gt;
+
+&lt;p&gt;Ceph S3, Erasure Coding &lt;sup&gt;8&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; (11 shards - &lt;a href=&#34;http://lambdastack.io/blog/2017/02/26/erasure-coding/&#34;&gt;see other article on EC calculations&lt;/a&gt;) - tuned for larger objects&lt;/p&gt;
+
+&lt;p&gt;10TB HDD x 204 (drives per rack) x 5 (racks) = 10.2PB raw storage / 1.375 (EC factor - see EC article) = 7,418TB (7.4PB) usable. Using EC instead of replica for better storage utilization. ~3% write overhead and ~1.2% read overhead for EC as compared to replicas. The big penalty will come on a rebuild of an object if required due to data failure etc.&lt;/p&gt;
+
+&lt;p&gt;$1,500,000 (total cost) / 7,418TB (usable) = $202.21 per TB (internally price this one-time, annually or however you like. This example will be one-time (1 year) divided into monthly)&lt;/p&gt;
+
+&lt;p&gt;Operational costs (power/cooling/space density) are standardize (PUE). A normal rack uses less than ~5kW on average and I will use $.10 kW/h cost (change to your areas average): 8,760 (annual hours) * $.10 * 5 = $4,104.06 * 5 (racks) = $20,520.30 (annual) / 7,418TB (usable) = $2.77TB for OpEx (annual)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;$202.21 + $2.77 = $204.98TB (first year). $2.77TB annual after first year plus operational labor&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;NB: If you use commercial hardware load-balancers then your cost will increase. These do not usually gain you performance over HAProxy in this scenario. However, you can always add them and repurpose the HAProxy nodes included above.&lt;/p&gt;
+
+&lt;p&gt;Network traffic - ~15Gbs sustained (give or take) split with &lt;sup&gt;70&lt;/sup&gt;&amp;frasl;&lt;sub&gt;30&lt;/sub&gt; read/write (change based on your assumptions but these values are used for standard benchmarking). Since a high-speed network is part of a normal enterprise (large), there are no additional costs for network usage in this scenario beyond purchasing additional spines which are factored into the cost. (Internal only)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;AWS S3 (published pricing):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Store 7,418TB to be equal with above&lt;/p&gt;
+
+&lt;p&gt;Multiple datacenters (standard)&lt;/p&gt;
+
+&lt;p&gt;Transfer In &lt;a href=&#34;https://aws.amazon.com/snowmobile/&#34;&gt;(Would take a &amp;ldquo;snowmobile&amp;rdquo; - Big semi-tractor and trailer rigs)&lt;/a&gt;. This scenario doesn&amp;rsquo;t even cover that cost but it&amp;rsquo;s expensive and takes a long time.&lt;/p&gt;
+
+&lt;p&gt;Transfer Out - 70TB monthly (for this simple low cost example) - This applies to everything including EC2, Direct Connect etc.&lt;/p&gt;
+
+&lt;p&gt;Direct Connect - Would need 2 LAG 10Gbs circuits plus additional equipment to sustain internal rate above. The cost is not reported here and much higher (setup, monthly and long-term contract)!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;$176,110.98 (monthly) * 12 = $2,113,331.76 (annual) / 7,418TB = $284.89TB (annual) PLUS costs not reported!!&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/aws-s3-worksheet.png&#34; style=&#34;max-width: 100%&#34;&gt;
+&lt;strong&gt;AWS online worksheet - &lt;a href=&#34;https://calculator.s3.amazonaws.com/index.html&#34;&gt;https://calculator.s3.amazonaws.com/index.html&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/aws-s3-detail.png&#34; style=&#34;max-width: 100%&#34;&gt;
+&lt;strong&gt;AWS detail&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
+
+&lt;p&gt;If you are a startup and only using a small amount of storage then you can easily cost justify using a public cloud provider. However, if you are an enterprise and own datacenters then it&amp;rsquo;s far better from a cost stand point to build your own S3 on-premises and maintain control (even with added operational labor costs). The above scenario takes into consideration only one datacenter for the on-premises so the cost look very good for it even starting in the first year. However, if you factor in a second datacenter, just double the cost to keep it easy, then you see that year one (only) is better (from a cash outlay) for AWS S3 (w/o high transfer rate and Direct Connect costs).&lt;/p&gt;
+
+&lt;p&gt;Second datacenter factored in for on-premises:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$3,000,000 for 2 datacenters with ~10 spare servers and drives per datacenter.&lt;/p&gt;
+
+&lt;p&gt;$204.98TB x 2 = $409.96TB (annual) or $409.96TB / 3 (3 years) = $136.65TB annually over 3 year period.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Using the above cost figures, the AWS S3 cost will remain annual while the on-premises&amp;rsquo; cost go down annually due to many factors but mainly due to shelf life of 3-5yrs of equipment. Of course, there will be the annual OpEx costs mentioned plus drive and server replacement costs (some were already factored into the initial cost). The on-premises version also does not include operational labor costs (important). However, the labor cost would most likely only get you closer on year one using the single datacenter scenario.&lt;/p&gt;
+
+&lt;p&gt;The point is, there are many ways to approach the cost points. If you have a lot of data and it continues to grow at an exponential rate and you continue to find more ways to process (analyze) the data then your transfer out of storage rates will increase (same transfer costs apply to EC2 and Direct Connect) and thus your real cost of AWS S3. This can also be applied to AWS Glacier as well.&lt;/p&gt;
+
+&lt;p&gt;Again, AWS S3 is great but it is more expensive than you think when you have a lot of data and need access to it frequently. But if you&amp;rsquo;re a small shop or just want someone else to manage things for you, it&amp;rsquo;s a good option. Just don&amp;rsquo;t assume it&amp;rsquo;s cheaper because it&amp;rsquo;s not especially when you get into PB range which is now becoming a norm.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;Tested S3 from EC2 large in us-east-1 (same) region using JMeter and used same EC2 JMeter tests against Ceph in DMZ (owned datacenter - not close to region) and Ceph won in performance in most tests. Was not testing for performances between the two but was testing to establish a base line. Results were very surprising! Take away - do a lot of tests because results can be counter intuitive.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Global Cloud Storage</title>
+      <link>http://lambdastack.io/blog/2017/03/01/global-cloud-storage/</link>
+      <pubDate>Wed, 01 Mar 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/03/01/global-cloud-storage/</guid>
+      <description>
+
+&lt;h2 id=&#34;global-cloud-storage&#34;&gt;Global Cloud Storage&lt;/h2&gt;
+
+&lt;p&gt;Everything fails! No matter how great the architecture, things can fail due to many factors including human, power, fiber cuts, etc. We even have failures in our own datacenters. The point is you need to plan on failure as part of your architecture.&lt;/p&gt;
+
+&lt;p&gt;Yesterday, AWS S3 us-east-1 had an issue which caused rippling affects across the Internet including AWS&amp;rsquo; on status page that depends on S3. All cloud providers have failed and will fail again - it&amp;rsquo;s just a fact. The question is what are you going to do about it?&lt;/p&gt;
+
+&lt;p&gt;It doesn&amp;rsquo;t matter if you&amp;rsquo;re a startup or large enterprise, you need to have multiple cloud storage providers. Netflix learned this lesson a long time ago. AWS S3 is the defacto standard for Cloud Storage APIs. Most cloud providers support the S3 interface so if your app uses the S3 API for interfacing with your object storage then you should be able to implement a multi-cloud solution.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;NB: There are multiple ways to do this and the drawing is &lt;strong&gt;only&lt;/strong&gt; one way&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;determine-who-supports-s3&#34;&gt;Determine who supports S3&lt;/h4&gt;
+
+&lt;p&gt;You will need to determine which providers support the S3 API. A number of other cloud providers do. I would recommend using AWS S3 as the Primary Object Store when using a public cloud. It&amp;rsquo;s the original and most battle tested - not to mention every tool support the S3 API.&lt;/p&gt;
+
+&lt;h4 id=&#34;mirror-bucket-names&#34;&gt;Mirror bucket names&lt;/h4&gt;
+
+&lt;p&gt;Bucket names for AWS S3 are a global resource. Meaning, if you want to have a bucket called &lt;code&gt;mybucket&lt;/code&gt; and someone else has already taken the name then you&amp;rsquo;re out of luck. Thats why most people for website objects will do something like &lt;code&gt;www.mydomain.com&lt;/code&gt; as a bucket name because it unlikely that someone is using that bucket name.&lt;/p&gt;
+
+&lt;h4 id=&#34;replicate-objects-to-all-providers&#34;&gt;Replicate objects to all providers&lt;/h4&gt;
+
+&lt;p&gt;You will want to replicate your S3 objects to other providers whenever you push to AWS S3. You can do this in your code if your app does it or use a 3rd party tool to do it. &lt;code&gt;S3lsio&lt;/code&gt;, a very fast tool that I created and will soon do just that. Google has a cli tool called &lt;code&gt;gsutil&lt;/code&gt; which allows you to rsync your S3 to GCE (rsync is a replication tool in the Linux world). I would suspect Azure has something similar.&lt;/p&gt;
+
+&lt;h4 id=&#34;option-1-global-dns&#34;&gt;(Option 1) Global DNS&lt;/h4&gt;
+
+&lt;p&gt;If you&amp;rsquo;re able to cleanly mirror your bucket and objects and your provider supports the S3 API interface then you can create a custom domain and have it managed by a DNS provider that can support failovers. There are several that can do it. This drawing supports this option.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/global_cloud_storage.svg&#34; style=&#34;max-width: 100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;option-2-customer-request-router&#34;&gt;(Option 2) Customer Request Router&lt;/h4&gt;
+
+&lt;p&gt;This one requires a little more experience. This requires a small microservice app that returns the correct URL based a policy via an HTTP 302 redirect which cause the browser (assuming browser) to try the new URL your request router just returned. The new URL can even be rewritten to support the format of the secondary cloud storage provider if needed.&lt;/p&gt;
+
+&lt;h4 id=&#34;option-3-global-load-balancing-via-cdn&#34;&gt;(Option 3) Global Load Balancing via CDN&lt;/h4&gt;
+
+&lt;p&gt;CDNs (Content Delivery Network) were created to solve these types of scenarios. However, CDNs can be costly so you need to be aware of that. Even AWS Cloud Front can be used in this case (mostly like not impacted by a storage issue on S3)&lt;/p&gt;
+
+&lt;h4 id=&#34;other-options&#34;&gt;Other Options&lt;/h4&gt;
+
+&lt;p&gt;Yes, there are still other ways to solve this. You need to think about your use cases and design around them. However, make sure to do your own due diligence! Vendor marketing materials are 100% buzzword compliant and they may not help any.&lt;/p&gt;
+
+&lt;h4 id=&#34;test-failover&#34;&gt;Test failover&lt;/h4&gt;
+
+&lt;p&gt;Now that you have architected the best way for your use cases, it&amp;rsquo;s time to test. Everything must be tested and re-tested. The simplest way to test is to verify that you can access each provider endpoint for the same object. Next, login to your S3 console and temporarily disable your bucket and then try your test app or test website. Do the same thing for the other cloud providers until only one is &lt;code&gt;live&lt;/code&gt; (keep the other provider buckets disabled for the test). Do not do this on a production system until fully baked.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SLA - Availability or Durability</title>
+      <link>http://lambdastack.io/blog/2017/02/27/sla/</link>
+      <pubDate>Mon, 27 Feb 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/02/27/sla/</guid>
+      <description>
+
+&lt;h3 id=&#34;sla-availability-or-durability&#34;&gt;SLA - Availability or Durability&lt;/h3&gt;
+
+&lt;p&gt;I seem to be getting more questions lately like, &amp;ldquo;how many 9s is your object store?&amp;rdquo; or &amp;ldquo;how do you calculate 9s?&amp;rdquo;. The questions need to be narrowed down since those are very broad. For example, when dealing with storage like an object store, there are two types of &amp;ldquo;9s&amp;rdquo;. One for durability and one for availability. If you look at AWS S3, they put on their primary site 11 9s of durability which is very good. Deeper into site or FAQ you also find where they claim 4 9s of availability. Why such a difference and what does it mean?&lt;/p&gt;
+
+&lt;h4 id=&#34;sla&#34;&gt;SLA&lt;/h4&gt;
+
+&lt;p&gt;The SLA (Service Level Agreement) is a promise/contract from the issuer to the customer that guarantees &amp;ldquo;X level&amp;rdquo; of service. You need to really dig into the SLA to make sure that you fully understand the SLA&amp;rsquo;s definition of time. For example, without hesitation when you see a guarantee that says 11 9s or 4 9s you immediately think that everything will be available almost 100% of the time. This is usually not the case.&lt;/p&gt;
+
+&lt;p&gt;First, make sure you understand that when you see 11 9s it usually means something like durability and not availability (but it could). A smaller number of 9s is usually reflective of availability. The reason for this can be many; networking, system failure, power and even the nature of certain protocols.&lt;/p&gt;
+
+&lt;p&gt;The SLA itself may also define its availability time as 6 days a week instead of 7 or 20 hours a day instead of 24 which would mean the number of 9s would be higher and still allow for good bit of downtime.&lt;/p&gt;
+
+&lt;h4 id=&#34;calculations&#34;&gt;Calculations&lt;/h4&gt;
+
+&lt;p&gt;Availability:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;4 nines –&amp;gt; (365×24) – .9999(365×24) = 8760 – 8759.124 = 0.876 hours = 52 minutes and 30 secs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;OR - 20 hours per day for 6 days a week&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;4 nines –&amp;gt; (365-52)x20 – .9999((365-52)x20) = 6260 – 6259.374 = 37 minutes and 30 secs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In both examples there are 4 9s but the second one the SLA defines its time differently.&lt;/p&gt;
+
+&lt;p&gt;Bonus:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;3 nines –&amp;gt; (365×24) – .999(365×24) = 8760 - 8751.24 = 8.76 hours = 8 hours and 45 minutes&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;NB: Google Cloud Platform and Azure also have the same level of availability as AWS S3 - 99.99%&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;durability&#34;&gt;Durability&lt;/h4&gt;
+
+&lt;p&gt;When you see something like 11 9s of durability, it&amp;rsquo;s usually calculated using a probability theory based on many factors such as replicas, distribution of objects in a cluster, multi-site replication, type of media etc. In AWS S3 they claim 11 9s and state the following in their &lt;a href=&#34;https://aws.amazon.com/s3/faqs/#How_durable_is_Amazon_S3&#34;&gt;FAQ&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Q: How durable is Amazon S3?&lt;/p&gt;
+
+&lt;p&gt;Amazon S3 Standard and Standard - IA are designed to provide 99.999999999% durability of objects over a given year. This durability level corresponds to an average annual expected loss of 0.000000001% of objects. For example, if you store 10,000 objects with Amazon S3, you can on average expect to incur a loss of a single object once every 10,000,000 years. In addition, Amazon S3 is designed to sustain the concurrent loss of data in two facilities.&lt;/p&gt;
+
+&lt;p&gt;As with any environments, the best practice is to have a backup and to put in place safeguards against malicious or accidental users errors. For S3 data, that best practice includes secure access permissions, Cross-Region Replication, versioning and a functioning, regularly tested backup.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I often hear some of my data science buddies get a little testy when I say, &amp;ldquo;durability determination is more of an art than science.&amp;rdquo; What I mean by this is yes we use historical data and probability but we sometimes throw in a little juju &lt;i class=&#34;fa fa-smile-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;. Read the durability claims in the SLA carefully.&lt;/p&gt;
+
+&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
+
+&lt;p&gt;Double check the SLA! In some SLAs I have seen where they never mention 9s but instead mention throughput as defined in any given 15 minute period. This of course is very vague and allows the SLA issuer to claim almost anything. This is common for internal teams in the Enterprise. Again, double check and get the issuer to explain it detail before agreeing to it.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;You can also simply cheat and look at: &lt;a href=&#34;https://en.wikipedia.org/wiki/High_availability#Percentage_calculation&#34;&gt;https://en.wikipedia.org/wiki/High_availability#Percentage_calculation&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TCP and Load Balancers</title>
+      <link>http://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</link>
+      <pubDate>Fri, 20 Jan 2017 11:54:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</guid>
+      <description>
+
+&lt;h4 id=&#34;why-do-i-get-a-tcp-rst-return-when-i-try-to-put-or-get-s3-objects&#34;&gt;Why do I get a &lt;code&gt;TCP RST&lt;/code&gt; return when I try to PUT or GET S3 objects?&lt;/h4&gt;
+
+&lt;p&gt;I have a colleague that has made the following statement:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;The data is sacred but, the requests are not!&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This holds very true when dealing with HTTP calls such as S3 GETs and PUTs.&lt;/p&gt;
+
+&lt;p&gt;Recently, we noticed that a client was doing a massive amounts of PUTs and then issuing corresponding GETs on the same S3 objects. In our case, our S3 is from Ceph&amp;rsquo;s RGW S3 and we have a number of load balancers in front of all of the RGW servers. The client had &amp;ldquo;rolled&amp;rdquo; their own S3 Python SDK instead of using AWS&amp;rsquo; official Python SDK. In doing so, they had not factored in best practices of exponential backoffs (retries).&lt;/p&gt;
+
+&lt;p&gt;When running similar tests against the RGW cluster directly (no load balancers), we were never able to replicate which pointed to the network or the load balancers or both. We had tested this on both commercial and open source load balancers.&lt;/p&gt;
+
+&lt;p&gt;TCP RST return values are usually associated with some sort of &amp;ldquo;man-in-the-middle&amp;rdquo; process such as load balancers, proxies or traffic sniffers. In our case, load balancers. By default, we disabled &lt;code&gt;no linger&lt;/code&gt; features which in theory would imply that the load balancers were not holding on to connections from the clients. We also had very low timeouts set as default.&lt;/p&gt;
+
+&lt;p&gt;After spending days testing and letting our tests run for 24 hour periods we found that on the open source version if you specify &lt;code&gt;no linger&lt;/code&gt; explicitly the issue goes away or dramatically reduces to just noise. For the commercial load balancers we upped the timeouts to 40s which addressed the issue.&lt;/p&gt;
+
+&lt;p&gt;In our case, the client did not want to enable retries in their code due to their own reasons. However, for those clients that had used best practices of exponential backoffs, they never saw an issue to begin with. By combining reasonable timeouts and lingering on your load balancers along with educating clients to code in retries, managing your S3 on-premise cluster becomes a lot easier.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Klaus - Hybrid WebStack</title>
+      <link>http://lambdastack.io/blog/2017/01/15/klaus/</link>
+      <pubDate>Sun, 15 Jan 2017 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/01/15/klaus/</guid>
+      <description>&lt;p&gt;There are very good Web Servers on the market, Apache and NGINX to name a few. However, to interface your backend code you need to use Apache modules or WSGI/FastCGI with NGINX (depending on your language of choice). To actually use a fully integrated environment you need to use something like Django or Tornado for Python. For GO there is a small built-in web server that allows you to build up a more robust environment around it. But for Rust, not so much - until now.&lt;/p&gt;
+
+&lt;p&gt;My original goto languages of choice were C/C++ and then some time ago I switched to Python as my first choice. But, after working with Rust this past year, there is no way I would go back. Rust gives me an environment with no runtime dependencies with the speed of optimized C/C++ code but with safety guarantees. This makes deploying code written in Rust as simple as moving an executable around. Contrast that with Python, Ruby or Java where you can easily spend more time making sure the dependencies are in place than actually writing the code in some cases.&lt;/p&gt;
+
+&lt;p&gt;As wonderful as Rust is there are a few missing pieces, a built-in default web server code to build on. However, there are several great projects that allow for powerful async I/O in a multi-threaded model that have guaranteed safety. One such project is called Klaus-rs. Klaus has not reached it&amp;rsquo;s 1.0 status but is very close. It&amp;rsquo;s what I call a full &amp;ldquo;hybrid model&amp;rdquo; which means it can run as a stand-alone Web Server that serves static pages as well as single page Javascript apps like React or Angular without any funky configuration changes. It just works out of the box so to speak. Klaus also works as an Agent model where it can reside in a background process to handle requests from other agents and initiate requests instead of simply responding to requests. It also has RESTful features built-in so setting up APIs are very simple and it will soon support built-in rate limiting via it&amp;rsquo;s built-in support for Redis.&lt;/p&gt;
+
+&lt;p&gt;One of the greatest and simplest features is the built-in support for AWS S3. This means that it can support making S3 calls using your own AWS credentials. You don&amp;rsquo;t have to create a funky piece of code and bolt it on to handle automatic uploads to S3 for example. Since it&amp;rsquo;s built in Rust and most of the code resides in a library, you can easily extend it to support your environment. The memory footprint is very small so running in a Docker container is also an ideal solution.&lt;/p&gt;
+
+&lt;p&gt;Why call it Klaus? The name is based off of a fictional character from the TV series called The Originals. In the series, Klaus is one of the first Vampires but what makes him so lethal is the fact that he is also part Werewolf making him a true hybrid that can survive anything. So, Klaus-rs can survive any distributed environment including Silver and Daylight!&lt;/p&gt;
+
+&lt;p&gt;To get started, simply fork the github project at &lt;a href=&#34;https://github.com/klaus-rs/klaus&#34;&gt;https://github.com/klaus-rs/klaus&lt;/a&gt; and start building. This of course assumes you have Rust installed if you plan on building it from source. To install Rust go to &lt;a href=&#34;https://rustup.rs&#34;&gt;https://rustup.rs&lt;/a&gt; and follow the instructions.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>S3LSIO - S3 Utility</title>
+      <link>http://lambdastack.io/blog/2016/10/05/s3lsio_s3/</link>
+      <pubDate>Wed, 05 Oct 2016 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2016/10/05/s3lsio_s3/</guid>
+      <description>&lt;p&gt;The initial release of s3lsio has been released for both MacOSX and Linux (RHEL/Fedora/CentOS). Ubuntu will be released soon. In theory Windows should work but OpenSSL can cause initial setup of the Rust build environment for s3lsio.&lt;/p&gt;
+
+&lt;p&gt;There are constant enhancements being made on a weekly basis. S3lsio is a command line tool that can work within a script, called from an app or ran stand alone to easily manipulate your AWS S3 and Ceph Rados Gateway (S3) environments. In addition to plain output you can specify JSON, pretty-json, serialize or quiet mode (only return codes are output) . Pretty-json is the default.&lt;/p&gt;
+
+&lt;p&gt;Credentials:&lt;/p&gt;
+
+&lt;p&gt;AWS supports a credentials file in the home directory of a given user such as:
+~/.aws/credentials&lt;/p&gt;
+
+&lt;p&gt;This file is a standard INI file format. So, if you don&amp;rsquo;t want to enter your credentials via the command line then you can place them in the aws credentials file.&lt;/p&gt;
+
+&lt;p&gt;API Signatures:&lt;/p&gt;
+
+&lt;p&gt;By default AWS uses API Signature V4 however, Ceph (Hammer and below) uses V2 but Ceph (Jewel and higher) supports V4. S3lsio supports both. The default signature is V4 for S3lsio. You can change that by passing in -s V2 or setting &amp;lsquo;signature=V2&amp;rsquo; in the config file.&lt;/p&gt;
+
+&lt;p&gt;Proxies:&lt;/p&gt;
+
+&lt;p&gt;S3lsio supports proxies in 3 ways: 1. Pass in -p &lt;whatever your proxy url:port&gt;, 2. Add to config file, 3. Set http_proxy, https_proxy and no_proxy environment variables. By default proxies are not used.&lt;/p&gt;
+
+&lt;p&gt;Example to create an S3 bucket:&lt;/p&gt;
+
+&lt;p&gt;./s3lsio bucket create mynewbucket&lt;/p&gt;
+
+&lt;p&gt;You can download and more instructions here: &lt;a href=&#34;http://www.lambdastack.io/s3lsio&#34;&gt;http://www.lambdastack.io/s3lsio&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust AWS S3 SDK</title>
+      <link>http://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</link>
+      <pubDate>Tue, 20 Sep 2016 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</guid>
+      <description>&lt;p&gt;The aws-sdk-rust library is officially released which allows both V2 and V4 API signatures. This is import for those that wish to use the SDK to access storage products that implement the S3 Interface such as Ceph&amp;rsquo;s Rados Gateway (RGW). Ceph Hammer release only uses V2 while the Jewel and higher releases support V4.&lt;/p&gt;
+
+&lt;p&gt;Enterprise level proxy support has also been added. So, if http_proxy, https_proxy and no_proxy environment variables are in use, aws-sdk-rust will use them to access the S3 resource.&lt;/p&gt;
+
+&lt;p&gt;Aws-sdk-rust can be found on crates.io and &lt;a href=&#34;https://github.com/lambdastackio/aws-sdk-rust&#34;&gt;https://github.com/lambdastackio/aws-sdk-rust&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Keep track of the crate. The library is under heavy development.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

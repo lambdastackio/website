@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Storage on The LambdaStack Project</title>
+    <link>http://lambdastack.io/categories/storage/index.xml</link>
+    <description>Recent content in Storage on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/categories/storage/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AWS S3 vs On-Premises</title>
+      <link>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</link>
+      <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</guid>
+      <description>
+
+&lt;h2 id=&#34;aws-s3-vs-on-premises&#34;&gt;AWS S3 vs On-Premises&lt;/h2&gt;
+
+&lt;p&gt;When you own Enterprise Storage or are asked to build enterprise class storage you find yourself more frequently having to cost justify against outside Cloud Storage vendors like AWS S3, GCE or Azure. So, how will you do that since you have to make capital expenditures vs OpEx that these providers discuss so much?&lt;/p&gt;
+
+&lt;p&gt;When you break down the pricing of AWS S3 and others you find that the actual storage cost is not too bad (depending on amount of stored data). What you don&amp;rsquo;t realize is the network transfer rate is where they get you. I have heard stories of small firms having bet pools going just to see who is closer at guessing a given days AWS cost. The same can be said for enterprises but the stakes are much higher!&lt;/p&gt;
+
+&lt;h4 id=&#34;sidebar&#34;&gt;Sidebar&lt;/h4&gt;
+
+&lt;p&gt;I like AWS, Azure and Google. They serve a good purpose of helping you get started on projects at a low entry cost and the &amp;ldquo;pay-as-you-go&amp;rdquo; model is very compelling. This model changes over time for some enterprises especially when it comes to storage. I just recently had a Senior level &amp;ldquo;Amazonian&amp;rdquo; (that&amp;rsquo;s what they call themselves) say &amp;ldquo;AWS is the world largest startup and that&amp;rsquo;s how we operate.&amp;rdquo; That sounds kinda cool but when I pressed him on enterprise like questions, his story fell flat. AWS seems to believe everything should run in a public cloud but that&amp;rsquo;s just not wise (in a general sense - some enterprises can&amp;rsquo;t allow their data outside their datacenters for many reasons).  Azure actually understands this and has &amp;ldquo;on-premises&amp;rdquo; versions of some of their offerings. They seem to have more of an understanding of the enterprise than the others.&lt;/p&gt;
+
+&lt;p&gt;Again, I like AWS. I wrote the Rust AWS-SDK-RUST SDK and other S3 tools. I&amp;rsquo;m simply making honest comparisons of cloud providers for enterprises. I have also used Google on past contracts and they are very good but I don&amp;rsquo;t have an enterprise reference to compare against.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Also, don&amp;rsquo;t get confused by AWS&amp;rsquo; &amp;ldquo;manage your on-premises via AWS.&amp;rdquo; It&amp;rsquo;s only their console that you can plug some data into and not a true on-premises solution.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;how-to-cost-justify&#34;&gt;How to cost justify&lt;/h4&gt;
+
+&lt;p&gt;Back from my sidebar. How do we cost justify on-premises S3 and compare it to AWS S3? The first thing is &lt;strong&gt;DO NOT&lt;/strong&gt; use a tradition enterprise storage vendor - you gain nothing. You need a solid open source solution using COTS (Common Off The Shelf) hardware such as Ceph on any hardware platform that meets your budget and minimum requirements to run a good S3 Object Store.&lt;/p&gt;
+
+&lt;p&gt;Cost Example (deep storage): (NB: These are conservative costs. You will need to plug in your costs. This also assumes you use all of the storage and most of data is machine generated as in Big Data. Also, no operating labor cost is factored in since that is so variable [see summary].)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Single datacenter. Would impact if disaster struck the datacenter itself. Data is very durable otherwise.&lt;/p&gt;
+
+&lt;p&gt;5 Racks ($300K each) - $1,500,000 (assumes your own datacenters with power/cooling - cost factors in ~10 spare storage nodes and additional 10TB HDD for replacements). Also these figures are high so your real figures should be a good bit less depending on your hardware vendor and even lower if you don&amp;rsquo;t have to use outside vendors and contractors.&lt;/p&gt;
+
+&lt;p&gt;Includes racks, high-density storage, network spines, 20Gbs NICs, TORs, software load-balancers (HAProxy), install labor, spares, etc&lt;/p&gt;
+
+&lt;p&gt;Ceph S3, Erasure Coding &lt;sup&gt;8&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; (11 shards - &lt;a href=&#34;http://lambdastack.io/blog/2017/02/26/erasure-coding/&#34;&gt;see other article on EC calculations&lt;/a&gt;) - tuned for larger objects&lt;/p&gt;
+
+&lt;p&gt;10TB HDD x 204 (drives per rack) x 5 (racks) = 10.2PB raw storage / 1.375 (EC factor - see EC article) = 7,418TB (7.4PB) usable. Using EC instead of replica for better storage utilization. ~3% write overhead and ~1.2% read overhead for EC as compared to replicas. The big penalty will come on a rebuild of an object if required due to data failure etc.&lt;/p&gt;
+
+&lt;p&gt;$1,500,000 (total cost) / 7,418TB (usable) = $202.21 per TB (internally price this one-time, annually or however you like. This example will be one-time (1 year) divided into monthly)&lt;/p&gt;
+
+&lt;p&gt;Operational costs (power/cooling/space density) are standardize (PUE). A normal rack uses less than ~5kW on average and I will use $.10 kW/h cost (change to your areas average): 8,760 (annual hours) * $.10 * 5 = $4,104.06 * 5 (racks) = $20,520.30 (annual) / 7,418TB (usable) = $2.77TB for OpEx (annual)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;$202.21 + $2.77 = $204.98TB (first year). $2.77TB annual after first year plus operational labor&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;NB: If you use commercial hardware load-balancers then your cost will increase. These do not usually gain you performance over HAProxy in this scenario. However, you can always add them and repurpose the HAProxy nodes included above.&lt;/p&gt;
+
+&lt;p&gt;Network traffic - ~15Gbs sustained (give or take) split with &lt;sup&gt;70&lt;/sup&gt;&amp;frasl;&lt;sub&gt;30&lt;/sub&gt; read/write (change based on your assumptions but these values are used for standard benchmarking). Since a high-speed network is part of a normal enterprise (large), there are no additional costs for network usage in this scenario beyond purchasing additional spines which are factored into the cost. (Internal only)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;AWS S3 (published pricing):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Store 7,418TB to be equal with above&lt;/p&gt;
+
+&lt;p&gt;Multiple datacenters (standard)&lt;/p&gt;
+
+&lt;p&gt;Transfer In &lt;a href=&#34;https://aws.amazon.com/snowmobile/&#34;&gt;(Would take a &amp;ldquo;snowmobile&amp;rdquo; - Big semi-tractor and trailer rigs)&lt;/a&gt;. This scenario doesn&amp;rsquo;t even cover that cost but it&amp;rsquo;s expensive and takes a long time.&lt;/p&gt;
+
+&lt;p&gt;Transfer Out - 70TB monthly (for this simple low cost example) - This applies to everything including EC2, Direct Connect etc.&lt;/p&gt;
+
+&lt;p&gt;Direct Connect - Would need 2 LAG 10Gbs circuits plus additional equipment to sustain internal rate above. The cost is not reported here and much higher (setup, monthly and long-term contract)!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;$176,110.98 (monthly) * 12 = $2,113,331.76 (annual) / 7,418TB = $284.89TB (annual) PLUS costs not reported!!&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/aws-s3-worksheet.png&#34; style=&#34;max-width: 100%&#34;&gt;
+&lt;strong&gt;AWS online worksheet - &lt;a href=&#34;https://calculator.s3.amazonaws.com/index.html&#34;&gt;https://calculator.s3.amazonaws.com/index.html&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/aws-s3-detail.png&#34; style=&#34;max-width: 100%&#34;&gt;
+&lt;strong&gt;AWS detail&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
+
+&lt;p&gt;If you are a startup and only using a small amount of storage then you can easily cost justify using a public cloud provider. However, if you are an enterprise and own datacenters then it&amp;rsquo;s far better from a cost stand point to build your own S3 on-premises and maintain control (even with added operational labor costs). The above scenario takes into consideration only one datacenter for the on-premises so the cost look very good for it even starting in the first year. However, if you factor in a second datacenter, just double the cost to keep it easy, then you see that year one (only) is better (from a cash outlay) for AWS S3 (w/o high transfer rate and Direct Connect costs).&lt;/p&gt;
+
+&lt;p&gt;Second datacenter factored in for on-premises:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;$3,000,000 for 2 datacenters with ~10 spare servers and drives per datacenter.&lt;/p&gt;
+
+&lt;p&gt;$204.98TB x 2 = $409.96TB (annual) or $409.96TB / 3 (3 years) = $136.65TB annually over 3 year period.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Using the above cost figures, the AWS S3 cost will remain annual while the on-premises&amp;rsquo; cost go down annually due to many factors but mainly due to shelf life of 3-5yrs of equipment. Of course, there will be the annual OpEx costs mentioned plus drive and server replacement costs (some were already factored into the initial cost). The on-premises version also does not include operational labor costs (important). However, the labor cost would most likely only get you closer on year one using the single datacenter scenario.&lt;/p&gt;
+
+&lt;p&gt;The point is, there are many ways to approach the cost points. If you have a lot of data and it continues to grow at an exponential rate and you continue to find more ways to process (analyze) the data then your transfer out of storage rates will increase (same transfer costs apply to EC2 and Direct Connect) and thus your real cost of AWS S3. This can also be applied to AWS Glacier as well.&lt;/p&gt;
+
+&lt;p&gt;Again, AWS S3 is great but it is more expensive than you think when you have a lot of data and need access to it frequently. But if you&amp;rsquo;re a small shop or just want someone else to manage things for you, it&amp;rsquo;s a good option. Just don&amp;rsquo;t assume it&amp;rsquo;s cheaper because it&amp;rsquo;s not especially when you get into PB range which is now becoming a norm.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;Tested S3 from EC2 large in us-east-1 (same) region using JMeter and used same EC2 JMeter tests against Ceph in DMZ (owned datacenter - not close to region) and Ceph won in performance in most tests. Was not testing for performances between the two but was testing to establish a base line. Results were very surprising! Take away - do a lot of tests because results can be counter intuitive.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hyper-Converged Infrastructure (HCI) - Truth</title>
+      <link>http://lambdastack.io/blog/2017/03/05/hci/</link>
+      <pubDate>Sun, 05 Mar 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/03/05/hci/</guid>
+      <description>
+
+&lt;h2 id=&#34;hyper-converged-infrastructure-hci-truth&#34;&gt;Hyper-Converged Infrastructure (HCI) - Truth&lt;/h2&gt;
+
+&lt;p&gt;I happened to just stumble upon a few marketing oriented whitepapers from VMWare today (odd use of my time). All three were centered around Hyper-Converged Infrastructure (HCI). At Bloomberg, we run VMWare and OpenStack clusters. Our OpenStack clusters are currently fully Hyper-Converged. I have even given talks on them &lt;a href=&#34;http://lambdastack.io/videos/openstack-austin/&#34;&gt;http://lambdastack.io/videos/openstack-austin/&lt;/a&gt;. If you look at the video and the presentation you will see why we no longer believe in this model for us.&lt;/p&gt;
+
+&lt;p&gt;We have many clusters and some are very large. Our compute and storage run on the same nodes in these clusters. We even went to a &amp;ldquo;POD&amp;rdquo; like system (three PODs per rack) to help us scale as seen in the presentation. When we first started out over four years ago, Hyper-Converged was not the buzzword it is today and it made sense at the time. However, today, it&amp;rsquo;s a different story.&lt;/p&gt;
+
+&lt;p&gt;VMWare is seemingly pushing HCI as the greatest thing since sliced bread. They have even produced a whitepaper on how to better your career by embracing it. We have found that HCI only works for small clusters will a limited work load. Scaling an HCI is very complicated and costly. The storage portion is the part that really needs the most scale so scaling compute to fit the scale needs of storage can be a waste of resources.&lt;/p&gt;
+
+&lt;p&gt;If you charge your internal customers for compute resources and storage resources then an HCI can cause their cost to be very high even with oversubscription of compute. Last year we began the process of breaking out compute from storage so that we could scale them independently of each other.&lt;/p&gt;
+
+&lt;p&gt;After we began to split out our storage, we were able to pass along a dramatic drop in per TB charge to our internal customers which was not possible before. Storage and compute resource needs are different. We suspected we would see a drop in issues due to the reduced pressure on resources which we did. However, we were surprised at how much more healthy our nodes became due to this.&lt;/p&gt;
+
+&lt;p&gt;Vendors like to create buzzwords but I often wonder if they really actually eat their own dog food so to speak and operate things at massive scale or if everything is simply based on theory. I suspect the latter. In our experience, Hyper-Converged can work good enough at a small scale but it does not do well at scale. Vendors that are pushing it are just trying to survive in a changing world. Make sure it&amp;rsquo;s right for you before investing.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Global Cloud Storage</title>
+      <link>http://lambdastack.io/blog/2017/03/01/global-cloud-storage/</link>
+      <pubDate>Wed, 01 Mar 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/03/01/global-cloud-storage/</guid>
+      <description>
+
+&lt;h2 id=&#34;global-cloud-storage&#34;&gt;Global Cloud Storage&lt;/h2&gt;
+
+&lt;p&gt;Everything fails! No matter how great the architecture, things can fail due to many factors including human, power, fiber cuts, etc. We even have failures in our own datacenters. The point is you need to plan on failure as part of your architecture.&lt;/p&gt;
+
+&lt;p&gt;Yesterday, AWS S3 us-east-1 had an issue which caused rippling affects across the Internet including AWS&amp;rsquo; on status page that depends on S3. All cloud providers have failed and will fail again - it&amp;rsquo;s just a fact. The question is what are you going to do about it?&lt;/p&gt;
+
+&lt;p&gt;It doesn&amp;rsquo;t matter if you&amp;rsquo;re a startup or large enterprise, you need to have multiple cloud storage providers. Netflix learned this lesson a long time ago. AWS S3 is the defacto standard for Cloud Storage APIs. Most cloud providers support the S3 interface so if your app uses the S3 API for interfacing with your object storage then you should be able to implement a multi-cloud solution.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;NB: There are multiple ways to do this and the drawing is &lt;strong&gt;only&lt;/strong&gt; one way&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;determine-who-supports-s3&#34;&gt;Determine who supports S3&lt;/h4&gt;
+
+&lt;p&gt;You will need to determine which providers support the S3 API. A number of other cloud providers do. I would recommend using AWS S3 as the Primary Object Store when using a public cloud. It&amp;rsquo;s the original and most battle tested - not to mention every tool support the S3 API.&lt;/p&gt;
+
+&lt;h4 id=&#34;mirror-bucket-names&#34;&gt;Mirror bucket names&lt;/h4&gt;
+
+&lt;p&gt;Bucket names for AWS S3 are a global resource. Meaning, if you want to have a bucket called &lt;code&gt;mybucket&lt;/code&gt; and someone else has already taken the name then you&amp;rsquo;re out of luck. Thats why most people for website objects will do something like &lt;code&gt;www.mydomain.com&lt;/code&gt; as a bucket name because it unlikely that someone is using that bucket name.&lt;/p&gt;
+
+&lt;h4 id=&#34;replicate-objects-to-all-providers&#34;&gt;Replicate objects to all providers&lt;/h4&gt;
+
+&lt;p&gt;You will want to replicate your S3 objects to other providers whenever you push to AWS S3. You can do this in your code if your app does it or use a 3rd party tool to do it. &lt;code&gt;S3lsio&lt;/code&gt;, a very fast tool that I created and will soon do just that. Google has a cli tool called &lt;code&gt;gsutil&lt;/code&gt; which allows you to rsync your S3 to GCE (rsync is a replication tool in the Linux world). I would suspect Azure has something similar.&lt;/p&gt;
+
+&lt;h4 id=&#34;option-1-global-dns&#34;&gt;(Option 1) Global DNS&lt;/h4&gt;
+
+&lt;p&gt;If you&amp;rsquo;re able to cleanly mirror your bucket and objects and your provider supports the S3 API interface then you can create a custom domain and have it managed by a DNS provider that can support failovers. There are several that can do it. This drawing supports this option.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/global_cloud_storage.svg&#34; style=&#34;max-width: 100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;option-2-customer-request-router&#34;&gt;(Option 2) Customer Request Router&lt;/h4&gt;
+
+&lt;p&gt;This one requires a little more experience. This requires a small microservice app that returns the correct URL based a policy via an HTTP 302 redirect which cause the browser (assuming browser) to try the new URL your request router just returned. The new URL can even be rewritten to support the format of the secondary cloud storage provider if needed.&lt;/p&gt;
+
+&lt;h4 id=&#34;option-3-global-load-balancing-via-cdn&#34;&gt;(Option 3) Global Load Balancing via CDN&lt;/h4&gt;
+
+&lt;p&gt;CDNs (Content Delivery Network) were created to solve these types of scenarios. However, CDNs can be costly so you need to be aware of that. Even AWS Cloud Front can be used in this case (mostly like not impacted by a storage issue on S3)&lt;/p&gt;
+
+&lt;h4 id=&#34;other-options&#34;&gt;Other Options&lt;/h4&gt;
+
+&lt;p&gt;Yes, there are still other ways to solve this. You need to think about your use cases and design around them. However, make sure to do your own due diligence! Vendor marketing materials are 100% buzzword compliant and they may not help any.&lt;/p&gt;
+
+&lt;h4 id=&#34;test-failover&#34;&gt;Test failover&lt;/h4&gt;
+
+&lt;p&gt;Now that you have architected the best way for your use cases, it&amp;rsquo;s time to test. Everything must be tested and re-tested. The simplest way to test is to verify that you can access each provider endpoint for the same object. Next, login to your S3 console and temporarily disable your bucket and then try your test app or test website. Do the same thing for the other cloud providers until only one is &lt;code&gt;live&lt;/code&gt; (keep the other provider buckets disabled for the test). Do not do this on a production system until fully baked.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

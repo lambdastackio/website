@@ -1,0 +1,5 @@
+text: "Ceph-Rust is the Official Ceph Rust SDK for librados. It mirrors the `C` version of librados PLUS has Admin Socket features built-in. You can combine Ceph-Rust with Klaus to form a powerful and very fast backend doing Ceph maintenance. Core of Cepheus which is coming soon!"
+name: "ceph-rust"
+position: "Ceph Rust SDK"
+avatar: "img/rust.svg"
+project: "https://github.com/ceph/ceph-rust"

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on The LambdaStack Project</title>
+    <link>http://lambdastack.io/categories/web/index.xml</link>
+    <description>Recent content in Web on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SLA - Availability or Durability</title>
+      <link>http://lambdastack.io/blog/2017/02/27/sla/</link>
+      <pubDate>Mon, 27 Feb 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/02/27/sla/</guid>
+      <description>
+
+&lt;h3 id=&#34;sla-availability-or-durability&#34;&gt;SLA - Availability or Durability&lt;/h3&gt;
+
+&lt;p&gt;I seem to be getting more questions lately like, &amp;ldquo;how many 9s is your object store?&amp;rdquo; or &amp;ldquo;how do you calculate 9s?&amp;rdquo;. The questions need to be narrowed down since those are very broad. For example, when dealing with storage like an object store, there are two types of &amp;ldquo;9s&amp;rdquo;. One for durability and one for availability. If you look at AWS S3, they put on their primary site 11 9s of durability which is very good. Deeper into site or FAQ you also find where they claim 4 9s of availability. Why such a difference and what does it mean?&lt;/p&gt;
+
+&lt;h4 id=&#34;sla&#34;&gt;SLA&lt;/h4&gt;
+
+&lt;p&gt;The SLA (Service Level Agreement) is a promise/contract from the issuer to the customer that guarantees &amp;ldquo;X level&amp;rdquo; of service. You need to really dig into the SLA to make sure that you fully understand the SLA&amp;rsquo;s definition of time. For example, without hesitation when you see a guarantee that says 11 9s or 4 9s you immediately think that everything will be available almost 100% of the time. This is usually not the case.&lt;/p&gt;
+
+&lt;p&gt;First, make sure you understand that when you see 11 9s it usually means something like durability and not availability (but it could). A smaller number of 9s is usually reflective of availability. The reason for this can be many; networking, system failure, power and even the nature of certain protocols.&lt;/p&gt;
+
+&lt;p&gt;The SLA itself may also define its availability time as 6 days a week instead of 7 or 20 hours a day instead of 24 which would mean the number of 9s would be higher and still allow for good bit of downtime.&lt;/p&gt;
+
+&lt;h4 id=&#34;calculations&#34;&gt;Calculations&lt;/h4&gt;
+
+&lt;p&gt;Availability:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;4 nines –&amp;gt; (365×24) – .9999(365×24) = 8760 – 8759.124 = 0.876 hours = 52 minutes and 30 secs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;OR - 20 hours per day for 6 days a week&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;4 nines –&amp;gt; (365-52)x20 – .9999((365-52)x20) = 6260 – 6259.374 = 37 minutes and 30 secs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In both examples there are 4 9s but the second one the SLA defines its time differently.&lt;/p&gt;
+
+&lt;p&gt;Bonus:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;3 nines –&amp;gt; (365×24) – .999(365×24) = 8760 - 8751.24 = 8.76 hours = 8 hours and 45 minutes&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;NB: Google Cloud Platform and Azure also have the same level of availability as AWS S3 - 99.99%&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;durability&#34;&gt;Durability&lt;/h4&gt;
+
+&lt;p&gt;When you see something like 11 9s of durability, it&amp;rsquo;s usually calculated using a probability theory based on many factors such as replicas, distribution of objects in a cluster, multi-site replication, type of media etc. In AWS S3 they claim 11 9s and state the following in their &lt;a href=&#34;https://aws.amazon.com/s3/faqs/#How_durable_is_Amazon_S3&#34;&gt;FAQ&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Q: How durable is Amazon S3?&lt;/p&gt;
+
+&lt;p&gt;Amazon S3 Standard and Standard - IA are designed to provide 99.999999999% durability of objects over a given year. This durability level corresponds to an average annual expected loss of 0.000000001% of objects. For example, if you store 10,000 objects with Amazon S3, you can on average expect to incur a loss of a single object once every 10,000,000 years. In addition, Amazon S3 is designed to sustain the concurrent loss of data in two facilities.&lt;/p&gt;
+
+&lt;p&gt;As with any environments, the best practice is to have a backup and to put in place safeguards against malicious or accidental users errors. For S3 data, that best practice includes secure access permissions, Cross-Region Replication, versioning and a functioning, regularly tested backup.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I often hear some of my data science buddies get a little testy when I say, &amp;ldquo;durability determination is more of an art than science.&amp;rdquo; What I mean by this is yes we use historical data and probability but we sometimes throw in a little juju &lt;i class=&#34;fa fa-smile-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;. Read the durability claims in the SLA carefully.&lt;/p&gt;
+
+&lt;h4 id=&#34;summary&#34;&gt;Summary&lt;/h4&gt;
+
+&lt;p&gt;Double check the SLA! In some SLAs I have seen where they never mention 9s but instead mention throughput as defined in any given 15 minute period. This of course is very vague and allows the SLA issuer to claim almost anything. This is common for internal teams in the Enterprise. Again, double check and get the issuer to explain it detail before agreeing to it.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;You can also simply cheat and look at: &lt;a href=&#34;https://en.wikipedia.org/wiki/High_availability#Percentage_calculation&#34;&gt;https://en.wikipedia.org/wiki/High_availability#Percentage_calculation&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Klaus - Hybrid WebStack</title>
+      <link>http://lambdastack.io/blog/2017/01/15/klaus/</link>
+      <pubDate>Sun, 15 Jan 2017 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/01/15/klaus/</guid>
+      <description>&lt;p&gt;There are very good Web Servers on the market, Apache and NGINX to name a few. However, to interface your backend code you need to use Apache modules or WSGI/FastCGI with NGINX (depending on your language of choice). To actually use a fully integrated environment you need to use something like Django or Tornado for Python. For GO there is a small built-in web server that allows you to build up a more robust environment around it. But for Rust, not so much - until now.&lt;/p&gt;
+
+&lt;p&gt;My original goto languages of choice were C/C++ and then some time ago I switched to Python as my first choice. But, after working with Rust this past year, there is no way I would go back. Rust gives me an environment with no runtime dependencies with the speed of optimized C/C++ code but with safety guarantees. This makes deploying code written in Rust as simple as moving an executable around. Contrast that with Python, Ruby or Java where you can easily spend more time making sure the dependencies are in place than actually writing the code in some cases.&lt;/p&gt;
+
+&lt;p&gt;As wonderful as Rust is there are a few missing pieces, a built-in default web server code to build on. However, there are several great projects that allow for powerful async I/O in a multi-threaded model that have guaranteed safety. One such project is called Klaus-rs. Klaus has not reached it&amp;rsquo;s 1.0 status but is very close. It&amp;rsquo;s what I call a full &amp;ldquo;hybrid model&amp;rdquo; which means it can run as a stand-alone Web Server that serves static pages as well as single page Javascript apps like React or Angular without any funky configuration changes. It just works out of the box so to speak. Klaus also works as an Agent model where it can reside in a background process to handle requests from other agents and initiate requests instead of simply responding to requests. It also has RESTful features built-in so setting up APIs are very simple and it will soon support built-in rate limiting via it&amp;rsquo;s built-in support for Redis.&lt;/p&gt;
+
+&lt;p&gt;One of the greatest and simplest features is the built-in support for AWS S3. This means that it can support making S3 calls using your own AWS credentials. You don&amp;rsquo;t have to create a funky piece of code and bolt it on to handle automatic uploads to S3 for example. Since it&amp;rsquo;s built in Rust and most of the code resides in a library, you can easily extend it to support your environment. The memory footprint is very small so running in a Docker container is also an ideal solution.&lt;/p&gt;
+
+&lt;p&gt;Why call it Klaus? The name is based off of a fictional character from the TV series called The Originals. In the series, Klaus is one of the first Vampires but what makes him so lethal is the fact that he is also part Werewolf making him a true hybrid that can survive anything. So, Klaus-rs can survive any distributed environment including Silver and Daylight!&lt;/p&gt;
+
+&lt;p&gt;To get started, simply fork the github project at &lt;a href=&#34;https://github.com/klaus-rs/klaus&#34;&gt;https://github.com/klaus-rs/klaus&lt;/a&gt; and start building. This of course assumes you have Rust installed if you plan on building it from source. To install Rust go to &lt;a href=&#34;https://rustup.rs&#34;&gt;https://rustup.rs&lt;/a&gt; and follow the instructions.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

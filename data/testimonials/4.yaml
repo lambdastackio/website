@@ -1,0 +1,5 @@
+text: "Klaus is a true Hybrid WebStack. It can be ran (with no dependencies) as a fast async I/O futures based Web Server, it can be ran as an API Server or as an Agent. It also has built-in support for AWS S3 and Redis."
+name: "klaus"
+position: "Hybrid WebStack"
+avatar: "img/klaus.png"
+project: "https://github.com/klaus-rs/"

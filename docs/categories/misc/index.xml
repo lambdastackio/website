@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Misc on The LambdaStack Project</title>
+    <link>http://lambdastack.io/categories/misc/index.xml</link>
+    <description>Recent content in Misc on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/categories/misc/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugo vs WordPress</title>
+      <link>http://lambdastack.io/blog/2017/02/01/hugo/</link>
+      <pubDate>Wed, 01 Feb 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/02/01/hugo/</guid>
+      <description>
+
+&lt;h3 id=&#34;hugo-vs-wordpress&#34;&gt;&lt;code&gt;Hugo&lt;/code&gt; vs &lt;code&gt;WordPress&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;We all know that &lt;code&gt;WordPress&lt;/code&gt; is a Content Management System (CMS). For years, people have been using WordPress to help them manage their content and for the most part it works - sort of. WordPress is a very old tech code base. It&amp;rsquo;s written in PHP (who uses that anymore?) using Apache/NGINX and it uses MySQL as it SQL backend. None of those are bad on their own (except PHP) but the way that WordPress is organized and Architected makes it very prone to scalability issues and it&amp;rsquo;s an anti-pattern of &lt;code&gt;Microservices&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This site was originally a WordPress site and used a different domain name. I even tried Wordpress.com but you&amp;rsquo;re not allowed to upload your own custom templates which seems odd to me. I even tried other blogging sites like &lt;code&gt;Medium&lt;/code&gt; and &lt;code&gt;Blogger&lt;/code&gt; but being a developer and architect, I wanted more freedom. Like all good developers, I went back to my original idea. I looked at hosting on BlueHost and others but I began to have a reaction when I had to pay a lot for hosting - no tech is easier to architect and manage than web servers.&lt;/p&gt;
+
+&lt;p&gt;So, I had the idea that I would build-out an AWS EC2 environment and use Elastic Load Balancers to front the EC2 instances. I took the generic CloudFormation template and modified it to fit my needs. When executed, it built the EC2 instances, setup the ELB, setup RDS and had my hosting environment setup in no time using my custom WordPress template. BTW, I was using Amazon Linux AMIs. The code base is located &lt;a href=&#34;https://github.com/lambdastackio/wordpress&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For some reason, I had in my mind that my costs would be almost nothing - my traffic was good but not excessive. My first AWS bill was over &lt;strong&gt;$70&lt;/strong&gt;. When I drilled down into the invoice I noticed my instance types were too high, my RDS was too much etc. I changed the types down to micro level on everything I could. This lowered the next bill down to a little more than &lt;strong&gt;$50&lt;/strong&gt;. I also had an instance go south on me and I had to manage the site which I did not want to do. I started thinking that I should have just paid a hosting company to deal with the goofy issues associated with WordPress. I was about to move to a hosting company when I ran across &lt;a href=&#34;https://gohugo.io/&#34;&gt;&lt;code&gt;Hugo&lt;/code&gt;&lt;/a&gt;, a static website generator built in GO.&lt;/p&gt;
+
+&lt;p&gt;I installed &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; and played around with it and thought it was super simple to use but it was a static site generator and not a CMS. What if I wanted to use my iPad or iPhone to write posts while traveling? Was that feature worth $50+ a month? The answer was obvious - nope!&lt;/p&gt;
+
+&lt;p&gt;It took me a few days to figure out the templates and how to override the parts I wanted to customized. Once I saw how fast and simple it was to customized I began to really enjoy it. After a week or so I actually enjoyed working with it (I never said that about WordPress).&lt;/p&gt;
+
+&lt;p&gt;Today this site uses Hugo to generate the site based on &lt;code&gt;Markdown&lt;/code&gt; and I simply use a custom domain &lt;code&gt;lambdastack.io&lt;/code&gt; on &lt;code&gt;Github&lt;/code&gt; and post the code to the &lt;code&gt;docs&lt;/code&gt; folder. The code for the site can be found &lt;a href=&#34;https://github.com/lambdastackio/website&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hugo and Github hosting work very well and everything is version controlled. It&amp;rsquo;s so simple to change and add things. The only odd things I have seen has been &lt;code&gt;Github&lt;/code&gt; related. If you have a good bit of traffic then push to AWS S3 and use Cloud Front. BTW, I no longer use the WordPress HA platform I built on AWS - &lt;strong&gt;Github is free!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Update: We use Github Enterprise at work but it does not allow for custom domains so I had to add a deployment pipeline hooked to github push which then pushes the docs site to all of my HA Web Servers&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Load Balancers</title>
+      <link>http://lambdastack.io/blog/2016/10/15/lbs/</link>
+      <pubDate>Sat, 15 Oct 2016 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2016/10/15/lbs/</guid>
+      <description>
+
+&lt;h3 id=&#34;load-balancers-haproxy-vs-other&#34;&gt;Load Balancers - HAProxy vs Other&lt;/h3&gt;
+
+&lt;p&gt;Load Balancers are very import tools for scalability, depending on the protocol. For HTTP(S), load balancers are a must unless you&amp;rsquo;re good with having only one web server exposed. Recently, I was asked to do performance tests of our HAProxy servers that front our Ceph RGW (S3) nodes and do the same for a very popular hardware load balancer.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The name of the hardware load balancer vendors will not be released to protect the innocent - ME :)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Confession - Many years ago I believed that hardware load balancers must be faster than software load balancers because in theory they are tuned to specific hardware and that hardware &lt;strong&gt;must&lt;/strong&gt; be specially design for the given task. That&amp;rsquo;s almost embarrassing when I say it out loud because that in no way is accurate!&lt;/p&gt;
+
+&lt;p&gt;I wrote the Chef Cookbook called &lt;code&gt;Ceph-Chef&lt;/code&gt; that I also manage at the &lt;a href=&#34;https://github.com/ceph/ceph-chef&#34;&gt;Ceph repo&lt;/a&gt;. I also created the Chef-BCS project at &lt;a href=&#34;https://github.com/bloomberg/chef-bcs&#34;&gt;https://github.com/bloomberg/chef-bcs&lt;/a&gt; that uses the Ceph-Chef cookbook to install and manage Ceph as a very large Object Store. At the time, I did not have dedicated hardware load balancers at my disposal so I had to build out &lt;code&gt;HAProxy&lt;/code&gt; with &lt;code&gt;KeepAliveD&lt;/code&gt; using &lt;code&gt;Bird&lt;/code&gt; for BGP to advertise the IPs the network spines. I ran the HAProxy nodes in an Active-Passive mode using bonded 10Gb NICs (what I had available to me).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This configuration is available in the Chef-BCS project and I ran it for a long time in a very large Object Store cluster.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;After tuning HAProxy and the vendor supported hardware load balancers (vendor tuned those), I began testing 2MB PUTs and random byte-range request GETs. I launched &lt;a href=&#34;https://github.com/lambdastackio/s3lsio&#34;&gt;&lt;code&gt;s3lsio&lt;/code&gt; benchmarking&lt;/a&gt; from many VMs along with running from actual bare-metal servers. I needed to generate enough sustained traffic to fill the two bonded 10Gb pipes of the HAProxy load balancer (the hardware load balancer had 4X more potential throughput).&lt;/p&gt;
+
+&lt;p&gt;I was surprised to see how much the vendor needed to tune the hardware load balancers to even get close to the performance of the HAProxy load balancers. I&amp;rsquo;m not able to share specifics but there were only a few tests where the hardware load balancers met or slightly out performed HAProxy. Almost all tests showed HAProxy out performing.&lt;/p&gt;
+
+&lt;p&gt;In summary, I know that I could have gotten even more performance out of HAProxy had I taken the time to tune it more and tuned the hardware it ran on. In future projects I may do just that.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,12 @@
+weight: 4
+title: "S3LSIO"
+description: >
+  <ul class="list-style-none">
+    <li>Fast AWS and Ceph S3 CLI</li>
+    <li>Returns data in JSON</li>
+    <li>Does Benchmarking of S3</li>
+    <li>Can integrate into scripts</li>
+    <li>Multi-threaded</li>
+    <li>No dependencies - Built in Rust</li>
+  </ul>
+image: "img/carousel/s3lsio-github.png"

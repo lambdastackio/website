@@ -1,0 +1,10 @@
+weight: 2
+title: "Official Ceph-Rust"
+description: >
+  <ul class="list-style-none">
+     <li>Ceph Librados Rust Library</li>
+     <li>Access to Admin Sockets</li>
+     <li>Pull Ceph Stats</li>
+     <li>Can be used with Klaus</li>
+   </ul>
+image: "img/carousel/ceph-rust-github.png"

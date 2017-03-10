@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drives on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/drives/index.xml</link>
+    <description>Recent content in Drives on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/tags/drives/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Seagate ISE 8TB</title>
+      <link>http://lambdastack.io/videos/seagate/</link>
+      <pubDate>Sun, 19 Feb 2017 18:56:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/videos/seagate/</guid>
+      <description>
+
+&lt;h4 id=&#34;seagate-8tb-ise-hdd&#34;&gt;Seagate 8TB ISE HDD&lt;/h4&gt;
+
+&lt;iframe width=&#34;400&#34; height=&#34;225&#34; src=&#34;https://www.youtube.com/embed/8MiNq4GUpsE&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;strong&gt;NB: Disclaimer - This is not a review. Interesting drive for &amp;ldquo;deep and cheap&amp;rdquo; storage&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I have experience with many drive types. I have had some actually catch on fire in my data center before. When I see an interesting drive I will often review it or simply post about it for future reference for myself. In this case, a future possible reference for self-encrypting drives.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seagate.com/enterprise-storage/hard-disk-drives/enterprise-capacity-3-5-hdd/&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ceph and SMR Drives - NO</title>
+      <link>http://lambdastack.io/blog/2017/02/13/smr/</link>
+      <pubDate>Mon, 13 Feb 2017 11:27:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/02/13/smr/</guid>
+      <description>
+
+&lt;h4 id=&#34;don-t-use-ceph-with-smr-drives&#34;&gt;Don&amp;rsquo;t use Ceph with SMR Drives!&lt;/h4&gt;
+
+&lt;p&gt;A while back at Ceph Day in NYC I saw a representative from a drive manufacturer talk about SMR drives. SMR stands for &lt;a href=&#34;https://en.wikipedia.org/wiki/Shingled_magnetic_recording&#34;&gt;&lt;code&gt;Shingled Magnetic Recording&lt;/code&gt;&lt;/a&gt; and the analogy given was &amp;lsquo;think about the shingles on a house&amp;rsquo;. It sounded very interesting but they were not on the market at the time.&lt;/p&gt;
+
+&lt;p&gt;A very active community member, Wido den Hollander, posted his findings &lt;a href=&#34;https://blog.widodh.nl/2017/02/do-not-use-smr-disks-with-ceph/&#34;&gt;here&lt;/a&gt;. The net result was &lt;code&gt;DO NOT USE SMR DRIVES!&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

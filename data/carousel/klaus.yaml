@@ -1,0 +1,10 @@
+weight: 3
+title: "Klaus"
+description: >
+  <ul class="list-style-none">
+    <li>Hybrid WebStack</li>
+    <li>Web Server, API Server, Agent Server...</li>
+    <li>Integrates with AWS S3</li>
+    <li>Integrates with Redis</li>
+  </ul>
+image: "img/carousel/klaus-github.png"

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agile on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/agile/index.xml</link>
+    <description>Recent content in Agile on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/tags/agile/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Continuous Delivery - Principles</title>
+      <link>http://lambdastack.io/blog/2016/12/30/cicd-principles/</link>
+      <pubDate>Fri, 30 Dec 2016 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2016/12/30/cicd-principles/</guid>
+      <description>
+
+&lt;h3 id=&#34;principles&#34;&gt;Principles&lt;/h3&gt;
+
+&lt;p&gt;There are five principles at the heart of continuous delivery:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Build quality in&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Work in small batches&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Computers perform repetitive tasks, people solve problems&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Relentlessly pursue continuous improvement&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Everyone is responsible&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It’s easy to get bogged down in the details of implementing continuous delivery—tools, architecture, practices, politics—if you find yourself lost, try revisiting these principles and you may find it helps you refocus on what’s important.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Build Quality In&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;W. Edwards Deming, a key figure in the history of the Lean movement, offered 14 key principles for management. Principle three states, “Cease dependence on inspection to achieve quality. Eliminate the need for inspection on a mass basis by building quality into the product in the first place.”&lt;/p&gt;
+
+&lt;p&gt;It’s much cheaper to fix problems and defects if we find them immediately—ideally before they are ever checked into version control, by running automated tests locally. Finding defects downstream through inspection (such as manual testing) is time-consuming, requiring significant triage. Then we must fix the defect, trying to recall what we were thinking when we introduced the problem days or perhaps even weeks ago.&lt;/p&gt;
+
+&lt;p&gt;Creating and evolving feedback loops to detect problems as early as possible is essential and never-ending work in continuous delivery. If we find a problem in our exploratory testing, we must not only fix it, but then ask: How could we have caught the problem with an automated acceptance test? When an acceptance test fails, we should ask: Could we have written a unit test to catch this problem?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Work in Small Batches&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In traditional phased approaches to software development, handoffs from dev to test or test to IT operations consist of whole releases: months worth of work by teams consisting of tens or hundreds of people.&lt;/p&gt;
+
+&lt;p&gt;In continuous delivery, we take the opposite approach, and try and get every change in version control as far towards release as we can, getting comprehensive feedback as rapidly as possible.&lt;/p&gt;
+
+&lt;p&gt;Working in small batches has many benefits. It reduces the time it takes to get feedback on our work, makes it easier to triage and remediate problems, increases efficiency and motivation, and prevents us from succumbing to the sunk cost fallacy.&lt;/p&gt;
+
+&lt;p&gt;The reason we work in large batches is because of the large fixed cost of handing off changes. A key goal of continuous delivery is to change the economics of the software delivery process to make it economically viable to work in small batches so we can obtain the many benefits of this approach.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Computers Perform Repetitive Tasks, People Solve Problems&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;One of the earliest philosophical ideas of the Toyota tradition is jidoka, sometimes translated as “automation with a human touch.” The goal is for computers to perform simple, repetitive tasks, such as regression testing, so that humans can focus on problem-solving. Thus computers and people complement each other.&lt;/p&gt;
+
+&lt;p&gt;Many people worry that automation will put them out of a job. This is not the goal. There will never be a shortage of work in a successful company. Rather, people are freed up from mindless drudge-work to focus on higher value activities. This also has the benefit of improving quality, since humans are at their most error-prone when performing mindless tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Relentlessly Pursue Continuous Improvement&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Continuous improvement, or kaizen in Japanese, is another key idea from the Lean movement. Taiichi Ohno, a key figure in the history of the Toyota company, once said,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Kaizen opportunities are infinite. Don’t think you have made things better than before and be at ease… This would be like the student who becomes proud because they bested their master two times out of three in fencing. Once you pick up the sprouts of kaizen ideas, it is important to have the attitude in our daily work that just underneath one kaizen idea is yet another one.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Don’t treat transformation as a project to be embarked on and then completed so we can return to business as usual. The best organizations are those where everybody treats improvement work as an essential part of their daily work, and where nobody is satisfied with the status quo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Everyone is Responsible&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In high performing organizations, nothing is “somebody else’s problem.” Developers are responsible for the quality and stability of the software they build. Operations teams are responsible for helping developers build quality in. Everyone works together to achieve the organizational level goals, rather than optimizing for what’s best for their team or department.&lt;/p&gt;
+
+&lt;p&gt;When people make local optimizations that reduce the overall performance of the organization, it’s often due to systemic problems such as poor management systems such as annual budgeting cycles, or incentives that reward the wrong behaviors. A classic example is rewarding developers for increasing their velocity or writing more code, and rewarding testers based on the number of bugs they find.&lt;/p&gt;
+
+&lt;p&gt;Most people want to do the right thing, but they will adapt their behavior based on how they are rewarded. Therefore, it is very important to create fast feedback loops from the things that really matter: how customers react to what we build for them, and the impact on our organization.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This blog was originally published by Jez Humble at &lt;a href=&#34;https://continuousdelivery.com&#34;&gt;https://continuousdelivery.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;All content licensed under the &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/3.0/us/&#34;&gt;Creative Commons Attribution-Share Alike 3.0 United States&lt;/a&gt; License (CC BY-SA 3.0 US).&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Continuous Testing</title>
+      <link>http://lambdastack.io/blog/2016/12/15/cdtesting/</link>
+      <pubDate>Thu, 15 Dec 2016 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2016/12/15/cdtesting/</guid>
+      <description>
+
+&lt;h3 id=&#34;continuous-testing&#34;&gt;Continuous Testing&lt;/h3&gt;
+
+&lt;p&gt;The key to building quality into our software is making sure we can get fast feedback on the impact of changes. Traditionally, extensive use was made of manual inspection of code changes and manual testing (testers following documentation describing the steps required to test the various functions of the system) in order to demonstrate the correctness of the system. This type of testing was normally done in a phase following “dev complete”. However this strategy have several drawbacks:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Manual regression testing takes a long time and is relatively expensive to perform, creating a bottleneck that prevents us releasing software more frequently, and getting feedback to developers weeks (and sometimes months) after they wrote the code being tested.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Manual tests and inspections are not very reliable, since people are notoriously poor at performing repetitive tasks such as regression testing manually, and it is extremely hard to predict the impact of a set of changes on a complex software system through inspection.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;When systems are evolving over time, as is the case in modern software products and services, we have to spend considerable effort updating test documentation to keep it up-to-date.
+In order to build quality in to software, we need to adopt a different approach. Our goal is to run many different types of tests—both manual and automated—continually throughout the delivery process. The types of tests we want to run are nicely laid out the quadrant diagram created by Brian Marick, below:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/cicd/test-quadrant.png&#34; style=&#34;max-width: 100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Once we have continuous integration and test automation in place, we create a deployment pipeline (the key pattern in continuous delivery). In the deployment pipeline pattern, every change runs a build that a) creates packages that can be deployed to any environment and b) runs unit tests (and possibly other tasks such as static analysis), giving feedback to developers in the space of a few minutes. Packages that pass this set of tests have more comprehensive automated acceptance tests run against them. Once we have packages that pass all the automated tests, they are available for self-service deplyment to other environments for activities such as exploratory testing, usability testing, and ultimately release. Complex products and services may have sophisticated deployment pipelines; a simple, linear pipeline is shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/cicd/pipeline-sequence.png&#34; style=&#34;max-width: 100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;In the deployment pipeline, every change is effectively a release candidate. The job of the deployment pipeline is to catch known issues. If we can’t detect any known problems, we should feel totally comfortable releasing any packages that have gone through it. If we aren’t, or if we discover defects later, it means we need to improve our pipeline, perhaps adding or updating some tests.&lt;/p&gt;
+
+&lt;p&gt;Our goal should be to find problems as soon as possible, and make the lead time from check-in to release as short as possible. Thus we want to parallelize the activities in the deployment pipeline, not have many stages executing in series. There is also a feedback process: if we discover bugs in exploratory testing, we should be looking to improve our automated tests. If we discover a defect in the acceptance tests, we should be looking to improve our unit tests (most of our defects should be discovered through unit testing).&lt;/p&gt;
+
+&lt;p&gt;Get started by building a skeleton deployment pipeline—create a single unit test, a single acceptance test, an automated deployment script that stands up an exploratory testing envrionment, and thread them together. Then increase test coverage and extend your deployment pipeline as your product or service evolves.&lt;/p&gt;
+
+&lt;h4 id=&#34;resources&#34;&gt;Resources&lt;/h4&gt;
+
+&lt;p&gt;A &lt;a href=&#34;https://youtu.be/X9ap-zH0Gkc&#34;&gt;1h video&lt;/a&gt; in which Badri Janakiraman and I discuss how to create maintainable suites of automated acceptance test&lt;/p&gt;
+
+&lt;p&gt;Lisa Crispin and Janet Gregory have two great books on agile testing: Agile Testing and More Agile Testing&lt;/p&gt;
+
+&lt;p&gt;Elisabeth Hendrickson has written an excellent book on exploratory testing, Explore It!. I recorded an interview with her where we discuss the role of testers, acceptance test driven development, and the impact of continuous delivery on testing. Watch her awesome 30m talk On the Care and Feeding of Feedback Cycles.&lt;/p&gt;
+
+&lt;p&gt;Gojko Adzic’s Specification By Example has a series of interviews with successful teams worldwide and is a good distillation of effective patterns for specifying requirements and tests.&lt;/p&gt;
+
+&lt;p&gt;Think that “a few minutes” is optimistic for running automated tests? Read Dan Bodart’s blog post &lt;a href=&#34;http://dan.bodar.com/2012/02/28/crazy-fast-build-times-or-when-10-seconds-starts-to-make-you-nervous/&#34;&gt;Crazy fast build times&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://martinfowler.com/bliki/TestPyramid.html&#34;&gt;Martin Fowler discusses the Test Pyramid and its evil twin, the ice cream cone on his blog.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;faq&#34;&gt;FAQ&lt;/h4&gt;
+
+&lt;p&gt;Does continuous delivery mean firing all our testers?&lt;/p&gt;
+
+&lt;p&gt;No. Testers have a unique perspective on the system—they understand how users interact with it. I recommend having testers pair alongside developers (in person) to help them create and evolve the suites of automated tests. This way, developers get to understand the testers’ perspective, and testers can start to learn test automation. Testers should also be performing exploratory testing continuously as part of their work. Certainly, testers will have to learn new skills—but that is true of anybody working in our industry.&lt;/p&gt;
+
+&lt;p&gt;Should we be automating all of our tests?&lt;/p&gt;
+
+&lt;p&gt;No. As shown in the quadrant diagram, there are still important manual activities such as exploratory testing and usability testing (although automation can help with these activities, it can’t replace people). We should be aiming to bring all test activities, including security testing, into the development process and performing them continually from the beginning of the software delivery lifecycle for every product and service we build.&lt;/p&gt;
+
+&lt;p&gt;Should I stop and automate all of my manual tests right now?&lt;/p&gt;
+
+&lt;p&gt;No. Start by writing a couple of automated tests—the ones that validate the most important functionality in the system. Get those running on every commit. Then the rule is to add new tests to cover new functionality that is added, and functionality that is being changed. Over time, you will evolve a comprehensive suite of automated tests. In general, it’s better to have 20 tests that run quickly and are trusted by the team than 2,000 tests that are flaky and constantly failing and which are ignored by the team.&lt;/p&gt;
+
+&lt;p&gt;Who is responsible for the automated tests?&lt;/p&gt;
+
+&lt;p&gt;The whole team. In particular, developers should be involved in creating and maintaining the automated tests, and should stop what they are doing and fix them whenever there is a failure. This is essential because it teaches developers how to write testable software. When automated tests are created and maintained by a different group from the developers, there is no force acting on the developers to help them write software that is easy to test. Retrofitting automated tests onto such systems is painful and expensive, and poorly designed software that is hard to test is a major factor contributing to automated test suites that are expensive to maintain.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This blog was originally published by Jez Humble at &lt;a href=&#34;https://continuousdelivery.com&#34;&gt;https://continuousdelivery.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;All content licensed under the &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/3.0/us/&#34;&gt;Creative Commons Attribution-Share Alike 3.0 United States&lt;/a&gt; License (CC BY-SA 3.0 US).&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Continuous Delivery</title>
+      <link>http://lambdastack.io/blog/2016/11/15/cd/</link>
+      <pubDate>Tue, 15 Nov 2016 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2016/11/15/cd/</guid>
+      <description>
+
+&lt;h3 id=&#34;what-is-continuous-delivery&#34;&gt;What is Continuous Delivery?&lt;/h3&gt;
+
+&lt;p&gt;Continuous Delivery is the ability to get changes of all types—including new features, configuration changes, bug fixes and experiments—into production, or into the hands of users, safely and quickly in a sustainable way.&lt;/p&gt;
+
+&lt;p&gt;Our goal is to make deployments—whether of a large-scale distributed system, a complex production environment, an embedded system, or an app—predictable, routine affairs that can be performed on demand.&lt;/p&gt;
+
+&lt;p&gt;We achieve all this by ensuring our code is always in a deployable state, even in the face of teams of thousands of developers making changes on a daily basis. We thus completely eliminate the integration, testing and hardening phases that traditionally followed “dev complete”, as well as code freezes.&lt;/p&gt;
+
+&lt;h3 id=&#34;why-continuous-delivery&#34;&gt;Why continuous delivery?&lt;/h3&gt;
+
+&lt;p&gt;It is often assumed that if we want to deploy software more frequently, we must accept lower levels of stability and reliability in our systems. In fact, peer-reviewed research shows that this is not the case—high performance teams consistently deliver services faster and more reliably than their low performing competition. This is true even in highly regulated domains such as financial services and government. This capability provides an incredible competitive advantage for organizations that are willing to invest the effort to pursue it.&lt;/p&gt;
+
+&lt;p&gt;The practices at the heart of continuous delivery help us achieve several important benefits:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Low risk releases&lt;/strong&gt;. The primary goal of continuous delivery is to make software deployments painless, low-risk events that can be performed at any time, on demand. By applying patterns such as &lt;a href=&#34;https://martinfowler.com/bliki/BlueGreenDeployment.html&#34;&gt;blue-green deployments&lt;/a&gt; it is relatively straightforward to achieve zero-downtime deployments that are undetectable to users.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Faster time to market&lt;/strong&gt;. It’s not uncommon for the integration and test/fix phase of the traditional phased software delivery lifecycle to consume weeks or even months. When teams work together to automate the build and deployment, environment provisioning, and regression testing processes, developers can incorporate integration and regression testing into their daily work and completely remove these phases. We also avoid the large amounts of re-work that plague the phased approach.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Higher quality&lt;/strong&gt;. When developers have automated tools that discover regressions within minutes, teams are freed to focus their effort on user research and higher level testing activities such as exploratory testing, usability testing, and performance and security testing. By building a deployment pipeline, these activities can be performed continuously throughout the delivery process, ensuring quality is built in to products and services from the beginning.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Lower costs&lt;/strong&gt;. Any successful software product or service will evolve significantly over the course of its lifetime. By investing in build, test, deployment and environment automation, we substantially reduce the cost of making and delivering incremental changes to software by eliminating many of the fixed costs associated with the release process.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Better products&lt;/strong&gt;. Continuous delivery makes it economic to work in small batches. This means we can get feedback from users throughout the delivery lifecycle based on working software. Techniques such as A/B testing enable us to take a hypothesis-driven approach to product development whereby we can test ideas with users before building out whole features. This means we can avoid the &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; of features we build that deliver zero or negative value to our businesses.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Happier teams&lt;/strong&gt;. Peer-reviewed research has shown continuous delivery makes releases less painful and reduces team burnout. Furthermore, when we release more frequently, software delivery teams can engage more actively with users, learn which ideas work and which don’t, and see first-hand the outcomes of the work they have done. By removing the low-value painful activities associated with software delivery, we can focus on what we care about most—continuously delighting our users.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If this sounds too good to be true, bear in mind: continuous delivery is not magic. It’s about continuous, daily improvement—the constant discipline of pursuing higher performance by following the heuristic “if it hurts, do it more often, and bring the pain forward.”&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This blog was originally published by Jez Humble at &lt;a href=&#34;https://continuousdelivery.com&#34;&gt;https://continuousdelivery.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;All content licensed under the &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/3.0/us/&#34;&gt;Creative Commons Attribution-Share Alike 3.0 United States&lt;/a&gt; License (CC BY-SA 3.0 US).&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

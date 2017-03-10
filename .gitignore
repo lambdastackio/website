@@ -1,0 +1,6 @@
+/public/
+/themes/
+themes/*
+_drafts/*
+.DS_Store
+*.zip

@@ -1,0 +1,74 @@
+<div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="{{ .Site.BaseURL }}">
+                    <img src="{{ .Site.BaseURL }}img/lambdastack-avatar.svg" alt="{{ .Title }} logo" class="hidden-xs hidden-sm" height="50px">
+                    <img src="{{ .Site.BaseURL }}img/lambdastack-avatar-smallest.svg" alt="{{ .Title }} logo" class="visible-xs visible-sm" height="40px">
+                    <span class="sr-only">{{ .Title }} - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+                <div style="margin-top: 13px; margin-left: 50px; float: left;">
+                    <span title="Chris Jones"><a href="https://linkedin.com/in/cjones303"><img class="testimonial name-picture" alt="Chris Jones" src="/img/cj.png" height="40px" width="40px" style="margin-bottom: 20px;"></a></span>
+                    <a href="https://twitter.com/hanscj1"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+                    <a href="https://github.com/lambdastackio"><i class="fa fa-github fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/in/cjones303"><i class="fa fa-linkedin fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <!--/.navbar-header -->
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    {{ range .Site.Params.menu }}
+                    <li class="dropdown">
+                        <a href="{{ .url }}">{{ .name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            <!--/.nav-collapse -->
+
+        </div>
+    </div>
+    <!-- /#navbar -->
+    <div align="center" class="text" style="font-style: italic;">
+        <!-- <p>"A smooth Sea never made a skillful Sailor"</p> -->
+        <p>"There is no compression algorithm for experience" -- Andy Jassy (AWS)</p>
+    </div>
+</div>
+<div align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Leader -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-2914530565022048"
+         data-ad-slot="1429395047"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<!-- *** NAVBAR END ***-->

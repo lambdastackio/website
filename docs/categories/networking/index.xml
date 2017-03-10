@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on The LambdaStack Project</title>
+    <link>http://lambdastack.io/categories/networking/index.xml</link>
+    <description>Recent content in Networking on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/categories/networking/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>TCP and Load Balancers</title>
+      <link>http://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</link>
+      <pubDate>Fri, 20 Jan 2017 11:54:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</guid>
+      <description>
+
+&lt;h4 id=&#34;why-do-i-get-a-tcp-rst-return-when-i-try-to-put-or-get-s3-objects&#34;&gt;Why do I get a &lt;code&gt;TCP RST&lt;/code&gt; return when I try to PUT or GET S3 objects?&lt;/h4&gt;
+
+&lt;p&gt;I have a colleague that has made the following statement:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;The data is sacred but, the requests are not!&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This holds very true when dealing with HTTP calls such as S3 GETs and PUTs.&lt;/p&gt;
+
+&lt;p&gt;Recently, we noticed that a client was doing a massive amounts of PUTs and then issuing corresponding GETs on the same S3 objects. In our case, our S3 is from Ceph&amp;rsquo;s RGW S3 and we have a number of load balancers in front of all of the RGW servers. The client had &amp;ldquo;rolled&amp;rdquo; their own S3 Python SDK instead of using AWS&amp;rsquo; official Python SDK. In doing so, they had not factored in best practices of exponential backoffs (retries).&lt;/p&gt;
+
+&lt;p&gt;When running similar tests against the RGW cluster directly (no load balancers), we were never able to replicate which pointed to the network or the load balancers or both. We had tested this on both commercial and open source load balancers.&lt;/p&gt;
+
+&lt;p&gt;TCP RST return values are usually associated with some sort of &amp;ldquo;man-in-the-middle&amp;rdquo; process such as load balancers, proxies or traffic sniffers. In our case, load balancers. By default, we disabled &lt;code&gt;no linger&lt;/code&gt; features which in theory would imply that the load balancers were not holding on to connections from the clients. We also had very low timeouts set as default.&lt;/p&gt;
+
+&lt;p&gt;After spending days testing and letting our tests run for 24 hour periods we found that on the open source version if you specify &lt;code&gt;no linger&lt;/code&gt; explicitly the issue goes away or dramatically reduces to just noise. For the commercial load balancers we upped the timeouts to 40s which addressed the issue.&lt;/p&gt;
+
+&lt;p&gt;In our case, the client did not want to enable retries in their code due to their own reasons. However, for those clients that had used best practices of exponential backoffs, they never saw an issue to begin with. By combining reasonable timeouts and lingering on your load balancers along with educating clients to code in retries, managing your S3 on-premise cluster becomes a lot easier.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Load Balancers</title>
+      <link>http://lambdastack.io/blog/2016/10/15/lbs/</link>
+      <pubDate>Sat, 15 Oct 2016 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2016/10/15/lbs/</guid>
+      <description>
+
+&lt;h3 id=&#34;load-balancers-haproxy-vs-other&#34;&gt;Load Balancers - HAProxy vs Other&lt;/h3&gt;
+
+&lt;p&gt;Load Balancers are very import tools for scalability, depending on the protocol. For HTTP(S), load balancers are a must unless you&amp;rsquo;re good with having only one web server exposed. Recently, I was asked to do performance tests of our HAProxy servers that front our Ceph RGW (S3) nodes and do the same for a very popular hardware load balancer.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The name of the hardware load balancer vendors will not be released to protect the innocent - ME :)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Confession - Many years ago I believed that hardware load balancers must be faster than software load balancers because in theory they are tuned to specific hardware and that hardware &lt;strong&gt;must&lt;/strong&gt; be specially design for the given task. That&amp;rsquo;s almost embarrassing when I say it out loud because that in no way is accurate!&lt;/p&gt;
+
+&lt;p&gt;I wrote the Chef Cookbook called &lt;code&gt;Ceph-Chef&lt;/code&gt; that I also manage at the &lt;a href=&#34;https://github.com/ceph/ceph-chef&#34;&gt;Ceph repo&lt;/a&gt;. I also created the Chef-BCS project at &lt;a href=&#34;https://github.com/bloomberg/chef-bcs&#34;&gt;https://github.com/bloomberg/chef-bcs&lt;/a&gt; that uses the Ceph-Chef cookbook to install and manage Ceph as a very large Object Store. At the time, I did not have dedicated hardware load balancers at my disposal so I had to build out &lt;code&gt;HAProxy&lt;/code&gt; with &lt;code&gt;KeepAliveD&lt;/code&gt; using &lt;code&gt;Bird&lt;/code&gt; for BGP to advertise the IPs the network spines. I ran the HAProxy nodes in an Active-Passive mode using bonded 10Gb NICs (what I had available to me).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This configuration is available in the Chef-BCS project and I ran it for a long time in a very large Object Store cluster.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;After tuning HAProxy and the vendor supported hardware load balancers (vendor tuned those), I began testing 2MB PUTs and random byte-range request GETs. I launched &lt;a href=&#34;https://github.com/lambdastackio/s3lsio&#34;&gt;&lt;code&gt;s3lsio&lt;/code&gt; benchmarking&lt;/a&gt; from many VMs along with running from actual bare-metal servers. I needed to generate enough sustained traffic to fill the two bonded 10Gb pipes of the HAProxy load balancer (the hardware load balancer had 4X more potential throughput).&lt;/p&gt;
+
+&lt;p&gt;I was surprised to see how much the vendor needed to tune the hardware load balancers to even get close to the performance of the HAProxy load balancers. I&amp;rsquo;m not able to share specifics but there were only a few tests where the hardware load balancers met or slightly out performed HAProxy. Almost all tests showed HAProxy out performing.&lt;/p&gt;
+
+&lt;p&gt;In summary, I know that I could have gotten even more performance out of HAProxy had I taken the time to tune it more and tuned the hardware it ran on. In future projects I may do just that.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

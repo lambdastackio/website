@@ -1,0 +1,5 @@
+text: "Chef-BCS is the Official Bloomberg Cloud Storage (BCS) system built on Ceph-Chef. It will automatically build a Ceph Object Store cluster based on yaml data files. The default out-of-the box builds a 4 node Vagrant/VirtualBox Ceph Object Store on your laptop/desktop so that you can do development and tune before moving to your version of a staging environment."
+name: "chef-bcs"
+position: "Chef-BCS"
+avatar: "img/ceph-github.png"
+project: "https://github.com/bloomberg/chef-bcs"

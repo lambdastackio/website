@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redhat on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/redhat/index.xml</link>
+    <description>Recent content in Redhat on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/tags/redhat/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Red Hat Ceph Object Store</title>
+      <link>http://lambdastack.io/videos/redhat-objectstore/</link>
+      <pubDate>Wed, 15 Feb 2017 18:56:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/videos/redhat-objectstore/</guid>
+      <description>
+
+&lt;h4 id=&#34;ceph-object-store&#34;&gt;Ceph Object Store&lt;/h4&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/Wh4N-cka7Uc&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;strong&gt;NB: Disclaimer - This is video from Red Hat - not me&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This video does a good job talking about Object Store. It&amp;rsquo;s also from Red Hat.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

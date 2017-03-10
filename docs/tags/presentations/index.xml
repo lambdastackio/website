@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Presentations on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/presentations/index.xml</link>
+    <description>Recent content in Presentations on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/tags/presentations/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ceph Day - Chicago</title>
+      <link>http://lambdastack.io/videos/cephday-chicago/</link>
+      <pubDate>Thu, 20 Aug 2015 13:00:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/videos/cephday-chicago/</guid>
+      <description>
+
+&lt;h4 id=&#34;ceph-day-chicago&#34;&gt;Ceph Day - Chicago&lt;/h4&gt;
+
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/qepwEI1tZ53PwO&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt;
+
+&lt;p&gt;Ceph Day in Chicago presentation from &lt;a href=&#34;http://www.slideshare.net/Inktank_Ceph/ceph-day-chicago-ceph-at-work-at-bloomberg&#34;&gt;SlideShare&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

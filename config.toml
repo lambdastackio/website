@@ -1,0 +1,139 @@
+baseurl = "http://lambdastack.io/"
+title = "The LambdaStack Project"
+theme = "hugo-universal-theme"
+languageCode = "en-us"
+# Enable comments by entering your Disqus shortname
+disqusShortname = "lambdastack-io"
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = "UA-84702578-1"
+
+# Define the number of posts per page
+paginate = 10
+
+[params]
+    viewMorePostLink = "/blog/"
+    author = "Chris Jones"
+    description = "Personal website and blog for Chris Jones on Ceph, AWS S3, Object Storage and Block Storage"
+
+    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
+    style = "green"
+
+    # Since this template is static, the contact form uses www.formspree.io as a
+    # proxy. The form makes a POST request to their servers to send the actual
+    # email. Visitors can send up to a 1000 emails each month for free.
+    #
+    # What you need to do for the setup?
+    #
+    # - set your email address under 'email' below
+    # - upload the generated site to your server
+    # - send a dummy email yourself to confirm your account
+    # - click the confirm link in the email from www.formspree.io
+    # - you're done. Happy mailing!
+    #
+    # Enable the contact form by entering your Formspree.io email
+    # email = "your@email.com"
+
+    about_us = "<p>The LambdaStack Project is a collection of OSS (Open Source Software) Micro-Services projects. Each of the Micro-Services range from a powerful Hybrid Web Stack to full Software-Defined-Storage management.</p>"
+    copyright = "<p>Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer's.</p><p>All content originating from Chris Jones is licensed under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Attribution-ShareAlike 4.0 International</a></p><p><a href=\"https://www.linkedin.com/in/cjones303/\">Click here to contact me.</a></p>"
+
+    # Format dates with Go's time formatting
+    date_format = "January 2, 2006"
+
+    logo = "img/lambdastack-avatar.svg"
+    address = """<p><strong>Chris Jones</strong>
+        <br>New York
+        <br>
+        <div style="float: left;">
+            <a href="https://twitter.com/hanscj1"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+            <a href="https://github.com/lambdastackio"><i class="fa fa-github fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+            <a href="https://linkedin.com/in/cjones303"><i class="fa fa-linkedin fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+        </div>
+      </p>
+      """
+
+[Permalinks]
+    blog = "/blog/:year/:month/:day/:filename/"
+
+[[params.menu]]
+    name = "Home"
+    url  = "/"
+    weight = 1
+
+[[params.menu]]
+    name = "Blog"
+    url  = "/blog/"
+    weight = 2
+
+[[params.menu]]
+    name = "Videos"
+    url  = "/videos/"
+    weight = 3
+
+[[params.menu]]
+    name = "Architectures"
+    url  = "/architectures/"
+    weight = 4
+
+[[params.menu]]
+    name = "Code"
+    url  = "/code/"
+    weight = 5
+
+[[params.menu]]
+    name = "FAQ"
+    url  = "/faq/"
+    weight = 6
+
+[[params.menu]]
+    name = "About"
+    url  = "/about/"
+    weight = 7
+
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    categories = true
+    tags = true
+    search = true
+
+[params.carousel]
+    enable = true
+    # All carousel items are defined in their own files. You can find example items
+    # at 'exampleSite/data/carousel'.
+    # For more informtion take a look at the README.
+
+[params.features]
+    enable = true
+    title = "Cloud Storage Videos"
+    # All features are defined in their own files. You can find example items
+    # at 'exampleSite/data/features'.
+    # For more informtion take a look at the README.
+
+[params.testimonials]
+    enable = true
+    # Using testimonials as projects!!
+    # All projects are defined in their own files. You can find example items
+    # at 'exampleSite/data/testimonials'.
+    # For more informtion take a look at the README.
+    title = "Some of my Projects"
+    subtitle = "All of the projects follow a Micro-Services Architecture."
+
+[params.see_more]
+    enable = true
+    icon = "fa fa-file-code-o"
+    title = "Do you want to see more?"
+    subtitle = "I'm preparing a webinar series on S3 for both Ceph and AWS. It's not currently available but will be soon!"
+    link_url = "#"
+    link_text = "Coming Soon"
+
+# [params.clients]
+#     enable = true
+#     # All clients are defined in their own files. You can find example items
+#     # at 'exampleSite/data/clients'.
+#     # For more informtion take a look at the README.
+#     title = "Our Clients"
+#     subtitle = ""
+
+[params.recent_posts]
+    enable = true
+    title = "My blog - @hanscj1"
+    subtitle = "All of the blogs posts try to represent a solution to a given problem. All of my comments and views are my own and not my employer's."

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/redis/index.xml</link>
+    <description>Recent content in Redis on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Klaus - Hybrid WebStack</title>
+      <link>http://lambdastack.io/blog/2017/01/15/klaus/</link>
+      <pubDate>Sun, 15 Jan 2017 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/01/15/klaus/</guid>
+      <description>&lt;p&gt;There are very good Web Servers on the market, Apache and NGINX to name a few. However, to interface your backend code you need to use Apache modules or WSGI/FastCGI with NGINX (depending on your language of choice). To actually use a fully integrated environment you need to use something like Django or Tornado for Python. For GO there is a small built-in web server that allows you to build up a more robust environment around it. But for Rust, not so much - until now.&lt;/p&gt;
+
+&lt;p&gt;My original goto languages of choice were C/C++ and then some time ago I switched to Python as my first choice. But, after working with Rust this past year, there is no way I would go back. Rust gives me an environment with no runtime dependencies with the speed of optimized C/C++ code but with safety guarantees. This makes deploying code written in Rust as simple as moving an executable around. Contrast that with Python, Ruby or Java where you can easily spend more time making sure the dependencies are in place than actually writing the code in some cases.&lt;/p&gt;
+
+&lt;p&gt;As wonderful as Rust is there are a few missing pieces, a built-in default web server code to build on. However, there are several great projects that allow for powerful async I/O in a multi-threaded model that have guaranteed safety. One such project is called Klaus-rs. Klaus has not reached it&amp;rsquo;s 1.0 status but is very close. It&amp;rsquo;s what I call a full &amp;ldquo;hybrid model&amp;rdquo; which means it can run as a stand-alone Web Server that serves static pages as well as single page Javascript apps like React or Angular without any funky configuration changes. It just works out of the box so to speak. Klaus also works as an Agent model where it can reside in a background process to handle requests from other agents and initiate requests instead of simply responding to requests. It also has RESTful features built-in so setting up APIs are very simple and it will soon support built-in rate limiting via it&amp;rsquo;s built-in support for Redis.&lt;/p&gt;
+
+&lt;p&gt;One of the greatest and simplest features is the built-in support for AWS S3. This means that it can support making S3 calls using your own AWS credentials. You don&amp;rsquo;t have to create a funky piece of code and bolt it on to handle automatic uploads to S3 for example. Since it&amp;rsquo;s built in Rust and most of the code resides in a library, you can easily extend it to support your environment. The memory footprint is very small so running in a Docker container is also an ideal solution.&lt;/p&gt;
+
+&lt;p&gt;Why call it Klaus? The name is based off of a fictional character from the TV series called The Originals. In the series, Klaus is one of the first Vampires but what makes him so lethal is the fact that he is also part Werewolf making him a true hybrid that can survive anything. So, Klaus-rs can survive any distributed environment including Silver and Daylight!&lt;/p&gt;
+
+&lt;p&gt;To get started, simply fork the github project at &lt;a href=&#34;https://github.com/klaus-rs/klaus&#34;&gt;https://github.com/klaus-rs/klaus&lt;/a&gt; and start building. This of course assumes you have Rust installed if you plan on building it from source. To install Rust go to &lt;a href=&#34;https://rustup.rs&#34;&gt;https://rustup.rs&lt;/a&gt; and follow the instructions.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

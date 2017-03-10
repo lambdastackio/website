@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global Cloud Storage</title>
+  <meta name="author" content="Chris Jones" />
+  <meta name="keywords" content="ceph aws s3 openstack storage object store">
+  <meta name="description" content="Personal website and blog for Chris Jones on Ceph, AWS S3, Object Storage and Block Storage">
+  <meta name="generator" content="Hugo 0.18.1" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="http://lambdastack.io/css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="http://lambdastack.io/css/style.green.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+  
+  <link href="http://lambdastack.io/css/custom.css" rel="stylesheet">
+  
+    
+  
+  <link rel="shortcut icon" href="http://lambdastack.io/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="http://lambdastack.io/img/lambdastack-200x200.png" />
+  
+  <link href="http://lambdastack.io/css/owl.carousel.css" rel="stylesheet">
+  <link href="http://lambdastack.io/css/owl.theme.css" rel="stylesheet">
+  <link rel="alternate" href="http://lambdastack.io/index.xml" type="application/rss+xml" title="The LambdaStack Project">
+  
+  <meta property="og:title" content="Global Cloud Storage" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://lambdastack.io" />
+  <meta property="og:image" content="img/lambdastack-avatar.svg" />
+  
+  <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=58aa244335de59001102d9ba&product=sop' async='async'></script>
+  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58aa18cb82a5e50012745e6e&product=inline-share-buttons"></script>
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="http://lambdastack.io/">
+                    <img src="http://lambdastack.io/img/lambdastack-avatar.svg" alt="Global Cloud Storage logo" class="hidden-xs hidden-sm" height="50px">
+                    <img src="http://lambdastack.io/img/lambdastack-avatar-smallest.svg" alt="Global Cloud Storage logo" class="visible-xs visible-sm" height="40px">
+                    <span class="sr-only">Global Cloud Storage - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+                <div style="margin-top: 13px; margin-left: 50px; float: left;">
+                    <span title="Chris Jones"><a href="https://linkedin.com/in/cjones303"><img class="testimonial name-picture" alt="Chris Jones" src="/img/cj.png" height="40px" width="40px" style="margin-bottom: 20px;"></a></span>
+                    <a href="https://twitter.com/hanscj1"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+                    <a href="https://github.com/lambdastackio"><i class="fa fa-github fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/in/cjones303"><i class="fa fa-linkedin fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li class="dropdown">
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/blog/">Blog</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/videos/">Videos</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/architectures/">Architectures</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/code/">Code</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/faq/">FAQ</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+    <div align="center" class="text" style="font-style: italic;">
+        
+        <p>"There is no compression algorithm for experience" -- Andy Jassy (AWS)</p>
+    </div>
+</div>
+<div align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-2914530565022048"
+         data-ad-slot="1429395047"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Global Cloud Storage</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">By <a href="#">Chris Jones</a> | March 1, 2017</p>
+
+                        <div class="sharethis-inline-share-buttons"></div>
+                        <br/>
+
+                        <div id="post-content">
+                          
+
+<h2 id="global-cloud-storage">Global Cloud Storage</h2>
+
+<p>Everything fails! No matter how great the architecture, things can fail due to many factors including human, power, fiber cuts, etc. We even have failures in our own datacenters. The point is you need to plan on failure as part of your architecture.</p>
+
+<p>Yesterday, AWS S3 us-east-1 had an issue which caused rippling affects across the Internet including AWS&rsquo; on status page that depends on S3. All cloud providers have failed and will fail again - it&rsquo;s just a fact. The question is what are you going to do about it?</p>
+
+<p>It doesn&rsquo;t matter if you&rsquo;re a startup or large enterprise, you need to have multiple cloud storage providers. Netflix learned this lesson a long time ago. AWS S3 is the defacto standard for Cloud Storage APIs. Most cloud providers support the S3 interface so if your app uses the S3 API for interfacing with your object storage then you should be able to implement a multi-cloud solution.</p>
+
+<blockquote>
+<p>NB: There are multiple ways to do this and the drawing is <strong>only</strong> one way</p>
+</blockquote>
+
+<h4 id="determine-who-supports-s3">Determine who supports S3</h4>
+
+<p>You will need to determine which providers support the S3 API. A number of other cloud providers do. I would recommend using AWS S3 as the Primary Object Store when using a public cloud. It&rsquo;s the original and most battle tested - not to mention every tool support the S3 API.</p>
+
+<h4 id="mirror-bucket-names">Mirror bucket names</h4>
+
+<p>Bucket names for AWS S3 are a global resource. Meaning, if you want to have a bucket called <code>mybucket</code> and someone else has already taken the name then you&rsquo;re out of luck. Thats why most people for website objects will do something like <code>www.mydomain.com</code> as a bucket name because it unlikely that someone is using that bucket name.</p>
+
+<h4 id="replicate-objects-to-all-providers">Replicate objects to all providers</h4>
+
+<p>You will want to replicate your S3 objects to other providers whenever you push to AWS S3. You can do this in your code if your app does it or use a 3rd party tool to do it. <code>S3lsio</code>, a very fast tool that I created and will soon do just that. Google has a cli tool called <code>gsutil</code> which allows you to rsync your S3 to GCE (rsync is a replication tool in the Linux world). I would suspect Azure has something similar.</p>
+
+<h4 id="option-1-global-dns">(Option 1) Global DNS</h4>
+
+<p>If you&rsquo;re able to cleanly mirror your bucket and objects and your provider supports the S3 API interface then you can create a custom domain and have it managed by a DNS provider that can support failovers. There are several that can do it. This drawing supports this option.</p>
+
+<p><img src="/img/global_cloud_storage.svg" style="max-width: 100%"></p>
+
+<h4 id="option-2-customer-request-router">(Option 2) Customer Request Router</h4>
+
+<p>This one requires a little more experience. This requires a small microservice app that returns the correct URL based a policy via an HTTP 302 redirect which cause the browser (assuming browser) to try the new URL your request router just returned. The new URL can even be rewritten to support the format of the secondary cloud storage provider if needed.</p>
+
+<h4 id="option-3-global-load-balancing-via-cdn">(Option 3) Global Load Balancing via CDN</h4>
+
+<p>CDNs (Content Delivery Network) were created to solve these types of scenarios. However, CDNs can be costly so you need to be aware of that. Even AWS Cloud Front can be used in this case (mostly like not impacted by a storage issue on S3)</p>
+
+<h4 id="other-options">Other Options</h4>
+
+<p>Yes, there are still other ways to solve this. You need to think about your use cases and design around them. However, make sure to do your own due diligence! Vendor marketing materials are 100% buzzword compliant and they may not help any.</p>
+
+<h4 id="test-failover">Test failover</h4>
+
+<p>Now that you have architected the best way for your use cases, it&rsquo;s time to test. Everything must be tested and re-tested. The simplest way to test is to verify that you can access each provider endpoint for the same object. Next, login to your S3 console and temporarily disable your bucket and then try your test app or test website. Do the same thing for the other cloud providers until only one is <code>live</code> (keep the other provider buckets disabled for the test). Do not do this on a production system until fully baked.</p>
+
+                        </div>
+
+                        <br/>
+                        <div class="sharethis-inline-share-buttons"></div>
+
+                        
+                        
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lambdastack-io';
+    var disqus_identifier = 'http:\/\/lambdastack.io\/blog\/2017\/03\/01\/global-cloud-storage\/';
+    var disqus_title = 'Global Cloud Storage';
+    var disqus_url = 'http:\/\/lambdastack.io\/blog\/2017\/03\/01\/global-cloud-storage\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Search</h3>
+    </div>
+
+    <div class="panel-body">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" role="search">
+            <div class="input-group">
+                <input type="search" name="q" results="0" class="form-control" placeholder="Search">
+                <input type="hidden" name="q" value="site:http://lambdastack.io/">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            <li><a href="http://lambdastack.io/categories/agile">agile (3)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/architectures">architectures (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/aws">aws (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/azure">azure (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/ceph">ceph (12)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/chef">chef (3)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/cicd">cicd (4)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/code">code (2)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/drives">drives (2)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/erasure-coding">erasure-coding (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/gce">gce (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/infrastructure">infrastructure (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/license">license (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/load-balancers">load-balancers (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/misc">misc (2)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/networking">networking (2)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/open">open (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/opensource">opensource (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/performance">performance (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/presentations">presentations (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/redhat">redhat (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/reviews">reviews (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/rust">rust (3)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/s3">s3 (7)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/sla">sla (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/storage">storage (3)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/team">team (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/vm">vm (1)</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/categories/web">web (2)</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+    <div class="panel-heading">
+        <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            <li><a href="http://lambdastack.io/tags/agile"><i class="fa fa-tags"></i> agile</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/api"><i class="fa fa-tags"></i> api</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/architectures"><i class="fa fa-tags"></i> architectures</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/aws"><i class="fa fa-tags"></i> aws</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/azure"><i class="fa fa-tags"></i> azure</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/block-storage"><i class="fa fa-tags"></i> block-storage</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/ceph"><i class="fa fa-tags"></i> ceph</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/chef"><i class="fa fa-tags"></i> chef</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/cicd"><i class="fa fa-tags"></i> cicd</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/code"><i class="fa fa-tags"></i> code</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/drives"><i class="fa fa-tags"></i> drives</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/erasure-coding"><i class="fa fa-tags"></i> erasure-coding</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/gce"><i class="fa fa-tags"></i> gce</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/infrastructure"><i class="fa fa-tags"></i> infrastructure</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/license"><i class="fa fa-tags"></i> license</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/load-balancers"><i class="fa fa-tags"></i> load-balancers</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/msic"><i class="fa fa-tags"></i> msic</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/networking"><i class="fa fa-tags"></i> networking</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/open"><i class="fa fa-tags"></i> open</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/opensource"><i class="fa fa-tags"></i> opensource</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/performance"><i class="fa fa-tags"></i> performance</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/presentations"><i class="fa fa-tags"></i> presentations</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/redhat"><i class="fa fa-tags"></i> redhat</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/redis"><i class="fa fa-tags"></i> redis</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/reviews"><i class="fa fa-tags"></i> reviews</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/rust"><i class="fa fa-tags"></i> rust</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/s3"><i class="fa fa-tags"></i> s3</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/sla"><i class="fa fa-tags"></i> sla</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/storage"><i class="fa fa-tags"></i> storage</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/tcp"><i class="fa fa-tags"></i> tcp</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/team"><i class="fa fa-tags"></i> team</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/vm"><i class="fa fa-tags"></i> vm</a>
+            </li>
+            
+            <li><a href="http://lambdastack.io/tags/web"><i class="fa fa-tags"></i> web</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        <footer id="footer">
+    <div class="container">
+        
+        <div class="col-md-4 col-sm-6">
+            <h4>About</h4>
+            <p>The LambdaStack Project is a collection of OSS (Open Source Software) Micro-Services projects. Each of the Micro-Services range from a powerful Hybrid Web Stack to full Software-Defined-Storage management.</p>
+            <hr class="hidden-md hidden-lg hidden-sm">
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-6">
+             
+            <h4>Recent posts</h4>
+            <div class="blog-entries">
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/">
+                          
+                            <img src="http://lambdastack.io/img/aws-s3-worksheet.png" class="img-responsive" alt="">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/">AWS S3 vs On-Premises</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="http://lambdastack.io/blog/2017/03/05/hci/">
+                          
+                            <img src="http://lambdastack.io/img/hci.png" class="img-responsive" alt="">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="http://lambdastack.io/blog/2017/03/05/hci/">Hyper-Converged Infrastructure (HCI) - Truth</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="http://lambdastack.io/blog/2017/03/01/global-cloud-storage/">
+                          
+                            <img src="http://lambdastack.io/img/global_cloud_storage.svg" class="img-responsive" alt="">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="http://lambdastack.io/blog/2017/03/01/global-cloud-storage/">Global Cloud Storage</a></h5>
+                    </div>
+                </div>
+                
+            </div>
+            <hr class="hidden-md hidden-lg">
+             
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-6">
+            <h4>Contact</h4>
+            <p><strong>Chris Jones</strong>
+        <br>New York
+        <br>
+        <div style="float: left;">
+            <a href="https://twitter.com/hanscj1"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+            <a href="https://github.com/lambdastackio"><i class="fa fa-github fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+            <a href="https://linkedin.com/in/cjones303"><i class="fa fa-linkedin fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+        </div>
+      </p>
+      
+            
+            <hr class="hidden-md hidden-lg hidden-sm">
+        </div>
+        
+        
+    </div>
+    
+</footer>
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left"><p>Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer's.</p><p>All content originating from Chris Jones is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Attribution-ShareAlike 4.0 International</a></p><p><a href="https://www.linkedin.com/in/cjones303/">Click here to contact me.</a></p></p>
+            
+            <p class="pull-right">
+            </p>
+        </div>
+    </div>
+</div>
+
+<div align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-2914530565022048"
+         data-ad-slot="1429395047"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+
+    </div>
+    
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84702578-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+<script src="http://lambdastack.io/js/front.js"></script>
+
+
+<script src="http://lambdastack.io/js/owl.carousel.min.js"></script>
+
+
+  </body>
+</html>

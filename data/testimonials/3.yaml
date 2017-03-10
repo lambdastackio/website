@@ -1,0 +1,5 @@
+text: "S3LSIO is a powerful S3 utility that provides all of the S3 features of the AWS CLI and S3CMD plus benchmarking and other features you would find in part of JMeter but purpose built for you S3 environment. Also, there are no dependencies since it's built in Rust and it's very fast!"
+name: "s3lsio"
+position: "AWS S3 Utility"
+avatar: "img/projects/s3lsio.png"
+project: "https://github.com/lambdastackio/s3lsio"

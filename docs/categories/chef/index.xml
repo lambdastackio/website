@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chef on The LambdaStack Project</title>
+    <link>http://lambdastack.io/categories/chef/index.xml</link>
+    <description>Recent content in Chef on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/categories/chef/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Building Large Ceph Clusters</title>
+      <link>http://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</link>
+      <pubDate>Sat, 01 Oct 2016 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</guid>
+      <description>&lt;p&gt;Ceph is a very complex distributed storage system that provides an Object Store, Block Storage Devices and Distributed File System. It has a built-in installation program called Ceph-Deploy but it&amp;rsquo;s design is for very simple and small installations. There are two official automated installation and maintenance systems for Ceph, Ceph-Ansible and Ceph-Chef. As the name implies, Ceph-Ansible is built for the Ansible while Ceph-Chef is built for Chef. I will focus on Ceph-Chef for the Chef environment.&lt;/p&gt;
+
+&lt;p&gt;Ceph-Chef is managed in the Ceph github repo and it&amp;rsquo;s a Chef cookbook that allows for a lot flexibility. Since Ceph-Chef is a cookbook it relies on a larger Chef repo project that you would create and customized for your environment. A great example Chef project that uses Ceph-Chef can be found at Bloomberg&amp;rsquo;s github repo called Chef-BCS. Chef-BCS is what powers the large Ceph installations at Bloomberg.&lt;/p&gt;
+
+&lt;p&gt;The recommend way to get started using both Ceph-Chef and Chef-BCS is to clone Chef-BCS on github.com. Once you have forked it then clone it to your local environment (i.e., an OSX or Linux based environment - have not tested Windows based environment). To just kick the tires so to speak, make sure VirtualBox and Vagrant are installed.&lt;/p&gt;
+
+&lt;p&gt;Once the dependencies are installed; inside the root of the cloned project you can find a &lt;code&gt;build_dev.sh&lt;/code&gt; script (if not present then simply change to the /&lt;your cloned root&gt;/bootstrap/vms/vagrant directory and enter ./CEPH_UP.sh). It will simply launch the default VirtualBox install of Ceph which consists of four VMs (1 - Bootstrap VM and 3 - Ceph VMs). The script also changes the directory to /&lt;your cloned root&gt;/bootstrap/vms/vagrant. Inside that directory you can see Ceph running on each Ceph VM with &amp;lsquo;vagrant ssh ceph-vm1&amp;rsquo; (change vm1 to vm2 or vm3 to see each Ceph VM).&lt;/p&gt;
+
+&lt;p&gt;Now that you have a default Ceph Object Store VM cluster running locally, you can change ceph.conf settings and restart the processes to inspect the changes before building your real cluster. There will be more how-to articles coming soon.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Summit - Austin TX</title>
+      <link>http://lambdastack.io/videos/openstack-austin/</link>
+      <pubDate>Fri, 15 Apr 2016 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/videos/openstack-austin/</guid>
+      <description>&lt;p&gt;Talk at OpenStack Summit in Austin TX. I discussed our new Architecture for our Object Store. I also go into (just a little) why a fully hyper-converged Compute/Storage is not a good idea for large installations.&lt;/p&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/gW084yAvoK0&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ceph Day in NYC</title>
+      <link>http://lambdastack.io/videos/cephday-nyc/</link>
+      <pubDate>Wed, 20 Jan 2016 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/videos/cephday-nyc/</guid>
+      <description>&lt;p&gt;This talk was with Chris Morgan and myself at Ceph Day in NYC. We talk about what we&amp;rsquo;re doing with Ceph and OpenStack and our new multi-petabyte Object Store called BCS (Bloomberg Cloud Storage).&lt;/p&gt;
+
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/ZHyIJ1UA5R8?t=13m48s&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

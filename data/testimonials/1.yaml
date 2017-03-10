@@ -1,0 +1,5 @@
+text: "Ceph-Chef is the Official Ceph Chef Cookbook used to install and manage Ceph. I created it at Bloomberg and open sourced it. I manage it at Ceph's Github Repo and we use it at Bloomberg to manage our large Ceph clusters."
+name: "ceph-chef"
+position: "Ceph Chef Cookbook"
+avatar: "img/ceph-github.png"
+project: "https://github.com/ceph/ceph-chef"

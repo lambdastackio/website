@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vm on The LambdaStack Project</title>
+    <link>http://lambdastack.io/categories/vm/index.xml</link>
+    <description>Recent content in Vm on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/categories/vm/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hyper-Converged Infrastructure (HCI) - Truth</title>
+      <link>http://lambdastack.io/blog/2017/03/05/hci/</link>
+      <pubDate>Sun, 05 Mar 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/03/05/hci/</guid>
+      <description>
+
+&lt;h2 id=&#34;hyper-converged-infrastructure-hci-truth&#34;&gt;Hyper-Converged Infrastructure (HCI) - Truth&lt;/h2&gt;
+
+&lt;p&gt;I happened to just stumble upon a few marketing oriented whitepapers from VMWare today (odd use of my time). All three were centered around Hyper-Converged Infrastructure (HCI). At Bloomberg, we run VMWare and OpenStack clusters. Our OpenStack clusters are currently fully Hyper-Converged. I have even given talks on them &lt;a href=&#34;http://lambdastack.io/videos/openstack-austin/&#34;&gt;http://lambdastack.io/videos/openstack-austin/&lt;/a&gt;. If you look at the video and the presentation you will see why we no longer believe in this model for us.&lt;/p&gt;
+
+&lt;p&gt;We have many clusters and some are very large. Our compute and storage run on the same nodes in these clusters. We even went to a &amp;ldquo;POD&amp;rdquo; like system (three PODs per rack) to help us scale as seen in the presentation. When we first started out over four years ago, Hyper-Converged was not the buzzword it is today and it made sense at the time. However, today, it&amp;rsquo;s a different story.&lt;/p&gt;
+
+&lt;p&gt;VMWare is seemingly pushing HCI as the greatest thing since sliced bread. They have even produced a whitepaper on how to better your career by embracing it. We have found that HCI only works for small clusters will a limited work load. Scaling an HCI is very complicated and costly. The storage portion is the part that really needs the most scale so scaling compute to fit the scale needs of storage can be a waste of resources.&lt;/p&gt;
+
+&lt;p&gt;If you charge your internal customers for compute resources and storage resources then an HCI can cause their cost to be very high even with oversubscription of compute. Last year we began the process of breaking out compute from storage so that we could scale them independently of each other.&lt;/p&gt;
+
+&lt;p&gt;After we began to split out our storage, we were able to pass along a dramatic drop in per TB charge to our internal customers which was not possible before. Storage and compute resource needs are different. We suspected we would see a drop in issues due to the reduced pressure on resources which we did. However, we were surprised at how much more healthy our nodes became due to this.&lt;/p&gt;
+
+&lt;p&gt;Vendors like to create buzzwords but I often wonder if they really actually eat their own dog food so to speak and operate things at massive scale or if everything is simply based on theory. I suspect the latter. In our experience, Hyper-Converged can work good enough at a small scale but it does not do well at scale. Vendors that are pushing it are just trying to survive in a changing world. Make sure it&amp;rsquo;s right for you before investing.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

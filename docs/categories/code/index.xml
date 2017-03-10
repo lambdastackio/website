@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code on The LambdaStack Project</title>
+    <link>http://lambdastack.io/categories/code/index.xml</link>
+    <description>Recent content in Code on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
+    <atom:link href="http://lambdastack.io/categories/code/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rust</title>
+      <link>http://lambdastack.io/blog/2017/02/20/rust/</link>
+      <pubDate>Mon, 20 Feb 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/02/20/rust/</guid>
+      <description>
+
+&lt;h3 id=&#34;rust-programming&#34;&gt;&lt;code&gt;Rust&lt;/code&gt; Programming&lt;/h3&gt;
+
+&lt;p&gt;A programming language from Heaven! Unlike the language of sorcerers, &lt;code&gt;Ruby&lt;/code&gt;, &lt;code&gt;Rust&lt;/code&gt; is a real language that gives you all of the speed and power benefits of &lt;code&gt;C/C++&lt;/code&gt;, functional model of some scripting languages and true safety that only Rust can provide.&lt;/p&gt;
+
+&lt;h4 id=&#34;c-c-and-python&#34;&gt;C/C++ and Python&lt;/h4&gt;
+
+&lt;p&gt;I cut my teeth on C and C++ many years ago. I actually won many awards for writing &lt;code&gt;Best C/C++ Middleware&lt;/code&gt; from Database Advisor Magazine (dating myself). I went on to love &lt;code&gt;Python&lt;/code&gt; and it soon became my &lt;code&gt;goto&lt;/code&gt; language. Python is a very good scripting language but it lacks true multi-threaded support (GIL) and strong types. I know, &lt;code&gt;CPython&lt;/code&gt; can give you good performance and a few other goodies but overall Python has its place as a good dynamic language.&lt;/p&gt;
+
+&lt;h4 id=&#34;ruby&#34;&gt;Ruby&lt;/h4&gt;
+
+&lt;p&gt;A number of years ago I remember having a debate with a member of my team that I managed about Ruby. He swore up and down how awesome it was and that I would have to try it to really believe him. Of course, I resisted even looking in the direction of Ruby until I was forced to by my employer due to Chef and Puppet. Since then I have written a number of Ruby custom modules for Chef and yes it&amp;rsquo;s simple but it has really odd syntax that likens itself to ancient symbols you see in horror movies - a sorcery language.&lt;/p&gt;
+
+&lt;h4 id=&#34;java&#34;&gt;Java&lt;/h4&gt;
+
+&lt;p&gt;Another language that I have had to endure in my career is Java. I remember when Java was introduced (I keep dating myself). It promised so much but it&amp;rsquo;s initial performance was horrible. Since then, of course, the performance has dramatically improved but the verbosity of the code has not gotten any better. Today, it&amp;rsquo;s still used in a number of Enterprises but in a more monolithic nature - old school tech. When I see tech that is Java based, I can&amp;rsquo;t help to immediately think &lt;code&gt;outdated&lt;/code&gt;. I could go on and on about Java but you get the point.&lt;/p&gt;
+
+&lt;h4 id=&#34;go&#34;&gt;GO&lt;/h4&gt;
+
+&lt;p&gt;GO is actually a very good systems language. I like it a lot. It was built from ground up to support modern architectures but it too has issues. The compiled code is sort of bloated, it&amp;rsquo;s development dependency management was not really thought out ahead of time (folks have started a &lt;code&gt;pseudo best practices&lt;/code&gt; which has helped) and it&amp;rsquo;s super easy to hurt yourself at runtime like in C/C++ - just look at Docker. It will compile easily but &lt;code&gt;easy&lt;/code&gt; compilations can come at a big cost at runtime.&lt;/p&gt;
+
+&lt;h4 id=&#34;rust&#34;&gt;Rust&lt;/h4&gt;
+
+&lt;p&gt;Again, I&amp;rsquo;m a C/C++ guy at heart. I want everything to run at the speed of light, have no runtime dependencies and have a very small memory footprint. This of course causes all of the languages mentioned thus far to strike out except for C/C++ and GO.&lt;/p&gt;
+
+&lt;p&gt;When I first saw &lt;code&gt;Rust&lt;/code&gt; I thought, &amp;ldquo;great, another language.&amp;rdquo; I was working with GO and loved it&amp;rsquo;s simple model but found it&amp;rsquo;s development dependency model to be a pain. I wasn&amp;rsquo;t looking at learning a new language but I took a look while sitting in the Orlando airport on my way back to NYC (I know; I spend my time on odd things). For the first hour I was amazed at how simple it was to get Rust installed and how organized the development dependencies were with &lt;code&gt;Cargo&lt;/code&gt; (Rust&amp;rsquo;s package management system). I was able to build a small app (a little more than Hello World!) before boarding. While on the plane I read more about Rust and thus began my journey.&lt;/p&gt;
+
+&lt;p&gt;It wasn&amp;rsquo;t long before I realized that Rust too used some very odd syntax (lifetimes) and I lost even more hair struggling over the &lt;code&gt;borrower checker&lt;/code&gt;. For Rust to guarantee runtime safety, it must implement tight controls up front during the compilation period. This is completely different than any other programming model so it can take a while to get your head around it. However, once you do, there is no going back. You begin to really appreciate the lifetime management system and how to code in a model that guarantees thread safety etc.&lt;/p&gt;
+
+&lt;p&gt;I can happily say I am now &lt;code&gt;Team Rust&lt;/code&gt; and actually love coding in Rust. I still love Python and do some low-level things in C where needed but my heart is with Rust. Oh, I still have to adorn my black robe in secret and chant &lt;code&gt;Ruby&lt;/code&gt; while working on my employer&amp;rsquo;s Chef code - necessary evil I suppose!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>http://lambdastack.io/code/rust/</link>
+      <pubDate>Mon, 20 Feb 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/code/rust/</guid>
+      <description>
+
+&lt;h3 id=&#34;rust-programming&#34;&gt;&lt;code&gt;Rust&lt;/code&gt; Programming&lt;/h3&gt;
+
+&lt;p&gt;A programming language from Heaven! Unlike the language of sorcerers, &lt;code&gt;Ruby&lt;/code&gt;, &lt;code&gt;Rust&lt;/code&gt; is a real language that gives you all of the speed and power benefits of &lt;code&gt;C/C++&lt;/code&gt;, functional model of some scripting languages and true safety that only Rust can provide.&lt;/p&gt;
+
+&lt;h4 id=&#34;c-c-and-python&#34;&gt;C/C++ and Python&lt;/h4&gt;
+
+&lt;p&gt;I cut my teeth on C and C++ many years ago. I actually won many awards for writing &lt;code&gt;Best C/C++ Middleware&lt;/code&gt; from Database Advisor Magazine (dating myself). I went on to love &lt;code&gt;Python&lt;/code&gt; and it soon became my &lt;code&gt;goto&lt;/code&gt; language. Python is a very good scripting language but it lacks true multi-threaded support (GIL) and strong types. I know, &lt;code&gt;CPython&lt;/code&gt; can give you good performance and a few other goodies but overall Python has its place as a good dynamic language.&lt;/p&gt;
+
+&lt;h4 id=&#34;ruby&#34;&gt;Ruby&lt;/h4&gt;
+
+&lt;p&gt;A number of years ago I remember having a debate with a member of my team that I managed about Ruby. He swore up and down how awesome it was and that I would have to try it to really believe him. Of course, I resisted even looking in the direction of Ruby until I was forced to by my employer due to Chef and Puppet. Since then I have written a number of Ruby custom modules for Chef and yes it&amp;rsquo;s simple but it has really odd syntax that likens itself to ancient symbols you see in horror movies - a sorcery language.&lt;/p&gt;
+
+&lt;h4 id=&#34;java&#34;&gt;Java&lt;/h4&gt;
+
+&lt;p&gt;Another language that I have had to endure in my career is Java. I remember when Java was introduced (I keep dating myself). It promised so much but it&amp;rsquo;s initial performance was horrible. Since then, of course, the performance has dramatically improved but the verbosity of the code has not gotten any better. Today, it&amp;rsquo;s still used in a number of Enterprises but in a more monolithic nature - old school tech. When I see tech that is Java based, I can&amp;rsquo;t help to immediately think &lt;code&gt;outdated&lt;/code&gt;. I could go on and on about Java but you get the point.&lt;/p&gt;
+
+&lt;h4 id=&#34;go&#34;&gt;GO&lt;/h4&gt;
+
+&lt;p&gt;GO is actually a very good systems language. I like it a lot. It was built from ground up to support modern architectures but it too has issues. The compiled code is sort of bloated, it&amp;rsquo;s development dependency management was not really thought out ahead of time (folks have started a &lt;code&gt;pseudo best practices&lt;/code&gt; which has helped) and it&amp;rsquo;s super easy to hurt yourself at runtime like in C/C++ - just look at Docker. It will compile easily but &lt;code&gt;easy&lt;/code&gt; compilations can come at a big cost at runtime.&lt;/p&gt;
+
+&lt;h4 id=&#34;rust&#34;&gt;Rust&lt;/h4&gt;
+
+&lt;p&gt;Again, I&amp;rsquo;m a C/C++ guy at heart. I want everything to run at the speed of light, have no runtime dependencies and have a very small memory footprint. This of course causes all of the languages mentioned thus far to strike out except for C/C++ and GO.&lt;/p&gt;
+
+&lt;p&gt;When I first saw &lt;code&gt;Rust&lt;/code&gt; I thought, &amp;ldquo;great, another language.&amp;rdquo; I was working with GO and loved it&amp;rsquo;s simple model but found it&amp;rsquo;s development dependency model to be a pain. I wasn&amp;rsquo;t looking at learning a new language but I took a look while sitting in the Orlando airport on my way back to NYC (I know; I spend my time on odd things). For the first hour I was amazed at how simple it was to get Rust installed and how organized the development dependencies were with &lt;code&gt;Cargo&lt;/code&gt; (Rust&amp;rsquo;s package management system). I was able to build a small app (a little more than Hello World!) before boarding. While on the plane I read more about Rust and thus began my journey.&lt;/p&gt;
+
+&lt;p&gt;It wasn&amp;rsquo;t long before I realized that Rust too used some very odd syntax (lifetimes) and I lost even more hair struggling over the &lt;code&gt;borrower checker&lt;/code&gt;. For Rust to guarantee runtime safety, it must implement tight controls up front during the compilation period. This is completely different than any other programming model so it can take a while to get your head around it. However, once you do, there is no going back. You begin to really appreciate the lifetime management system and how to code in a model that guarantees thread safety etc.&lt;/p&gt;
+
+&lt;p&gt;I can happily say I am now &lt;code&gt;Team Rust&lt;/code&gt; and actually love coding in Rust. I still love Python and do some low-level things in C where needed but my heart is with Rust. Oh, I still have to adorn my black robe in secret and chant &lt;code&gt;Ruby&lt;/code&gt; while working on my employer&amp;rsquo;s Chef code - necessary evil I suppose!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,10 @@
+weight: 1
+title: "AWS-SDK-RUST"
+description: >
+  <ul class="list-style-none">
+     <li>Rust AWS S3 SDK</li>
+     <li>Multi-threaded</li>
+     <li>Supports V2 and V4</li>
+     <li>Very popular - crates.io</li>
+   </ul>
+image: "img/carousel/aws-sdk-rust-github.png"

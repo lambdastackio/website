@@ -1,0 +1,5 @@
+text: "AWS S3 is now considered the defacto Object Store standard. All Object Store products such as Ceph use the S3 SDK interface. Aws-sdk-rust is the S3 interface for Rust. It supports V2 and V3 Signatures so that all third party Object Stores can also be accessed."
+name: "aws-sdk-rust"
+position: "AWS S3 SDK"
+avatar: "img/projects/aws-sdk-rust.png"
+project: "https://github.com/lambdastackio/aws-sdk-rust"

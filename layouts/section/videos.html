@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nav.html" . }}
+
+        </header>
+
+        {{ partial "breadcrumbs.html" . }}
+
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    <!-- *** LEFT COLUMN *** -->
+
+                    <div class="col-md-9" id="blog-listing-medium">
+                        <!-- Pinned Videos of myself :) -->
+                        <p class="author-category">
+                          <h4><a href="#">Videos of Chris Jones</a></h4>
+                        </p>
+                        <section class="post">
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="image">
+                                      <a href="http://lambdastack.io/videos/openstack-austin/">
+                                          <img src="http://lambdastack.io/img/openstack-summit.png" class="img-responsive" alt="">
+                                      </a>
+                                  </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h2><a href="http://lambdastack.io/videos/openstack-austin/">OpenStack Summit - Austin TX</a></h2>
+                                    <div class="clearfix">
+                                        <p class="author-category">
+                                          By <a href="#">Chris Jones</a>
+                                          in <a href="http://lambdastack.io/categories/ceph">ceph</a>
+                                        </p>
+                                        <p class="date-comments">
+                                            <a href="http://lambdastack.io/videos/openstack-austin/"><i class="fa fa-calendar-o"></i> April 15, 2016</a>
+                                        </p>
+                                    </div>
+                                    <p class="intro">Talk at OpenStack Summit in Austin TX. I discussed our new Architecture for our Object Store. I also go into (just a little) why a fully hyper-converged Compute/Storage is not a good idea for large installations.</p>
+                                    <p class="read-more"><a href="http://lambdastack.io/videos/openstack-austin/" class="btn btn-template-main">Continue reading</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="post">
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="image">
+                                      <a href="http://lambdastack.io/videos/cephday-nyc/">
+                                          <img src="http://lambdastack.io/img/cephday-nyc.png" class="img-responsive" alt="">
+                                      </a>
+                                  </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h2><a href="http://lambdastack.io/videos/cephday-nyc/">Ceph Day in NYC</a></h2>
+                                    <div class="clearfix">
+                                        <p class="author-category">
+                                          By <a href="#">Chris Jones</a>
+                                          in <a href="http://lambdastack.io/categories/ceph">ceph</a>
+                                        </p>
+                                        <p class="date-comments">
+                                            <a href="http://lambdastack.io/videos/cephday-nyc/"><i class="fa fa-calendar-o"></i> January 20, 2016</a>
+                                        </p>
+                                    </div>
+                                    <p class="intro">This talk was with Chris Morgan and myself at Ceph Day in NYC. We talk about what we&rsquo;re doing with Ceph and OpenStack and our new multi-petabyte Object Store called BCS (Bloomberg Cloud Storage).</p>
+                                    <p class="read-more"><a href="http://lambdastack.io/videos/cephday-nyc/" class="btn btn-template-main">Continue reading</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <p class="author-category">
+                          <h4><a href="#">Presentations of Chris Jones</a></h4>
+                        </p>
+                        <section class="post">
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="image">
+                                      <a href="http://lambdastack.io/videos/cephday-chicago/">
+                                          <img src="http://lambdastack.io/img/cephday-chicago.png" class="img-responsive" alt="">
+                                      </a>
+                                  </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h2><a href="http://lambdastack.io/videos/cephday-chicago/">Ceph Day in Chicago</a></h2>
+                                    <div class="clearfix">
+                                        <p class="author-category">
+                                          By <a href="#">Chris Jones</a>
+                                          in <a href="http://lambdastack.io/categories/ceph">ceph</a>
+                                        </p>
+                                        <p class="date-comments">
+                                            <a href="http://lambdastack.io/videos/cephday-chicago/"><i class="fa fa-calendar-o"></i> August 20, 2015</a>
+                                        </p>
+                                    </div>
+                                    <p class="intro">A Ceph Day in Chicago presentation.</p>
+                                    <p class="read-more"><a href="http://lambdastack.io/videos/cephday-chicago/" class="btn btn-template-main">Continue reading</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <hr/>
+
+                        <!-- All of the videos listed as normal starting here -->
+                        <p class="author-category">
+                          <h4><a href="#">Collections That Interest Me...</a></h4>
+                        </p>
+
+                        {{ $paginator := .Paginate (where .Data.Pages "Type" "videos") }}
+                        {{ range $paginator.Pages }}
+                        <section class="post">
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="image">
+                                      <a href="{{ .Permalink }}">
+                                          {{ if .Params.banner }}
+                                          <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
+                                          {{ else }}
+                                          <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
+                                          {{ end }}
+                                      </a>
+                                  </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                                    <div class="clearfix">
+                                        <p class="author-category">
+                                          {{ if isset .Params "author" }}
+                                          By <a href="#">{{ .Params.author }}</a>
+                                          {{ end }}
+                                          {{ if isset .Params "categories" }}
+                                          {{ if gt (len .Params.categories) 0 }}
+                                          in <a href="{{ $.Site.BaseURL }}categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
+                                          {{ end }}
+                                          {{ end }}
+
+                                        </p>
+                                        <p class="date-comments">
+                                            <a href="{{ .Permalink }}"><i class="fa fa-calendar-o"></i> {{ .Date.Format .Site.Params.date_format }}</a>
+                                        </p>
+                                    </div>
+                                    <p class="intro">{{ .Summary }}</p>
+                                    <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">Continue reading</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        {{ end }}
+
+                        <ul class="pager">
+                            {{ if .Paginator.HasPrev }}
+                            <li class="previous"><a href="{{ .Site.BaseURL }}{{ .Paginator.Prev.URL }}">&larr; Newer</a></li>
+                            {{ else }}
+                            <li class="previous disabled"><a href="#">&larr; Newer</a></li>
+                            {{ end }}
+
+                            {{ if .Paginator.HasNext }}
+                            <li class="next"><a href="{{ .Site.BaseURL }}{{ .Paginator.Next.URL }}">Older &rarr;</a></li>
+                            {{ else }}
+                            <li class="next disabled"><a href="#">Older &rarr;</a></li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    <!-- /.col-md-9 -->
+
+                    <!-- *** LEFT COLUMN END *** -->
+
+                    <!-- *** RIGHT COLUMN ***
+       _________________________________________________________ -->
+
+                    <div class="col-md-3">
+
+                        <!-- *** MENUS AND WIDGETS *** -->
+
+                        {{ partial "sidebar.html" . }}
+
+                        <!-- *** MENUS AND FILTERS END *** -->
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <!-- *** RIGHT COLUMN END *** -->
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+  </body>
+</html>
