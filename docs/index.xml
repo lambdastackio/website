@@ -39,7 +39,7 @@
 &lt;p&gt;Cost Example (deep storage): (NB: These are conservative costs. You will need to plug in your costs. This also assumes you use all of the storage and most of data is machine generated as in Big Data. Also, no operating labor cost is factored in since that is so variable [see summary].)&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Single datacenter. Would impact if disaster struck the datacenter itself. Data is very durable otherwise.&lt;/p&gt;
+&lt;p&gt;Single datacenter. Data is very durable with Erasure Coding.&lt;/p&gt;
 
 &lt;p&gt;5 Racks ($300K each) - $1,500,000 (assumes your own datacenters with power/cooling - cost factors in ~10 spare storage nodes and additional 10TB HDD for replacements). Also these figures are high so your real figures should be a good bit less depending on your hardware vendor and even lower if you don&amp;rsquo;t have to use outside vendors and contractors.&lt;/p&gt;
 
@@ -65,7 +65,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;Store 7,418TB to be equal with above&lt;/p&gt;
 
-&lt;p&gt;Multiple datacenters (standard)&lt;/p&gt;
+&lt;p&gt;Replication with datacenter (standard). Replication to other regions will cost more.&lt;/p&gt;
 
 &lt;p&gt;Transfer In &lt;a href=&#34;https://aws.amazon.com/snowmobile/&#34;&gt;(Would take a &amp;ldquo;snowmobile&amp;rdquo; - Big semi-tractor and trailer rigs)&lt;/a&gt;. This scenario doesn&amp;rsquo;t even cover that cost but it&amp;rsquo;s expensive and takes a long time.&lt;/p&gt;
 
@@ -92,6 +92,8 @@
 &lt;p&gt;$3,000,000 for 2 datacenters with ~10 spare servers and drives per datacenter.&lt;/p&gt;
 
 &lt;p&gt;$204.98TB x 2 = $409.96TB (annual) or $409.96TB / 3 (3 years) = $136.65TB annually over 3 year period.&lt;/p&gt;
+
+&lt;p&gt;Factor in replication costs of AWS S3 to other regions if comparing with multiple datacenters of on-premises.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Using the above cost figures, the AWS S3 cost will remain annual while the on-premises&amp;rsquo; cost go down annually due to many factors but mainly due to shelf life of 3-5yrs of equipment. Of course, there will be the annual OpEx costs mentioned plus drive and server replacement costs (some were already factored into the initial cost). The on-premises version also does not include operational labor costs (important). However, the labor cost would most likely only get you closer on year one using the single datacenter scenario.&lt;/p&gt;

@@ -27,7 +27,7 @@ Back from my sidebar. How do we cost justify on-premises S3 and compare it to AW
 
 Cost Example (deep storage): (NB: These are conservative costs. You will need to plug in your costs. This also assumes you use all of the storage and most of data is machine generated as in Big Data. Also, no operating labor cost is factored in since that is so variable [see summary].)
 
->Single datacenter. Would impact if disaster struck the datacenter itself. Data is very durable otherwise.
+>Single datacenter. Data is very durable with Erasure Coding.
 
 >5 Racks ($300K each) - $1,500,000 (assumes your own datacenters with power/cooling - cost factors in ~10 spare storage nodes and additional 10TB HDD for replacements). Also these figures are high so your real figures should be a good bit less depending on your hardware vendor and even lower if you don't have to use outside vendors and contractors.
 
@@ -51,7 +51,7 @@ AWS S3 (published pricing):
 
 >Store 7,418TB to be equal with above
 
->Multiple datacenters (standard)
+>Replication with datacenter (standard). Replication to other regions will cost more.
 
 >Transfer In <a href="https://aws.amazon.com/snowmobile/">(Would take a "snowmobile" - Big semi-tractor and trailer rigs)</a>. This scenario doesn't even cover that cost but it's expensive and takes a long time.
 
@@ -76,6 +76,8 @@ Second datacenter factored in for on-premises:
 >$3,000,000 for 2 datacenters with ~10 spare servers and drives per datacenter.
 
 >$204.98TB x 2 = $409.96TB (annual) or $409.96TB / 3 (3 years) = $136.65TB annually over 3 year period.
+
+>Factor in replication costs of AWS S3 to other regions if comparing with multiple datacenters of on-premises.
 
 Using the above cost figures, the AWS S3 cost will remain annual while the on-premises' cost go down annually due to many factors but mainly due to shelf life of 3-5yrs of equipment. Of course, there will be the annual OpEx costs mentioned plus drive and server replacement costs (some were already factored into the initial cost). The on-premises version also does not include operational labor costs (important). However, the labor cost would most likely only get you closer on year one using the single datacenter scenario.
 
