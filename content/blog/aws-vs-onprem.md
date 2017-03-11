@@ -79,6 +79,14 @@ Second datacenter factored in for on-premises:
 
 >Factor in replication costs of AWS S3 to other regions if comparing with multiple datacenters of on-premises.
 
+---
+GCE (Update):
+
+>Taken from Google Cloud Platform calculator website showing difference in GCE and AWS for 10PB single region (single site). Notice how high both are with AWS being the highest.
+<img src="/img/gce.png" style="max-width: 100%">
+
+---
+
 Using the above cost figures, the AWS S3 cost will remain annual while the on-premises' cost go down annually due to many factors but mainly due to shelf life of 3-5yrs of equipment. Of course, there will be the annual OpEx costs mentioned plus drive and server replacement costs (some were already factored into the initial cost). The on-premises version also does not include operational labor costs (important). However, the labor cost would most likely only get you closer on year one using the single datacenter scenario.
 
 The point is, there are many ways to approach the cost points. If you have a lot of data and it continues to grow at an exponential rate and you continue to find more ways to process (analyze) the data then your transfer out of storage rates will increase (same transfer costs apply to EC2 and Direct Connect) and thus your real cost of AWS S3. This can also be applied to AWS Glacier as well.
