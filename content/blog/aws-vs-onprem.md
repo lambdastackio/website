@@ -45,7 +45,7 @@ Cost Example (deep storage): (NB: These are conservative costs. You will need to
 
 >NB: If you use commercial hardware load-balancers then your cost will increase. These do not usually gain you performance over HAProxy in this scenario. However, you can always add them and repurpose the HAProxy nodes included above.
 
->Network traffic - ~15Gbs sustained (give or take) split with 70/30 read/write (change based on your assumptions but these values are used for standard benchmarking). Since a high-speed network is part of a normal enterprise (large), there are no additional costs for network usage in this scenario beyond purchasing additional spines which are factored into the cost. (Internal only)
+>Network traffic - ~20Gbs (.0025TBps) sustained (give or take) split with 70/30 read/write (change based on your assumptions but these values are used for standard benchmarking). Since a high-speed network is part of a normal enterprise (large), there are no additional costs for network usage in this scenario beyond purchasing additional spines which are factored into the cost. (Internal only)
 
 AWS S3 (published pricing):
 
@@ -55,7 +55,7 @@ AWS S3 (published pricing):
 
 >Transfer In <a href="https://aws.amazon.com/snowmobile/">(Would take a "snowmobile" - Big semi-tractor and trailer rigs)</a>. This scenario doesn't even cover that cost but it's expensive and takes a long time.
 
->Transfer Out - 70TB monthly (for this simple low cost example) - This applies to everything including EC2, Direct Connect etc.
+>Transfer Out - 70TB monthly (this is only a fraction [2.33TB] per day of the on-premises example above) - Transfer out applies to everything including EC2, Direct Connect etc.
 
 >Direct Connect - Would need 2 LAG 10Gbs circuits plus additional equipment to sustain internal rate above. The cost is not reported here and much higher (setup, monthly and long-term contract)!
 
