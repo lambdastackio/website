@@ -144,62 +144,6 @@
     </item>
     
     <item>
-      <title>Global Cloud Storage</title>
-      <link>http://lambdastack.io/blog/2017/03/01/global-cloud-storage/</link>
-      <pubDate>Wed, 01 Mar 2017 01:00:00 +0200</pubDate>
-      
-      <guid>http://lambdastack.io/blog/2017/03/01/global-cloud-storage/</guid>
-      <description>
-
-&lt;h2 id=&#34;global-cloud-storage&#34;&gt;Global Cloud Storage&lt;/h2&gt;
-
-&lt;p&gt;Everything fails! No matter how great the architecture, things can fail due to many factors including human, power, fiber cuts, etc. We even have failures in our own datacenters. The point is you need to plan on failure as part of your architecture.&lt;/p&gt;
-
-&lt;p&gt;Yesterday, AWS S3 us-east-1 had an issue which caused rippling affects across the Internet including AWS&amp;rsquo; on status page that depends on S3. All cloud providers have failed and will fail again - it&amp;rsquo;s just a fact. The question is what are you going to do about it?&lt;/p&gt;
-
-&lt;p&gt;It doesn&amp;rsquo;t matter if you&amp;rsquo;re a startup or large enterprise, you need to have multiple cloud storage providers. Netflix learned this lesson a long time ago. AWS S3 is the defacto standard for Cloud Storage APIs. Most cloud providers support the S3 interface so if your app uses the S3 API for interfacing with your object storage then you should be able to implement a multi-cloud solution.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;NB: There are multiple ways to do this and the drawing is &lt;strong&gt;only&lt;/strong&gt; one way&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;determine-who-supports-s3&#34;&gt;Determine who supports S3&lt;/h4&gt;
-
-&lt;p&gt;You will need to determine which providers support the S3 API. A number of other cloud providers do. I would recommend using AWS S3 as the Primary Object Store when using a public cloud. It&amp;rsquo;s the original and most battle tested - not to mention every tool support the S3 API.&lt;/p&gt;
-
-&lt;h4 id=&#34;mirror-bucket-names&#34;&gt;Mirror bucket names&lt;/h4&gt;
-
-&lt;p&gt;Bucket names for AWS S3 are a global resource. Meaning, if you want to have a bucket called &lt;code&gt;mybucket&lt;/code&gt; and someone else has already taken the name then you&amp;rsquo;re out of luck. Thats why most people for website objects will do something like &lt;code&gt;www.mydomain.com&lt;/code&gt; as a bucket name because it unlikely that someone is using that bucket name.&lt;/p&gt;
-
-&lt;h4 id=&#34;replicate-objects-to-all-providers&#34;&gt;Replicate objects to all providers&lt;/h4&gt;
-
-&lt;p&gt;You will want to replicate your S3 objects to other providers whenever you push to AWS S3. You can do this in your code if your app does it or use a 3rd party tool to do it. &lt;code&gt;S3lsio&lt;/code&gt;, a very fast tool that I created and will soon do just that. Google has a cli tool called &lt;code&gt;gsutil&lt;/code&gt; which allows you to rsync your S3 to GCE (rsync is a replication tool in the Linux world). I would suspect Azure has something similar.&lt;/p&gt;
-
-&lt;h4 id=&#34;option-1-global-dns&#34;&gt;(Option 1) Global DNS&lt;/h4&gt;
-
-&lt;p&gt;If you&amp;rsquo;re able to cleanly mirror your bucket and objects and your provider supports the S3 API interface then you can create a custom domain and have it managed by a DNS provider that can support failovers. There are several that can do it. This drawing supports this option.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/global_cloud_storage.svg&#34; style=&#34;max-width: 100%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;option-2-customer-request-router&#34;&gt;(Option 2) Customer Request Router&lt;/h4&gt;
-
-&lt;p&gt;This one requires a little more experience. This requires a small microservice app that returns the correct URL based a policy via an HTTP 302 redirect which cause the browser (assuming browser) to try the new URL your request router just returned. The new URL can even be rewritten to support the format of the secondary cloud storage provider if needed.&lt;/p&gt;
-
-&lt;h4 id=&#34;option-3-global-load-balancing-via-cdn&#34;&gt;(Option 3) Global Load Balancing via CDN&lt;/h4&gt;
-
-&lt;p&gt;CDNs (Content Delivery Network) were created to solve these types of scenarios. However, CDNs can be costly so you need to be aware of that. Even AWS Cloud Front can be used in this case (mostly like not impacted by a storage issue on S3)&lt;/p&gt;
-
-&lt;h4 id=&#34;other-options&#34;&gt;Other Options&lt;/h4&gt;
-
-&lt;p&gt;Yes, there are still other ways to solve this. You need to think about your use cases and design around them. However, make sure to do your own due diligence! Vendor marketing materials are 100% buzzword compliant and they may not help any.&lt;/p&gt;
-
-&lt;h4 id=&#34;test-failover&#34;&gt;Test failover&lt;/h4&gt;
-
-&lt;p&gt;Now that you have architected the best way for your use cases, it&amp;rsquo;s time to test. Everything must be tested and re-tested. The simplest way to test is to verify that you can access each provider endpoint for the same object. Next, login to your S3 console and temporarily disable your bucket and then try your test app or test website. Do the same thing for the other cloud providers until only one is &lt;code&gt;live&lt;/code&gt; (keep the other provider buckets disabled for the test). Do not do this on a production system until fully baked.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>CI/CD Risk</title>
       <link>http://lambdastack.io/blog/2017/02/28/risk/</link>
       <pubDate>Tue, 28 Feb 2017 01:30:27 -0400</pubDate>
@@ -659,6 +603,26 @@
 &lt;p&gt;After spending days testing and letting our tests run for 24 hour periods we found that on the open source version if you specify &lt;code&gt;no linger&lt;/code&gt; explicitly the issue goes away or dramatically reduces to just noise. For the commercial load balancers we upped the timeouts to 40s which addressed the issue.&lt;/p&gt;
 
 &lt;p&gt;In our case, the client did not want to enable retries in their code due to their own reasons. However, for those clients that had used best practices of exponential backoffs, they never saw an issue to begin with. By combining reasonable timeouts and lingering on your load balancers along with educating clients to code in retries, managing your S3 on-premise cluster becomes a lot easier.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Klaus - Hybrid WebStack</title>
+      <link>http://lambdastack.io/blog/2017/01/15/klaus/</link>
+      <pubDate>Sun, 15 Jan 2017 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/01/15/klaus/</guid>
+      <description>&lt;p&gt;There are very good Web Servers on the market, Apache and NGINX to name a few. However, to interface your backend code you need to use Apache modules or WSGI/FastCGI with NGINX (depending on your language of choice). To actually use a fully integrated environment you need to use something like Django or Tornado for Python. For GO there is a small built-in web server that allows you to build up a more robust environment around it. But for Rust, not so much - until now.&lt;/p&gt;
+
+&lt;p&gt;My original goto languages of choice were C/C++ and then some time ago I switched to Python as my first choice. But, after working with Rust this past year, there is no way I would go back. Rust gives me an environment with no runtime dependencies with the speed of optimized C/C++ code but with safety guarantees. This makes deploying code written in Rust as simple as moving an executable around. Contrast that with Python, Ruby or Java where you can easily spend more time making sure the dependencies are in place than actually writing the code in some cases.&lt;/p&gt;
+
+&lt;p&gt;As wonderful as Rust is there are a few missing pieces, a built-in default web server code to build on. However, there are several great projects that allow for powerful async I/O in a multi-threaded model that have guaranteed safety. One such project is called Klaus-rs. Klaus has not reached it&amp;rsquo;s 1.0 status but is very close. It&amp;rsquo;s what I call a full &amp;ldquo;hybrid model&amp;rdquo; which means it can run as a stand-alone Web Server that serves static pages as well as single page Javascript apps like React or Angular without any funky configuration changes. It just works out of the box so to speak. Klaus also works as an Agent model where it can reside in a background process to handle requests from other agents and initiate requests instead of simply responding to requests. It also has RESTful features built-in so setting up APIs are very simple and it will soon support built-in rate limiting via it&amp;rsquo;s built-in support for Redis.&lt;/p&gt;
+
+&lt;p&gt;One of the greatest and simplest features is the built-in support for AWS S3. This means that it can support making S3 calls using your own AWS credentials. You don&amp;rsquo;t have to create a funky piece of code and bolt it on to handle automatic uploads to S3 for example. Since it&amp;rsquo;s built in Rust and most of the code resides in a library, you can easily extend it to support your environment. The memory footprint is very small so running in a Docker container is also an ideal solution.&lt;/p&gt;
+
+&lt;p&gt;Why call it Klaus? The name is based off of a fictional character from the TV series called The Originals. In the series, Klaus is one of the first Vampires but what makes him so lethal is the fact that he is also part Werewolf making him a true hybrid that can survive anything. So, Klaus-rs can survive any distributed environment including Silver and Daylight!&lt;/p&gt;
+
+&lt;p&gt;To get started, simply fork the github project at &lt;a href=&#34;https://github.com/klaus-rs/klaus&#34;&gt;https://github.com/klaus-rs/klaus&lt;/a&gt; and start building. This of course assumes you have Rust installed if you plan on building it from source. To install Rust go to &lt;a href=&#34;https://rustup.rs&#34;&gt;https://rustup.rs&lt;/a&gt; and follow the instructions.&lt;/p&gt;
 </description>
     </item>
     

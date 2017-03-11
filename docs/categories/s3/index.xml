@@ -119,62 +119,6 @@
     </item>
     
     <item>
-      <title>Global Cloud Storage</title>
-      <link>http://lambdastack.io/blog/2017/03/01/global-cloud-storage/</link>
-      <pubDate>Wed, 01 Mar 2017 01:00:00 +0200</pubDate>
-      
-      <guid>http://lambdastack.io/blog/2017/03/01/global-cloud-storage/</guid>
-      <description>
-
-&lt;h2 id=&#34;global-cloud-storage&#34;&gt;Global Cloud Storage&lt;/h2&gt;
-
-&lt;p&gt;Everything fails! No matter how great the architecture, things can fail due to many factors including human, power, fiber cuts, etc. We even have failures in our own datacenters. The point is you need to plan on failure as part of your architecture.&lt;/p&gt;
-
-&lt;p&gt;Yesterday, AWS S3 us-east-1 had an issue which caused rippling affects across the Internet including AWS&amp;rsquo; on status page that depends on S3. All cloud providers have failed and will fail again - it&amp;rsquo;s just a fact. The question is what are you going to do about it?&lt;/p&gt;
-
-&lt;p&gt;It doesn&amp;rsquo;t matter if you&amp;rsquo;re a startup or large enterprise, you need to have multiple cloud storage providers. Netflix learned this lesson a long time ago. AWS S3 is the defacto standard for Cloud Storage APIs. Most cloud providers support the S3 interface so if your app uses the S3 API for interfacing with your object storage then you should be able to implement a multi-cloud solution.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;NB: There are multiple ways to do this and the drawing is &lt;strong&gt;only&lt;/strong&gt; one way&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;determine-who-supports-s3&#34;&gt;Determine who supports S3&lt;/h4&gt;
-
-&lt;p&gt;You will need to determine which providers support the S3 API. A number of other cloud providers do. I would recommend using AWS S3 as the Primary Object Store when using a public cloud. It&amp;rsquo;s the original and most battle tested - not to mention every tool support the S3 API.&lt;/p&gt;
-
-&lt;h4 id=&#34;mirror-bucket-names&#34;&gt;Mirror bucket names&lt;/h4&gt;
-
-&lt;p&gt;Bucket names for AWS S3 are a global resource. Meaning, if you want to have a bucket called &lt;code&gt;mybucket&lt;/code&gt; and someone else has already taken the name then you&amp;rsquo;re out of luck. Thats why most people for website objects will do something like &lt;code&gt;www.mydomain.com&lt;/code&gt; as a bucket name because it unlikely that someone is using that bucket name.&lt;/p&gt;
-
-&lt;h4 id=&#34;replicate-objects-to-all-providers&#34;&gt;Replicate objects to all providers&lt;/h4&gt;
-
-&lt;p&gt;You will want to replicate your S3 objects to other providers whenever you push to AWS S3. You can do this in your code if your app does it or use a 3rd party tool to do it. &lt;code&gt;S3lsio&lt;/code&gt;, a very fast tool that I created and will soon do just that. Google has a cli tool called &lt;code&gt;gsutil&lt;/code&gt; which allows you to rsync your S3 to GCE (rsync is a replication tool in the Linux world). I would suspect Azure has something similar.&lt;/p&gt;
-
-&lt;h4 id=&#34;option-1-global-dns&#34;&gt;(Option 1) Global DNS&lt;/h4&gt;
-
-&lt;p&gt;If you&amp;rsquo;re able to cleanly mirror your bucket and objects and your provider supports the S3 API interface then you can create a custom domain and have it managed by a DNS provider that can support failovers. There are several that can do it. This drawing supports this option.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://lambdastack.io/img/global_cloud_storage.svg&#34; style=&#34;max-width: 100%&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;option-2-customer-request-router&#34;&gt;(Option 2) Customer Request Router&lt;/h4&gt;
-
-&lt;p&gt;This one requires a little more experience. This requires a small microservice app that returns the correct URL based a policy via an HTTP 302 redirect which cause the browser (assuming browser) to try the new URL your request router just returned. The new URL can even be rewritten to support the format of the secondary cloud storage provider if needed.&lt;/p&gt;
-
-&lt;h4 id=&#34;option-3-global-load-balancing-via-cdn&#34;&gt;(Option 3) Global Load Balancing via CDN&lt;/h4&gt;
-
-&lt;p&gt;CDNs (Content Delivery Network) were created to solve these types of scenarios. However, CDNs can be costly so you need to be aware of that. Even AWS Cloud Front can be used in this case (mostly like not impacted by a storage issue on S3)&lt;/p&gt;
-
-&lt;h4 id=&#34;other-options&#34;&gt;Other Options&lt;/h4&gt;
-
-&lt;p&gt;Yes, there are still other ways to solve this. You need to think about your use cases and design around them. However, make sure to do your own due diligence! Vendor marketing materials are 100% buzzword compliant and they may not help any.&lt;/p&gt;
-
-&lt;h4 id=&#34;test-failover&#34;&gt;Test failover&lt;/h4&gt;
-
-&lt;p&gt;Now that you have architected the best way for your use cases, it&amp;rsquo;s time to test. Everything must be tested and re-tested. The simplest way to test is to verify that you can access each provider endpoint for the same object. Next, login to your S3 console and temporarily disable your bucket and then try your test app or test website. Do the same thing for the other cloud providers until only one is &lt;code&gt;live&lt;/code&gt; (keep the other provider buckets disabled for the test). Do not do this on a production system until fully baked.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>SLA - Availability or Durability</title>
       <link>http://lambdastack.io/blog/2017/02/27/sla/</link>
       <pubDate>Mon, 27 Feb 2017 01:00:00 +0200</pubDate>
