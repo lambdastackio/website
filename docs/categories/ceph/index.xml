@@ -10,6 +10,62 @@
     <atom:link href="http://lambdastack.io/categories/ceph/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Hardware Sizing - Ceph Radosgw (RGW)</title>
+      <link>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</link>
+      <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</guid>
+      <description>
+
+&lt;h2 id=&#34;hardware-sizing-ceph-radosgw-rgw&#34;&gt;Hardware Sizing - Ceph Radosgw (RGW)&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;m often asked, &amp;ldquo;what&amp;rsquo;s the best hardware to use for Ceph?&amp;rdquo; The answer is simple - it depends. With Ceph there are many moving parts such as:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Ceph Monitor Nodes&lt;/p&gt;
+
+&lt;p&gt;Ceph RGW Nodes&lt;/p&gt;
+
+&lt;p&gt;Ceph Mgr Nodes&lt;/p&gt;
+
+&lt;p&gt;Ceph OSD Nodes&lt;/p&gt;
+
+&lt;p&gt;Ceph MDS Nodes&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In addition to those nodes you may also have software or hardware load-balancers in front of your RGW nodes. This discussion is centered around RGW nodes only. Other articles will detail out the specifics for the other nodes.&lt;/p&gt;
+
+&lt;p&gt;RGW nodes are known as a client to RADOS, core of Ceph itself. Since it&amp;rsquo;s a client it means it&amp;rsquo;s not required unless you want an S3 or Swift Object Store interface. By default Ceph is setup to use a &amp;ldquo;private&amp;rdquo; and &amp;ldquo;public&amp;rdquo; network interface to communicate between itself. The OSD nodes utilize both interfaces with the OSD-to-OSD communication being done over the &amp;ldquo;private&amp;rdquo; network interface and &amp;ldquo;client&amp;rdquo; interfacing being done over the &amp;ldquo;public&amp;rdquo; interface. This means that all &amp;ldquo;clients&amp;rdquo; (like RGW) only use the &amp;ldquo;public&amp;rdquo; interface and not the &amp;ldquo;private&amp;rdquo; interface.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You have the option on OSD nodes to use separate network interfaces for &amp;ldquo;public&amp;rdquo; and &amp;ldquo;private&amp;rdquo; or a single larger aggregate network interface where you run both types of traffic over a single interface. Your option.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;After running RGW nodes on small and large clusters in both dedicated (storage only) and Hyper-Converged with OpenStack and Ceph on the same nodes, I have seen that RGW itself (on a per instance basis) is more of a limitation than the hardware. For example, I had one configuration with 256GB RAM with two 10Gbps NICs bonded in mode 4 (aggregate) and running multiple RGW instances answering on different ports. After tracking the throughput of the network bond (bonds are not my preferred way but that&amp;rsquo;s what I had) and increasing Civetweb threads along with RGW thread pools and rados handles, I found that my bottle neck was RGW and not the hardware. Using CollectD metrics I found that the CPUs (24) ran mostly around 94% idle, memory percent used was not high and network traffic would top at around 6-8Gbps sustained (full duplex). I would also see thread counts as high 32K per instance. For the record, no logging on RGW and I started with a single RGW instance and ended up with four instances on different ports.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m still testing different configurations but when it comes to sizing RGW nodes, the following is a good guideline:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;1U size&lt;/p&gt;
+
+&lt;p&gt;1 10Gb NIC (minimum) for small-medium traffic and cluster size - Jumbo frames&lt;/p&gt;
+
+&lt;p&gt;1 20Gb NIC (minimum) for larger cluster size and higher traffic - Jumbo frames&lt;/p&gt;
+
+&lt;p&gt;64-128GB RAM will be more than enough for most clusters&lt;/p&gt;
+
+&lt;p&gt;Dual OS small SSDs in RAID 1&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the configuration that I mentioned earlier, you can even run extra Ceph Monitor processes on those same nodes and still have plenty of idle capacity.&lt;/p&gt;
+
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;Ceph RGW itself is the real bottle neck on throughput and not the hardware you choose. There is a sweet spot of finding the right mix of civetweb threads, RGW thread pool and other settings which require a lot of trial and error with your hardware and network configuration. You can run multiple instances of RGW using different ports (just have to have a section in the ceph.conf for each instance name along with the corresponding keyring - take a look at &lt;a href=&#34;https://github.com/bloomberg/chef-bcs&#34;&gt;https://github.com/bloomberg/chef-bcs&lt;/a&gt; for how to setup and run large clusters) but you need a good load-balancer in front of them (HAProxy or commercial).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>AWS S3 vs On-Premises</title>
       <link>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</link>
       <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>

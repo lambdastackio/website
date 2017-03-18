@@ -7,8 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;p&gt;Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer&#39;s.&lt;/p&gt;&lt;p&gt;All content originating from Chris Jones is licensed under &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/in/cjones303/&#34;&gt;Click here to contact me.&lt;/a&gt;&lt;/p&gt;</copyright>
-    <lastBuildDate>Thu, 09 Mar 2017 20:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 18 Mar 2017 01:00:00 +0200</lastBuildDate>
     <atom:link href="http://lambdastack.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hardware Sizing - Ceph Radosgw (RGW)</title>
+      <link>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</link>
+      <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</guid>
+      <description>
+
+&lt;h2 id=&#34;hardware-sizing-ceph-radosgw-rgw&#34;&gt;Hardware Sizing - Ceph Radosgw (RGW)&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;m often asked, &amp;ldquo;what&amp;rsquo;s the best hardware to use for Ceph?&amp;rdquo; The answer is simple - it depends. With Ceph there are many moving parts such as:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Ceph Monitor Nodes&lt;/p&gt;
+
+&lt;p&gt;Ceph RGW Nodes&lt;/p&gt;
+
+&lt;p&gt;Ceph Mgr Nodes&lt;/p&gt;
+
+&lt;p&gt;Ceph OSD Nodes&lt;/p&gt;
+
+&lt;p&gt;Ceph MDS Nodes&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In addition to those nodes you may also have software or hardware load-balancers in front of your RGW nodes. This discussion is centered around RGW nodes only. Other articles will detail out the specifics for the other nodes.&lt;/p&gt;
+
+&lt;p&gt;RGW nodes are known as a client to RADOS, core of Ceph itself. Since it&amp;rsquo;s a client it means it&amp;rsquo;s not required unless you want an S3 or Swift Object Store interface. By default Ceph is setup to use a &amp;ldquo;private&amp;rdquo; and &amp;ldquo;public&amp;rdquo; network interface to communicate between itself. The OSD nodes utilize both interfaces with the OSD-to-OSD communication being done over the &amp;ldquo;private&amp;rdquo; network interface and &amp;ldquo;client&amp;rdquo; interfacing being done over the &amp;ldquo;public&amp;rdquo; interface. This means that all &amp;ldquo;clients&amp;rdquo; (like RGW) only use the &amp;ldquo;public&amp;rdquo; interface and not the &amp;ldquo;private&amp;rdquo; interface.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You have the option on OSD nodes to use separate network interfaces for &amp;ldquo;public&amp;rdquo; and &amp;ldquo;private&amp;rdquo; or a single larger aggregate network interface where you run both types of traffic over a single interface. Your option.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;After running RGW nodes on small and large clusters in both dedicated (storage only) and Hyper-Converged with OpenStack and Ceph on the same nodes, I have seen that RGW itself (on a per instance basis) is more of a limitation than the hardware. For example, I had one configuration with 256GB RAM with two 10Gbps NICs bonded in mode 4 (aggregate) and running multiple RGW instances answering on different ports. After tracking the throughput of the network bond (bonds are not my preferred way but that&amp;rsquo;s what I had) and increasing Civetweb threads along with RGW thread pools and rados handles, I found that my bottle neck was RGW and not the hardware. Using CollectD metrics I found that the CPUs (24) ran mostly around 94% idle, memory percent used was not high and network traffic would top at around 6-8Gbps sustained (full duplex). I would also see thread counts as high 32K per instance. For the record, no logging on RGW and I started with a single RGW instance and ended up with four instances on different ports.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m still testing different configurations but when it comes to sizing RGW nodes, the following is a good guideline:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;1U size&lt;/p&gt;
+
+&lt;p&gt;1 10Gb NIC (minimum) for small-medium traffic and cluster size - Jumbo frames&lt;/p&gt;
+
+&lt;p&gt;1 20Gb NIC (minimum) for larger cluster size and higher traffic - Jumbo frames&lt;/p&gt;
+
+&lt;p&gt;64-128GB RAM will be more than enough for most clusters&lt;/p&gt;
+
+&lt;p&gt;Dual OS small SSDs in RAID 1&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the configuration that I mentioned earlier, you can even run extra Ceph Monitor processes on those same nodes and still have plenty of idle capacity.&lt;/p&gt;
+
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;Ceph RGW itself is the real bottle neck on throughput and not the hardware you choose. There is a sweet spot of finding the right mix of civetweb threads, RGW thread pool and other settings which require a lot of trial and error with your hardware and network configuration. You can run multiple instances of RGW using different ports (just have to have a section in the ceph.conf for each instance name along with the corresponding keyring - take a look at &lt;a href=&#34;https://github.com/bloomberg/chef-bcs&#34;&gt;https://github.com/bloomberg/chef-bcs&lt;/a&gt; for how to setup and run large clusters) but you need a good load-balancer in front of them (HAProxy or commercial).&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>AWS S3 vs On-Premises</title>
@@ -686,50 +742,6 @@ In order to build quality in to software, we need to adopt a different approach.
 &lt;p&gt;Who is responsible for the automated tests?&lt;/p&gt;
 
 &lt;p&gt;The whole team. In particular, developers should be involved in creating and maintaining the automated tests, and should stop what they are doing and fix them whenever there is a failure. This is essential because it teaches developers how to write testable software. When automated tests are created and maintained by a different group from the developers, there is no force acting on the developers to help them write software that is easy to test. Retrofitting automated tests onto such systems is painful and expensive, and poorly designed software that is hard to test is a major factor contributing to automated test suites that are expensive to maintain.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This blog was originally published by Jez Humble at &lt;a href=&#34;https://continuousdelivery.com&#34;&gt;https://continuousdelivery.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;All content licensed under the &lt;a href=&#34;https://creativecommons.org/licenses/by-sa/3.0/us/&#34;&gt;Creative Commons Attribution-Share Alike 3.0 United States&lt;/a&gt; License (CC BY-SA 3.0 US).&lt;/em&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Continuous Delivery</title>
-      <link>http://lambdastack.io/blog/2016/11/15/cd/</link>
-      <pubDate>Tue, 15 Nov 2016 15:00:00 +0200</pubDate>
-      
-      <guid>http://lambdastack.io/blog/2016/11/15/cd/</guid>
-      <description>
-
-&lt;h3 id=&#34;what-is-continuous-delivery&#34;&gt;What is Continuous Delivery?&lt;/h3&gt;
-
-&lt;p&gt;Continuous Delivery is the ability to get changes of all types—including new features, configuration changes, bug fixes and experiments—into production, or into the hands of users, safely and quickly in a sustainable way.&lt;/p&gt;
-
-&lt;p&gt;Our goal is to make deployments—whether of a large-scale distributed system, a complex production environment, an embedded system, or an app—predictable, routine affairs that can be performed on demand.&lt;/p&gt;
-
-&lt;p&gt;We achieve all this by ensuring our code is always in a deployable state, even in the face of teams of thousands of developers making changes on a daily basis. We thus completely eliminate the integration, testing and hardening phases that traditionally followed “dev complete”, as well as code freezes.&lt;/p&gt;
-
-&lt;h3 id=&#34;why-continuous-delivery&#34;&gt;Why continuous delivery?&lt;/h3&gt;
-
-&lt;p&gt;It is often assumed that if we want to deploy software more frequently, we must accept lower levels of stability and reliability in our systems. In fact, peer-reviewed research shows that this is not the case—high performance teams consistently deliver services faster and more reliably than their low performing competition. This is true even in highly regulated domains such as financial services and government. This capability provides an incredible competitive advantage for organizations that are willing to invest the effort to pursue it.&lt;/p&gt;
-
-&lt;p&gt;The practices at the heart of continuous delivery help us achieve several important benefits:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Low risk releases&lt;/strong&gt;. The primary goal of continuous delivery is to make software deployments painless, low-risk events that can be performed at any time, on demand. By applying patterns such as &lt;a href=&#34;https://martinfowler.com/bliki/BlueGreenDeployment.html&#34;&gt;blue-green deployments&lt;/a&gt; it is relatively straightforward to achieve zero-downtime deployments that are undetectable to users.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Faster time to market&lt;/strong&gt;. It’s not uncommon for the integration and test/fix phase of the traditional phased software delivery lifecycle to consume weeks or even months. When teams work together to automate the build and deployment, environment provisioning, and regression testing processes, developers can incorporate integration and regression testing into their daily work and completely remove these phases. We also avoid the large amounts of re-work that plague the phased approach.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Higher quality&lt;/strong&gt;. When developers have automated tools that discover regressions within minutes, teams are freed to focus their effort on user research and higher level testing activities such as exploratory testing, usability testing, and performance and security testing. By building a deployment pipeline, these activities can be performed continuously throughout the delivery process, ensuring quality is built in to products and services from the beginning.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Lower costs&lt;/strong&gt;. Any successful software product or service will evolve significantly over the course of its lifetime. By investing in build, test, deployment and environment automation, we substantially reduce the cost of making and delivering incremental changes to software by eliminating many of the fixed costs associated with the release process.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Better products&lt;/strong&gt;. Continuous delivery makes it economic to work in small batches. This means we can get feedback from users throughout the delivery lifecycle based on working software. Techniques such as A/B testing enable us to take a hypothesis-driven approach to product development whereby we can test ideas with users before building out whole features. This means we can avoid the &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; of features we build that deliver zero or negative value to our businesses.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Happier teams&lt;/strong&gt;. Peer-reviewed research has shown continuous delivery makes releases less painful and reduces team burnout. Furthermore, when we release more frequently, software delivery teams can engage more actively with users, learn which ideas work and which don’t, and see first-hand the outcomes of the work they have done. By removing the low-value painful activities associated with software delivery, we can focus on what we care about most—continuously delighting our users.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If this sounds too good to be true, bear in mind: continuous delivery is not magic. It’s about continuous, daily improvement—the constant discipline of pursuing higher performance by following the heuristic “if it hurts, do it more often, and bring the pain forward.”&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;This blog was originally published by Jez Humble at &lt;a href=&#34;https://continuousdelivery.com&#34;&gt;https://continuousdelivery.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
