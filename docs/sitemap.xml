@@ -147,13 +147,13 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/agile/</loc>
+    <loc>http://lambdastack.io/tags/agile/</loc>
     <lastmod>2016-12-30T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/agile/</loc>
+    <loc>http://lambdastack.io/categories/agile/</loc>
     <lastmod>2016-12-30T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -165,13 +165,13 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/architectures/</loc>
+    <loc>http://lambdastack.io/tags/architectures/</loc>
     <lastmod>2017-01-01T13:00:20+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/architectures/</loc>
+    <loc>http://lambdastack.io/categories/architectures/</loc>
     <lastmod>2017-01-01T13:00:20+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -183,13 +183,13 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/aws/</loc>
+    <loc>http://lambdastack.io/tags/aws/</loc>
     <lastmod>2017-03-09T20:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/aws/</loc>
+    <loc>http://lambdastack.io/categories/aws/</loc>
     <lastmod>2017-03-09T20:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -212,20 +212,14 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/ceph/</loc>
-    <lastmod>2017-03-18T01:00:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://lambdastack.io/tags/ceph/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/chef/</loc>
-    <lastmod>2016-10-01T13:00:20+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/ceph/</loc>
+    <lastmod>2017-03-18T01:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -236,8 +230,8 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/cicd/</loc>
-    <lastmod>2017-02-28T01:30:27-04:00</lastmod>
+    <loc>http://lambdastack.io/categories/chef/</loc>
+    <lastmod>2016-10-01T13:00:20+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -248,13 +242,19 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/code/</loc>
-    <lastmod>2017-02-20T13:00:20+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/cicd/</loc>
+    <lastmod>2017-02-28T01:30:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://lambdastack.io/tags/code/</loc>
+    <lastmod>2017-02-20T13:00:20+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://lambdastack.io/categories/code/</loc>
     <lastmod>2017-02-20T13:00:20+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -270,20 +270,14 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/drives/</loc>
-    <lastmod>2017-02-19T18:56:27-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://lambdastack.io/tags/drives/</loc>
     <lastmod>2017-02-19T18:56:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/erasure-coding/</loc>
-    <lastmod>2017-02-26T11:27:27-04:00</lastmod>
+    <loc>http://lambdastack.io/categories/drives/</loc>
+    <lastmod>2017-02-19T18:56:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -294,13 +288,13 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/faq/</loc>
+    <loc>http://lambdastack.io/categories/erasure-coding/</loc>
+    <lastmod>2017-02-26T11:27:27-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/hardware/</loc>
-    <lastmod>2017-03-18T01:00:00+02:00</lastmod>
-    <priority>0</priority>
+    <loc>http://lambdastack.io/faq/</loc>
   </url>
   
   <url>
@@ -310,8 +304,8 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/infrastructure/</loc>
-    <lastmod>2017-02-28T01:30:27-04:00</lastmod>
+    <loc>http://lambdastack.io/categories/hardware/</loc>
+    <lastmod>2017-03-18T01:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -322,8 +316,8 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/license/</loc>
-    <lastmod>2017-02-23T06:00:00+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/infrastructure/</loc>
+    <lastmod>2017-02-28T01:30:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -334,13 +328,19 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/load-balancers/</loc>
-    <lastmod>2017-01-20T11:54:20+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/license/</loc>
+    <lastmod>2017-02-23T06:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://lambdastack.io/tags/load-balancers/</loc>
+    <lastmod>2017-01-20T11:54:20+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://lambdastack.io/categories/load-balancers/</loc>
     <lastmod>2017-01-20T11:54:20+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -358,20 +358,14 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/networking/</loc>
-    <lastmod>2017-01-20T11:54:20+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://lambdastack.io/tags/networking/</loc>
     <lastmod>2017-01-20T11:54:20+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/open/</loc>
-    <lastmod>2017-02-22T15:00:00+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/networking/</loc>
+    <lastmod>2017-01-20T11:54:20+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -382,8 +376,8 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/opensource/</loc>
-    <lastmod>2017-02-23T06:00:00+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/open/</loc>
+    <lastmod>2017-02-22T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -394,8 +388,8 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/performance/</loc>
-    <lastmod>2016-10-15T13:00:20+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/opensource/</loc>
+    <lastmod>2017-02-23T06:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -406,8 +400,8 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/presentations/</loc>
-    <lastmod>2015-08-20T13:00:27-04:00</lastmod>
+    <loc>http://lambdastack.io/categories/performance/</loc>
+    <lastmod>2016-10-15T13:00:20+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -418,13 +412,19 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/redhat/</loc>
-    <lastmod>2017-02-15T18:56:27-04:00</lastmod>
+    <loc>http://lambdastack.io/categories/presentations/</loc>
+    <lastmod>2015-08-20T13:00:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://lambdastack.io/tags/redhat/</loc>
+    <lastmod>2017-02-15T18:56:27-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://lambdastack.io/categories/redhat/</loc>
     <lastmod>2017-02-15T18:56:27-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -436,20 +436,14 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/reviews/</loc>
-    <lastmod>2017-02-19T18:56:27-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://lambdastack.io/tags/reviews/</loc>
     <lastmod>2017-02-19T18:56:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/rust/</loc>
-    <lastmod>2017-02-20T13:00:20+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/reviews/</loc>
+    <lastmod>2017-02-19T18:56:27-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -460,8 +454,8 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/s3/</loc>
-    <lastmod>2017-03-09T20:00:00+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/rust/</loc>
+    <lastmod>2017-02-20T13:00:20+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -472,8 +466,8 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/sla/</loc>
-    <lastmod>2017-02-27T01:00:00+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/s3/</loc>
+    <lastmod>2017-03-09T20:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -484,13 +478,19 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/storage/</loc>
-    <lastmod>2017-03-18T01:00:00+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/sla/</loc>
+    <lastmod>2017-02-27T01:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://lambdastack.io/tags/storage/</loc>
+    <lastmod>2017-03-18T01:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://lambdastack.io/categories/storage/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -507,13 +507,13 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/team/</loc>
+    <loc>http://lambdastack.io/tags/team/</loc>
     <lastmod>2017-02-22T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/team/</loc>
+    <loc>http://lambdastack.io/categories/team/</loc>
     <lastmod>2017-02-22T15:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -531,25 +531,25 @@
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/vm/</loc>
-    <lastmod>2017-03-05T01:00:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://lambdastack.io/tags/vm/</loc>
     <lastmod>2017-03-05T01:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/web/</loc>
-    <lastmod>2017-02-27T01:00:00+02:00</lastmod>
+    <loc>http://lambdastack.io/categories/vm/</loc>
+    <lastmod>2017-03-05T01:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://lambdastack.io/tags/web/</loc>
+    <lastmod>2017-02-27T01:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://lambdastack.io/categories/web/</loc>
     <lastmod>2017-02-27T01:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
