@@ -40,7 +40,7 @@ Speaking:
 
 Social Media:
 
-> <a href="https://linkedin.com/in/cjones303">LinkedIn</a>
+> <a href="https://linkedin.com/in/hanscj1">LinkedIn</a>
 
 > <a href="https://twitter.com/hanscj1">Twitter</a>
 

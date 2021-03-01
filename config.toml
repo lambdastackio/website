@@ -64,30 +64,30 @@ paginate = 10
     url  = "/blog/"
     weight = 2
 
-[[params.menu]]
-    name = "Videos"
-    url  = "/videos/"
-    weight = 3
+#[[params.menu]]
+#    name = "Videos"
+#    url  = "/videos/"
+#    weight = 3
 
 [[params.menu]]
     name = "Architectures"
     url  = "/architectures/"
-    weight = 4
+    weight = 3
 
 [[params.menu]]
     name = "Code"
     url  = "/code/"
-    weight = 5
+    weight = 4
 
 [[params.menu]]
     name = "FAQ"
     url  = "/faq/"
-    weight = 6
+    weight = 5
 
 [[params.menu]]
     name = "About"
     url  = "/about/"
-    weight = 7
+    weight = 6
 
 # Enable and disable widgets for the right sidebar
 [params.widgets]
@@ -102,23 +102,23 @@ paginate = 10
     # For more informtion take a look at the README.
 
 [params.features]
-    enable = true
+    enable = false
     title = "Cloud Storage Videos"
     # All features are defined in their own files. You can find example items
     # at 'exampleSite/data/features'.
-    # For more informtion take a look at the README.
+    # For more information take a look at the README.
 
 [params.testimonials]
     enable = true
     # Using testimonials as projects!!
     # All projects are defined in their own files. You can find example items
     # at 'exampleSite/data/testimonials'.
-    # For more informtion take a look at the README.
+    # For more information take a look at the README.
     title = "Some of my Projects"
     subtitle = "All of the projects follow a Micro-Services Architecture."
 
 [params.see_more]
-    enable = true
+    enable = false
     icon = "fa fa-file-code-o"
     title = "Do you want to see more?"
     subtitle = "I'm preparing a webinar series on S3 for both Ceph and AWS. It's not currently available but will be soon!"
@@ -126,7 +126,7 @@ paginate = 10
     link_text = "Coming Soon"
 
 # [params.clients]
-#     enable = true
+#     enable = false
 #     # All clients are defined in their own files. You can find example items
 #     # at 'exampleSite/data/clients'.
 #     # For more informtion take a look at the README.
