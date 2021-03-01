@@ -1,5 +1,5 @@
 +++
-title = "About The LambdaStack Project"
+title = "LambdaStack"
 date = "2016-09-05"
 +++
 
