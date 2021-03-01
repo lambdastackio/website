@@ -4,7 +4,7 @@ date = "2016-11-15T15:00:00+02:00"
 tags = ["cicd", "agile"]
 categories = ["cicd", "agile"]
 banner = "img/cicd/cicd-pipeline.png"
-author = "Chris Jones"
+author = "Hans Chris Jones"
 +++
 
 ### What is Continuous Delivery?

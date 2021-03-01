@@ -4,7 +4,7 @@ date        = "2017-02-19T18:56:27-04:00"
 tags        = [ "Reviews", "Drives" ]
 categories = ["Reviews", "Drives"]
 banner = "img/seagate-8TB-ise.png"
-author = "Chris Jones"
+author = "Hans Chris Jones"
 +++
 
 #### Seagate 8TB ISE HDD

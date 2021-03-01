@@ -12,8 +12,8 @@ paginate = 10
 
 [params]
     viewMorePostLink = "/blog/"
-    author = "Chris Jones"
-    description = "Personal website and blog for Chris Jones on Ceph, AWS S3, Object Storage and Block Storage"
+    author = "Hans Chris Jones"
+    description = "Personal website and blog for Hans Chris Jones on Ceph, AWS S3, Object Storage and Block Storage"
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
     style = "green"
@@ -34,13 +34,13 @@ paginate = 10
     # email = "your@email.com"
 
     about_us = "<p>The LambdaStack Project is a collection of OSS (Open Source Software) Micro-Services projects. Each of the Micro-Services range from a powerful Hybrid Web Stack to full Software-Defined-Storage management.</p>"
-    copyright = "<p>Copyright (c) 2017, Chris Jones; all rights reserved. All comments and views are my own and not my employer's.</p><p>All content originating from Chris Jones is licensed under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Attribution-ShareAlike 4.0 International</a></p><p><a href=\"https://www.linkedin.com/in/cjones303/\">Click here to contact me.</a></p>"
+    copyright = "<p>Copyright (c) 2017, Hans Chris Jones; all rights reserved. All comments and views are my own and not my employer's.</p><p>All content originating from Hans Chris Jones is licensed under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Attribution-ShareAlike 4.0 International</a></p><p><a href=\"https://www.linkedin.com/in/cjones303/\">Click here to contact me.</a></p>"
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
 
     logo = "img/lambdastack-avatar.svg"
-    address = """<p><strong>Chris Jones</strong>
+    address = """<p><strong>Hans Chris Jones</strong>
         <br>New York
         <br>
         <div style="float: left;">

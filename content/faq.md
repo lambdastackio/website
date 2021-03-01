@@ -6,7 +6,7 @@ I try to keep the FAQs concerning The LambdaStack Project and other projects upd
 
 ## 1. What is the best way of reaching you?
 
-<a href="https://linkedin.com/in/cjones303">LinkedIn. You can send me InMail request by clicking here.</a>
+<a href="https://www.linkedin.com/in/hanscj1/">LinkedIn. You can send me InMail request by clicking here.</a>
 
 ## 2. Are all projects built in Rust?
 

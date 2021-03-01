@@ -4,7 +4,7 @@ date = "2016-01-20T13:00:20+02:00"
 tags = ["Ceph", "S3", "Block Storage", "Chef"]
 categories = ["ceph", "chef"]
 banner = "img/cephday-nyc.png"
-author = "Chris Jones"
+author = "Hans Chris Jones"
 +++
 
 This talk was with Chris Morgan and myself at Ceph Day in NYC. We talk about what we're doing with Ceph and OpenStack and our new multi-petabyte Object Store called BCS (Bloomberg Cloud Storage).

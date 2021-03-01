@@ -4,7 +4,7 @@ date = "2017-03-09T20:00:00+02:00"
 tags = ["storage", "s3", "aws", "ceph"]
 categories = ["storage", "s3", "aws", "ceph"]
 banner = "img/aws-s3-worksheet.png"
-author = "Chris Jones"
+author = "Hans Chris Jones"
 +++
 
 ## AWS S3 vs On-Premises

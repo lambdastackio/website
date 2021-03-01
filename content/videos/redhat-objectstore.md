@@ -4,7 +4,7 @@ date        = "2017-02-15T18:56:27-04:00"
 tags        = [ "Ceph", "RedHat" ]
 categories = ["Ceph", "RedHat"]
 banner = "img/redhat-objectstore.png"
-author = "Chris Jones"
+author = "Hans Chris Jones"
 +++
 
 #### Ceph Object Store

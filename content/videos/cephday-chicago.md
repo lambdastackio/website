@@ -4,7 +4,7 @@ date        = "2015-08-20T13:00:27-04:00"
 tags        = [ "Presentations", "Ceph" ]
 categories = ["Presentations", "Ceph"]
 banner = "img/cephday-chicago.png"
-author = "Chris Jones"
+author = "Hans Chris Jones"
 +++
 
 #### Ceph Day - Chicago

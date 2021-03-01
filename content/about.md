@@ -4,7 +4,7 @@ date = "2016-09-05"
 +++
 
 #### The LambdaStack Project
-Working projects of Chris Jones:
+Working projects of Hans Chris Jones:
 
 > http://ceph.com/team/#chris-jones
 
@@ -50,7 +50,7 @@ Meetups:
 
 Contact:
 
-> chris.jones at lambdastack.io
+> hans.jones at lambdastack.io
 
 The LambdaStack Project is a collection of Microservices projects I primarily built in Rust for speed and safety. However, there are several other non-rust based projects that I have also included centered around automating and managing Ceph at work.
 

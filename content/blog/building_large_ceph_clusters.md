@@ -4,7 +4,7 @@ date = "2016-10-01T13:00:20+02:00"
 tags = ["Ceph", "S3", "Block Storage", "Chef"]
 categories = ["ceph", "chef"]
 banner = "img/cluster.png"
-author = "Chris Jones"
+author = "Hans Chris Jones"
 +++
 
 Ceph is a very complex distributed storage system that provides an Object Store, Block Storage Devices and Distributed File System. It has a built-in installation program called Ceph-Deploy but it's design is for very simple and small installations. There are two official automated installation and maintenance systems for Ceph, Ceph-Ansible and Ceph-Chef. As the name implies, Ceph-Ansible is built for the Ansible while Ceph-Chef is built for Chef. I will focus on Ceph-Chef for the Chef environment.

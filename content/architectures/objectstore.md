@@ -4,7 +4,7 @@ date = "2017-01-01T13:00:20+02:00"
 tags = ["Ceph", "S3", "architectures"]
 categories = ["ceph", "architectures"]
 banner = "img/ObjectStoreRefArch.svg"
-author = "Chris Jones"
+author = "Hans Chris Jones"
 +++
 
 <a href="http://ceph.com">Ceph.com</a> talks about several Reference Architectures. The default Reference Architecture defined in <a href="https://github.com/bloomberg/chef-bcs">Chef-BCS</a> shows how to build out a Ceph Object Store similar to the one we built at Bloomberg. The default Vagrant/VirtualBox version represents the following:
