@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>team on LambdaStack</title>
-    <link>https://lambdastack.io/tags/team/</link>
+    <link>http://lambdastack.io/tags/team/</link>
     <description>Recent content in team on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Feb 2017 15:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/tags/team/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/tags/team/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Open Organizations</title>
-      <link>https://lambdastack.io/blog/2017/02/22/open_org/</link>
+      <link>http://lambdastack.io/blog/2017/02/22/open_org/</link>
       <pubDate>Wed, 22 Feb 2017 15:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/02/22/open_org/</guid>
+      <guid>http://lambdastack.io/blog/2017/02/22/open_org/</guid>
       <description>Open Organizations I have been asked recently a number of times about how best to bring teams together (not physically) and get buy-in on important projects especially when the org structure is more Matrix. Of course, there is no silver bullet to speak of in this case. Each organization has it&amp;rsquo;s own political structure that may have to be navigated which is so unfortunate because most people are not comfortable with change.</description>
     </item>
     

@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chef on LambdaStack</title>
-    <link>https://lambdastack.io/tags/chef/</link>
+    <link>http://lambdastack.io/tags/chef/</link>
     <description>Recent content in Chef on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Oct 2016 13:00:20 +0200</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/tags/chef/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/tags/chef/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Building Large Ceph Clusters</title>
-      <link>https://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</link>
+      <link>http://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</link>
       <pubDate>Sat, 01 Oct 2016 13:00:20 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</guid>
+      <guid>http://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</guid>
       <description>Ceph is a very complex distributed storage system that provides an Object Store, Block Storage Devices and Distributed File System. It has a built-in installation program called Ceph-Deploy but it&amp;rsquo;s design is for very simple and small installations. There are two official automated installation and maintenance systems for Ceph, Ceph-Ansible and Ceph-Chef. As the name implies, Ceph-Ansible is built for the Ansible while Ceph-Chef is built for Chef. I will focus on Ceph-Chef for the Chef environment.</description>
     </item>
     
     <item>
       <title>OpenStack Summit - Austin TX</title>
-      <link>https://lambdastack.io/videos/openstack-austin/</link>
+      <link>http://lambdastack.io/videos/openstack-austin/</link>
       <pubDate>Fri, 15 Apr 2016 13:00:20 +0200</pubDate>
       
-      <guid>https://lambdastack.io/videos/openstack-austin/</guid>
+      <guid>http://lambdastack.io/videos/openstack-austin/</guid>
       <description>Talk at OpenStack Summit in Austin TX. I discussed our new Architecture for our Object Store. I also go into (just a little) why a fully hyper-converged Compute/Storage is not a good idea for large installations.</description>
     </item>
     
     <item>
       <title>Ceph Day in NYC</title>
-      <link>https://lambdastack.io/videos/cephday-nyc/</link>
+      <link>http://lambdastack.io/videos/cephday-nyc/</link>
       <pubDate>Wed, 20 Jan 2016 13:00:20 +0200</pubDate>
       
-      <guid>https://lambdastack.io/videos/cephday-nyc/</guid>
+      <guid>http://lambdastack.io/videos/cephday-nyc/</guid>
       <description>This talk was with Chris Morgan and myself at Ceph Day in NYC. We talk about what we&amp;rsquo;re doing with Ceph and OpenStack and our new multi-petabyte Object Store called BCS (Bloomberg Cloud Storage).</description>
     </item>
     

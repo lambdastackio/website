@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sla on LambdaStack</title>
-    <link>https://lambdastack.io/categories/sla/</link>
+    <link>http://lambdastack.io/categories/sla/</link>
     <description>Recent content in sla on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Feb 2017 01:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/categories/sla/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/categories/sla/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SLA - Availability or Durability</title>
-      <link>https://lambdastack.io/blog/2017/02/27/sla/</link>
+      <link>http://lambdastack.io/blog/2017/02/27/sla/</link>
       <pubDate>Mon, 27 Feb 2017 01:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/02/27/sla/</guid>
+      <guid>http://lambdastack.io/blog/2017/02/27/sla/</guid>
       <description>SLA - Availability or Durability I seem to be getting more questions lately like, &amp;ldquo;how many 9s is your object store?&amp;rdquo; or &amp;ldquo;how do you calculate 9s?&amp;rdquo;. The questions need to be narrowed down since those are very broad. For example, when dealing with storage like an object store, there are two types of &amp;ldquo;9s&amp;rdquo;. One for durability and one for availability. If you look at AWS S3, they put on their primary site 11 9s of durability which is very good.</description>
     </item>
     

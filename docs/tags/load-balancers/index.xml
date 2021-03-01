@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Load Balancers on LambdaStack</title>
-    <link>https://lambdastack.io/tags/load-balancers/</link>
+    <link>http://lambdastack.io/tags/load-balancers/</link>
     <description>Recent content in Load Balancers on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Jan 2017 11:54:20 +0200</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/tags/load-balancers/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/tags/load-balancers/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TCP and Load Balancers</title>
-      <link>https://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</link>
+      <link>http://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</link>
       <pubDate>Fri, 20 Jan 2017 11:54:20 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</guid>
+      <guid>http://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</guid>
       <description>Why do I get a TCP RST return when I try to PUT or GET S3 objects? I have a colleague that has made the following statement:
 &amp;quot;The data is sacred but, the requests are not!&amp;quot;  This holds very true when dealing with HTTP calls such as S3 GETs and PUTs.
 Recently, we noticed that a client was doing a massive amounts of PUTs and then issuing corresponding GETs on the same S3 objects.</description>

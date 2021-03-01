@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Presentations on LambdaStack</title>
-    <link>https://lambdastack.io/categories/presentations/</link>
+    <link>http://lambdastack.io/categories/presentations/</link>
     <description>Recent content in Presentations on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 20 Aug 2015 13:00:27 -0400</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/categories/presentations/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/categories/presentations/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ceph Day - Chicago</title>
-      <link>https://lambdastack.io/videos/cephday-chicago/</link>
+      <link>http://lambdastack.io/videos/cephday-chicago/</link>
       <pubDate>Thu, 20 Aug 2015 13:00:27 -0400</pubDate>
       
-      <guid>https://lambdastack.io/videos/cephday-chicago/</guid>
+      <guid>http://lambdastack.io/videos/cephday-chicago/</guid>
       <description>Ceph Day - Chicago Ceph Day in Chicago presentation from SlideShare.</description>
     </item>
     

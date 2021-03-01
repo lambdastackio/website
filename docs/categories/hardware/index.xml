@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hardware on LambdaStack</title>
-    <link>https://lambdastack.io/categories/hardware/</link>
+    <link>http://lambdastack.io/categories/hardware/</link>
     <description>Recent content in hardware on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 18 Mar 2017 01:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/categories/hardware/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/categories/hardware/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hardware Sizing - Ceph Radosgw (RGW)</title>
-      <link>https://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</link>
+      <link>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</link>
       <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</guid>
+      <guid>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</guid>
       <description>Hardware Sizing - Ceph Radosgw (RGW) I&amp;rsquo;m often asked, &amp;ldquo;what&amp;rsquo;s the best hardware to use for Ceph?&amp;rdquo; The answer is simple - it depends. With Ceph there are many moving parts such as:
  Ceph Monitor Nodes
   Ceph RGW Nodes

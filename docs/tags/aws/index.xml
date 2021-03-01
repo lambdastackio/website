@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>aws on LambdaStack</title>
-    <link>https://lambdastack.io/tags/aws/</link>
+    <link>http://lambdastack.io/tags/aws/</link>
     <description>Recent content in aws on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Mar 2017 20:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AWS S3 vs On-Premises</title>
-      <link>https://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</link>
+      <link>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</link>
       <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</guid>
+      <guid>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</guid>
       <description>AWS S3 vs On-Premises When you own Enterprise Storage or are asked to build enterprise class storage you find yourself more frequently having to cost justify against outside Cloud Storage vendors like AWS S3, GCE or Azure. So, how will you do that since you have to make capital expenditures vs OpEx that these providers discuss so much?
 When you break down the pricing of AWS S3 and others you find that the actual storage cost is not too bad (depending on amount of stored data).</description>
     </item>
     
     <item>
       <title>S3LSIO - S3 Utility</title>
-      <link>https://lambdastack.io/blog/2016/10/05/s3lsio_s3/</link>
+      <link>http://lambdastack.io/blog/2016/10/05/s3lsio_s3/</link>
       <pubDate>Wed, 05 Oct 2016 15:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2016/10/05/s3lsio_s3/</guid>
+      <guid>http://lambdastack.io/blog/2016/10/05/s3lsio_s3/</guid>
       <description>The initial release of s3lsio has been released for both MacOSX and Linux (RHEL/Fedora/CentOS). Ubuntu will be released soon. In theory Windows should work but OpenSSL can cause initial setup of the Rust build environment for s3lsio.
 There are constant enhancements being made on a weekly basis. S3lsio is a command line tool that can work within a script, called from an app or ran stand alone to easily manipulate your AWS S3 and Ceph Rados Gateway (S3) environments.</description>
     </item>
     
     <item>
       <title>Rust AWS S3 SDK</title>
-      <link>https://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</link>
+      <link>http://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</link>
       <pubDate>Tue, 20 Sep 2016 15:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</guid>
+      <guid>http://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</guid>
       <description>The aws-sdk-rust library is officially released which allows both V2 and V4 API signatures. This is import for those that wish to use the SDK to access storage products that implement the S3 Interface such as Ceph&amp;rsquo;s Rados Gateway (RGW). Ceph Hammer release only uses V2 while the Jewel and higher releases support V4.
 Enterprise level proxy support has also been added. So, if http_proxy, https_proxy and no_proxy environment variables are in use, aws-sdk-rust will use them to access the S3 resource.</description>
     </item>

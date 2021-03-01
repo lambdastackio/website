@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>architectures on LambdaStack</title>
-    <link>https://lambdastack.io/categories/architectures/</link>
+    <link>http://lambdastack.io/categories/architectures/</link>
     <description>Recent content in architectures on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Jan 2017 13:00:20 +0200</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/categories/architectures/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/categories/architectures/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ceph Object Store for Development</title>
-      <link>https://lambdastack.io/architectures/objectstore/</link>
+      <link>http://lambdastack.io/architectures/objectstore/</link>
       <pubDate>Sun, 01 Jan 2017 13:00:20 +0200</pubDate>
       
-      <guid>https://lambdastack.io/architectures/objectstore/</guid>
+      <guid>http://lambdastack.io/architectures/objectstore/</guid>
       <description>Ceph.comtalks about several Reference Architectures. The default Reference Architecture defined in Chef-BCSshows how to build out a Ceph Object Store similar to the one we built at Bloomberg. The default Vagrant/VirtualBox version represents the following:
  3 RGW (Radosgw - S3) Nodes
   3 Ceph Mon Nodes

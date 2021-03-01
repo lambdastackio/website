@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>storage on LambdaStack</title>
-    <link>https://lambdastack.io/categories/storage/</link>
+    <link>http://lambdastack.io/categories/storage/</link>
     <description>Recent content in storage on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 18 Mar 2017 01:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/categories/storage/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/categories/storage/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hardware Sizing - Ceph Radosgw (RGW)</title>
-      <link>https://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</link>
+      <link>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</link>
       <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</guid>
+      <guid>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</guid>
       <description>Hardware Sizing - Ceph Radosgw (RGW) I&amp;rsquo;m often asked, &amp;ldquo;what&amp;rsquo;s the best hardware to use for Ceph?&amp;rdquo; The answer is simple - it depends. With Ceph there are many moving parts such as:
  Ceph Monitor Nodes
   Ceph RGW Nodes
@@ -28,20 +28,20 @@
     
     <item>
       <title>AWS S3 vs On-Premises</title>
-      <link>https://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</link>
+      <link>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</link>
       <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</guid>
+      <guid>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</guid>
       <description>AWS S3 vs On-Premises When you own Enterprise Storage or are asked to build enterprise class storage you find yourself more frequently having to cost justify against outside Cloud Storage vendors like AWS S3, GCE or Azure. So, how will you do that since you have to make capital expenditures vs OpEx that these providers discuss so much?
 When you break down the pricing of AWS S3 and others you find that the actual storage cost is not too bad (depending on amount of stored data).</description>
     </item>
     
     <item>
       <title>Hyper-Converged Infrastructure (HCI) - Truth</title>
-      <link>https://lambdastack.io/blog/2017/03/05/hci/</link>
+      <link>http://lambdastack.io/blog/2017/03/05/hci/</link>
       <pubDate>Sun, 05 Mar 2017 01:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/03/05/hci/</guid>
+      <guid>http://lambdastack.io/blog/2017/03/05/hci/</guid>
       <description>Hyper-Converged Infrastructure (HCI) - Truth I happened to just stumble upon a few marketing oriented whitepapers from VMWare today (odd use of my time). All three were centered around Hyper-Converged Infrastructure (HCI). At Bloomberg, we run VMWare and OpenStack clusters. Our OpenStack clusters are currently fully Hyper-Converged. I have even given talks on them http://lambdastack.io/videos/openstack-austin/. If you look at the video and the presentation you will see why we no longer believe in this model for us.</description>
     </item>
     

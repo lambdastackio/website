@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Videos on LambdaStack</title>
-    <link>https://lambdastack.io/videos/</link>
+    <link>http://lambdastack.io/videos/</link>
     <description>Recent content in Videos on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Feb 2017 18:56:27 -0400</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/videos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/videos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Seagate ISE 8TB</title>
-      <link>https://lambdastack.io/videos/seagate/</link>
+      <link>http://lambdastack.io/videos/seagate/</link>
       <pubDate>Sun, 19 Feb 2017 18:56:27 -0400</pubDate>
       
-      <guid>https://lambdastack.io/videos/seagate/</guid>
+      <guid>http://lambdastack.io/videos/seagate/</guid>
       <description>Seagate 8TB ISE HDD NB: Disclaimer - This is not a review. Interesting drive for &amp;ldquo;deep and cheap&amp;rdquo; storage
 I have experience with many drive types. I have had some actually catch on fire in my data center before. When I see an interesting drive I will often review it or simply post about it for future reference for myself. In this case, a future possible reference for self-encrypting drives.</description>
     </item>
     
     <item>
       <title>Red Hat Ceph Object Store</title>
-      <link>https://lambdastack.io/videos/redhat-objectstore/</link>
+      <link>http://lambdastack.io/videos/redhat-objectstore/</link>
       <pubDate>Wed, 15 Feb 2017 18:56:27 -0400</pubDate>
       
-      <guid>https://lambdastack.io/videos/redhat-objectstore/</guid>
+      <guid>http://lambdastack.io/videos/redhat-objectstore/</guid>
       <description>Ceph Object Store NB: Disclaimer - This is video from Red Hat - not me
 This video does a good job talking about Object Store. It&amp;rsquo;s also from Red Hat.</description>
     </item>
     
     <item>
       <title>OpenStack Summit - Austin TX</title>
-      <link>https://lambdastack.io/videos/openstack-austin/</link>
+      <link>http://lambdastack.io/videos/openstack-austin/</link>
       <pubDate>Fri, 15 Apr 2016 13:00:20 +0200</pubDate>
       
-      <guid>https://lambdastack.io/videos/openstack-austin/</guid>
+      <guid>http://lambdastack.io/videos/openstack-austin/</guid>
       <description>Talk at OpenStack Summit in Austin TX. I discussed our new Architecture for our Object Store. I also go into (just a little) why a fully hyper-converged Compute/Storage is not a good idea for large installations.</description>
     </item>
     
     <item>
       <title>Ceph Day in NYC</title>
-      <link>https://lambdastack.io/videos/cephday-nyc/</link>
+      <link>http://lambdastack.io/videos/cephday-nyc/</link>
       <pubDate>Wed, 20 Jan 2016 13:00:20 +0200</pubDate>
       
-      <guid>https://lambdastack.io/videos/cephday-nyc/</guid>
+      <guid>http://lambdastack.io/videos/cephday-nyc/</guid>
       <description>This talk was with Chris Morgan and myself at Ceph Day in NYC. We talk about what we&amp;rsquo;re doing with Ceph and OpenStack and our new multi-petabyte Object Store called BCS (Bloomberg Cloud Storage).</description>
     </item>
     
     <item>
       <title>Ceph Day - Chicago</title>
-      <link>https://lambdastack.io/videos/cephday-chicago/</link>
+      <link>http://lambdastack.io/videos/cephday-chicago/</link>
       <pubDate>Thu, 20 Aug 2015 13:00:27 -0400</pubDate>
       
-      <guid>https://lambdastack.io/videos/cephday-chicago/</guid>
+      <guid>http://lambdastack.io/videos/cephday-chicago/</guid>
       <description>Ceph Day - Chicago Ceph Day in Chicago presentation from SlideShare.</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>performance on LambdaStack</title>
-    <link>https://lambdastack.io/tags/performance/</link>
+    <link>http://lambdastack.io/tags/performance/</link>
     <description>Recent content in performance on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Oct 2016 13:00:20 +0200</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Load Balancers</title>
-      <link>https://lambdastack.io/blog/2016/10/15/lbs/</link>
+      <link>http://lambdastack.io/blog/2016/10/15/lbs/</link>
       <pubDate>Sat, 15 Oct 2016 13:00:20 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2016/10/15/lbs/</guid>
+      <guid>http://lambdastack.io/blog/2016/10/15/lbs/</guid>
       <description>Load Balancers - HAProxy vs Other Load Balancers are very import tools for scalability, depending on the protocol. For HTTP(S), load balancers are a must unless you&amp;rsquo;re good with having only one web server exposed. Recently, I was asked to do performance tests of our HAProxy servers that front our Ceph RGW (S3) nodes and do the same for a very popular hardware load balancer.
 The name of the hardware load balancer vendors will not be released to protect the innocent - ME :)</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vm on LambdaStack</title>
-    <link>https://lambdastack.io/categories/vm/</link>
+    <link>http://lambdastack.io/categories/vm/</link>
     <description>Recent content in vm on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Mar 2017 01:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/categories/vm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/categories/vm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hyper-Converged Infrastructure (HCI) - Truth</title>
-      <link>https://lambdastack.io/blog/2017/03/05/hci/</link>
+      <link>http://lambdastack.io/blog/2017/03/05/hci/</link>
       <pubDate>Sun, 05 Mar 2017 01:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/03/05/hci/</guid>
+      <guid>http://lambdastack.io/blog/2017/03/05/hci/</guid>
       <description>Hyper-Converged Infrastructure (HCI) - Truth I happened to just stumble upon a few marketing oriented whitepapers from VMWare today (odd use of my time). All three were centered around Hyper-Converged Infrastructure (HCI). At Bloomberg, we run VMWare and OpenStack clusters. Our OpenStack clusters are currently fully Hyper-Converged. I have even given talks on them http://lambdastack.io/videos/openstack-austin/. If you look at the video and the presentation you will see why we no longer believe in this model for us.</description>
     </item>
     

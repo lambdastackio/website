@@ -1,4 +1,4 @@
-baseurl = "https://lambdastack.io/"
+baseurl = "http://lambdastack.io/"
 title = "LambdaStack"
 theme = "hugo-universal-theme"
 languageCode = "en-us"

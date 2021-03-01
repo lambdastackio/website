@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>erasure-coding on LambdaStack</title>
-    <link>https://lambdastack.io/categories/erasure-coding/</link>
+    <link>http://lambdastack.io/categories/erasure-coding/</link>
     <description>Recent content in erasure-coding on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Feb 2017 11:27:27 -0400</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/categories/erasure-coding/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/categories/erasure-coding/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Erasure Coding vs Replica</title>
-      <link>https://lambdastack.io/blog/2017/02/26/erasure-coding/</link>
+      <link>http://lambdastack.io/blog/2017/02/26/erasure-coding/</link>
       <pubDate>Sun, 26 Feb 2017 11:27:27 -0400</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/02/26/erasure-coding/</guid>
+      <guid>http://lambdastack.io/blog/2017/02/26/erasure-coding/</guid>
       <description>Erasure Coding vs Replica Ceph RadosGW (RGW), Ceph&amp;rsquo;s S3 Object Store, supports both Replica and Erasure Coding. Most all examples of using RGW show replicas because that&amp;rsquo;s the easiest to setup, manage and get your head around. Replicas simply means that a default of 3 means that RGW stores the original plus two more copies spread out within the cluster based on the Crush Map, Ceph&amp;rsquo;s way of calculating where to store objects.</description>
     </item>
     

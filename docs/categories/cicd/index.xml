@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cicd on LambdaStack</title>
-    <link>https://lambdastack.io/categories/cicd/</link>
+    <link>http://lambdastack.io/categories/cicd/</link>
     <description>Recent content in cicd on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 28 Feb 2017 01:30:27 -0400</lastBuildDate>
     
-	<atom:link href="https://lambdastack.io/categories/cicd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://lambdastack.io/categories/cicd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CI/CD Risk</title>
-      <link>https://lambdastack.io/blog/2017/02/28/risk/</link>
+      <link>http://lambdastack.io/blog/2017/02/28/risk/</link>
       <pubDate>Tue, 28 Feb 2017 01:30:27 -0400</pubDate>
       
-      <guid>https://lambdastack.io/blog/2017/02/28/risk/</guid>
+      <guid>http://lambdastack.io/blog/2017/02/28/risk/</guid>
       <description>CI/CD Risk Portions of this content are from Randy Bias @ cloudscaling.com under creative commons
 In the DevOps mythos or worldview, continuous delivery (“CD”) is considered one of the holy mantras. Unfortunately, many take CD to an extreme that is unwarranted and not even reflected in how the DevOps originators (e.g. Amazon, Google) operate. This is one of those situations where folks are extrapolating and providing an interpretation of DevOps that isn’t really accurate.</description>
     </item>
     
     <item>
       <title>Continuous Delivery - Principles</title>
-      <link>https://lambdastack.io/blog/2016/12/30/cicd-principles/</link>
+      <link>http://lambdastack.io/blog/2016/12/30/cicd-principles/</link>
       <pubDate>Fri, 30 Dec 2016 15:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2016/12/30/cicd-principles/</guid>
+      <guid>http://lambdastack.io/blog/2016/12/30/cicd-principles/</guid>
       <description>Principles There are five principles at the heart of continuous delivery:
   Build quality in
   Work in small batches
@@ -38,19 +38,19 @@ In the DevOps mythos or worldview, continuous delivery (“CD”) is considered 
     
     <item>
       <title>Continuous Testing</title>
-      <link>https://lambdastack.io/blog/2016/12/15/cdtesting/</link>
+      <link>http://lambdastack.io/blog/2016/12/15/cdtesting/</link>
       <pubDate>Thu, 15 Dec 2016 15:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2016/12/15/cdtesting/</guid>
+      <guid>http://lambdastack.io/blog/2016/12/15/cdtesting/</guid>
       <description>Continuous Testing The key to building quality into our software is making sure we can get fast feedback on the impact of changes. Traditionally, extensive use was made of manual inspection of code changes and manual testing (testers following documentation describing the steps required to test the various functions of the system) in order to demonstrate the correctness of the system. This type of testing was normally done in a phase following “dev complete”.</description>
     </item>
     
     <item>
       <title>Continuous Delivery</title>
-      <link>https://lambdastack.io/blog/2016/11/15/cd/</link>
+      <link>http://lambdastack.io/blog/2016/11/15/cd/</link>
       <pubDate>Tue, 15 Nov 2016 15:00:00 +0200</pubDate>
       
-      <guid>https://lambdastack.io/blog/2016/11/15/cd/</guid>
+      <guid>http://lambdastack.io/blog/2016/11/15/cd/</guid>
       <description>What is Continuous Delivery? Continuous Delivery is the ability to get changes of all types—including new features, configuration changes, bug fixes and experiments—into production, or into the hands of users, safely and quickly in a sustainable way.
 Our goal is to make deployments—whether of a large-scale distributed system, a complex production environment, an embedded system, or an app—predictable, routine affairs that can be performed on demand.
 We achieve all this by ensuring our code is always in a deployable state, even in the face of teams of thousands of developers making changes on a daily basis.</description>
