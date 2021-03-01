@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>infrastructure on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/infrastructure/</link>
+    <description>Recent content in infrastructure on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Feb 2017 01:30:27 -0400</lastBuildDate>
+    
+	<atom:link href="http://lambdastack.io/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CI/CD Risk</title>
+      <link>http://lambdastack.io/blog/2017/02/28/risk/</link>
+      <pubDate>Tue, 28 Feb 2017 01:30:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/02/28/risk/</guid>
+      <description>CI/CD Risk Portions of this content are from Randy Bias @ cloudscaling.com under creative commons
+In the DevOps mythos or worldview, continuous delivery (“CD”) is considered one of the holy mantras. Unfortunately, many take CD to an extreme that is unwarranted and not even reflected in how the DevOps originators (e.g. Amazon, Google) operate. This is one of those situations where folks are extrapolating and providing an interpretation of DevOps that isn’t really accurate.</description>
+    </item>
+    
+  </channel>
+</rss>

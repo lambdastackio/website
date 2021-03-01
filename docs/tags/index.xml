@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/</link>
+    <description>Recent content in Tags on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Mar 2017 01:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://lambdastack.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ceph</title>
+      <link>http://lambdastack.io/tags/ceph/</link>
+      <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/ceph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hardware</title>
+      <link>http://lambdastack.io/tags/hardware/</link>
+      <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage</title>
+      <link>http://lambdastack.io/tags/storage/</link>
+      <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>http://lambdastack.io/tags/aws/</link>
+      <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>S3</title>
+      <link>http://lambdastack.io/tags/s3/</link>
+      <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/s3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vm</title>
+      <link>http://lambdastack.io/tags/vm/</link>
+      <pubDate>Sun, 05 Mar 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/vm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cicd</title>
+      <link>http://lambdastack.io/tags/cicd/</link>
+      <pubDate>Tue, 28 Feb 2017 01:30:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>infrastructure</title>
+      <link>http://lambdastack.io/tags/infrastructure/</link>
+      <pubDate>Tue, 28 Feb 2017 01:30:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api</title>
+      <link>http://lambdastack.io/tags/api/</link>
+      <pubDate>Mon, 27 Feb 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sla</title>
+      <link>http://lambdastack.io/tags/sla/</link>
+      <pubDate>Mon, 27 Feb 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/sla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>http://lambdastack.io/tags/web/</link>
+      <pubDate>Mon, 27 Feb 2017 01:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>erasure-coding</title>
+      <link>http://lambdastack.io/tags/erasure-coding/</link>
+      <pubDate>Sun, 26 Feb 2017 11:27:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/tags/erasure-coding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>license</title>
+      <link>http://lambdastack.io/tags/license/</link>
+      <pubDate>Thu, 23 Feb 2017 06:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/license/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opensource</title>
+      <link>http://lambdastack.io/tags/opensource/</link>
+      <pubDate>Thu, 23 Feb 2017 06:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/opensource/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open</title>
+      <link>http://lambdastack.io/tags/open/</link>
+      <pubDate>Wed, 22 Feb 2017 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/open/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>team</title>
+      <link>http://lambdastack.io/tags/team/</link>
+      <pubDate>Wed, 22 Feb 2017 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/team/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>http://lambdastack.io/tags/code/</link>
+      <pubDate>Mon, 20 Feb 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>http://lambdastack.io/tags/rust/</link>
+      <pubDate>Mon, 20 Feb 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>drives</title>
+      <link>http://lambdastack.io/tags/drives/</link>
+      <pubDate>Sun, 19 Feb 2017 18:56:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/tags/drives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reviews</title>
+      <link>http://lambdastack.io/tags/reviews/</link>
+      <pubDate>Sun, 19 Feb 2017 18:56:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/tags/reviews/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RedHat</title>
+      <link>http://lambdastack.io/tags/redhat/</link>
+      <pubDate>Wed, 15 Feb 2017 18:56:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/tags/redhat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>msic</title>
+      <link>http://lambdastack.io/tags/msic/</link>
+      <pubDate>Wed, 01 Feb 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/msic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Load Balancers</title>
+      <link>http://lambdastack.io/tags/load-balancers/</link>
+      <pubDate>Fri, 20 Jan 2017 11:54:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/load-balancers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>http://lambdastack.io/tags/networking/</link>
+      <pubDate>Fri, 20 Jan 2017 11:54:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCP</title>
+      <link>http://lambdastack.io/tags/tcp/</link>
+      <pubDate>Fri, 20 Jan 2017 11:54:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/tcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>http://lambdastack.io/tags/redis/</link>
+      <pubDate>Sun, 15 Jan 2017 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>architectures</title>
+      <link>http://lambdastack.io/tags/architectures/</link>
+      <pubDate>Sun, 01 Jan 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/architectures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>agile</title>
+      <link>http://lambdastack.io/tags/agile/</link>
+      <pubDate>Fri, 30 Dec 2016 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>http://lambdastack.io/tags/performance/</link>
+      <pubDate>Sat, 15 Oct 2016 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Block Storage</title>
+      <link>http://lambdastack.io/tags/block-storage/</link>
+      <pubDate>Sat, 01 Oct 2016 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/block-storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chef</title>
+      <link>http://lambdastack.io/tags/chef/</link>
+      <pubDate>Sat, 01 Oct 2016 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/tags/chef/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Presentations</title>
+      <link>http://lambdastack.io/tags/presentations/</link>
+      <pubDate>Thu, 20 Aug 2015 13:00:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/tags/presentations/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

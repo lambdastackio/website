@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/code/</link>
+    <description>Recent content in Code on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Feb 2017 13:00:20 +0200</lastBuildDate>
+    
+	<atom:link href="http://lambdastack.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rust</title>
+      <link>http://lambdastack.io/blog/2017/02/20/rust/</link>
+      <pubDate>Mon, 20 Feb 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/02/20/rust/</guid>
+      <description>Rust Programming A programming language from Heaven! Unlike the language of sorcerers, Ruby, Rust is a real language that gives you all of the speed and power benefits of C/C++, functional model of some scripting languages and true safety that only Rust can provide.
+C/C++ and Python I cut my teeth on C and C++ many years ago. I actually won many awards for writing Best C/C++ Middleware from Database Advisor Magazine (dating myself).</description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>http://lambdastack.io/code/rust/</link>
+      <pubDate>Mon, 20 Feb 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/code/rust/</guid>
+      <description>Rust Programming A programming language from Heaven! Unlike the language of sorcerers, Ruby, Rust is a real language that gives you all of the speed and power benefits of C/C++, functional model of some scripting languages and true safety that only Rust can provide.
+C/C++ and Python I cut my teeth on C and C++ many years ago. I actually won many awards for writing Best C/C++ Middleware from Database Advisor Magazine (dating myself).</description>
+    </item>
+    
+  </channel>
+</rss>

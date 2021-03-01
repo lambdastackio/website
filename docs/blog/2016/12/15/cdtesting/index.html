@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Continuous Testing</title>
+  <meta name="author" content="Hans Chris Jones" />
+  <meta name="keywords" content="ceph aws s3 openstack storage object store">
+  <meta name="description" content="Personal website and blog for Hans Chris Jones on Ceph, AWS S3, Object Storage and Block Storage">
+  <meta name="generator" content="Hugo 0.74.3" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="http://lambdastack.io/css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="http://lambdastack.io/css/style.green.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+  
+  <link href="http://lambdastack.io/css/custom.css" rel="stylesheet">
+  
+    
+  
+  <link rel="shortcut icon" href="http://lambdastack.io/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="http://lambdastack.io/img/lambdastack-200x200.png" />
+  
+  <link href="http://lambdastack.io/css/owl.carousel.css" rel="stylesheet">
+  <link href="http://lambdastack.io/css/owl.theme.css" rel="stylesheet">
+  <link rel="alternate" href="http://lambdastack.io/index.xml" type="application/rss+xml" title="The LambdaStack Project">
+  
+  <meta property="og:title" content="Continuous Testing" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://lambdastack.io" />
+  <meta property="og:image" content="img/lambdastack-avatar.svg" />
+  
+  <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=58aa244335de59001102d9ba&product=sop' async='async'></script>
+  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58aa18cb82a5e50012745e6e&product=inline-share-buttons"></script>
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="http://lambdastack.io/">
+                    <img src="http://lambdastack.io/img/lambdastack-avatar.svg" alt="Continuous Testing logo" class="hidden-xs hidden-sm" height="50px">
+                    <img src="http://lambdastack.io/img/lambdastack-avatar-smallest.svg" alt="Continuous Testing logo" class="visible-xs visible-sm" height="40px">
+                    <span class="sr-only">Continuous Testing - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+                <div style="margin-top: 13px; margin-left: 50px; float: left;">
+                    <span title="Chris Jones"><a href="https://linkedin.com/in/cjones303"><img class="testimonial name-picture" alt="Chris Jones" src="/img/cj.png" height="40px" width="40px" style="margin-bottom: 20px;"></a></span>
+                    <a href="https://twitter.com/hanscj1"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+                    <a href="https://github.com/lambdastackio"><i class="fa fa-github fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/in/cjones303"><i class="fa fa-linkedin fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li class="dropdown">
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/blog/">Blog</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/videos/">Videos</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/architectures/">Architectures</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/code/">Code</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/faq/">FAQ</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+    <div align="center" class="text" style="font-style: italic;">
+        
+        <p>"There is no compression algorithm for experience" -- Andy Jassy (AWS)</p>
+    </div>
+</div>
+<div align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-2914530565022048"
+         data-ad-slot="1429395047"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Continuous Testing</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">By <a href="#">Chris Jones</a> | December 15, 2016</p>
+
+                        <div class="sharethis-inline-share-buttons"></div>
+                        <br/>
+
+                        <div id="post-content">
+                          <h3 id="continuous-testing">Continuous Testing</h3>
+<p>The key to building quality into our software is making sure we can get fast feedback on the impact of changes. Traditionally, extensive use was made of manual inspection of code changes and manual testing (testers following documentation describing the steps required to test the various functions of the system) in order to demonstrate the correctness of the system. This type of testing was normally done in a phase following “dev complete”. However this strategy have several drawbacks:</p>
+<ul>
+<li>
+<p>Manual regression testing takes a long time and is relatively expensive to perform, creating a bottleneck that prevents us releasing software more frequently, and getting feedback to developers weeks (and sometimes months) after they wrote the code being tested.</p>
+</li>
+<li>
+<p>Manual tests and inspections are not very reliable, since people are notoriously poor at performing repetitive tasks such as regression testing manually, and it is extremely hard to predict the impact of a set of changes on a complex software system through inspection.</p>
+</li>
+<li>
+<p>When systems are evolving over time, as is the case in modern software products and services, we have to spend considerable effort updating test documentation to keep it up-to-date.
+In order to build quality in to software, we need to adopt a different approach. Our goal is to run many different types of tests—both manual and automated—continually throughout the delivery process. The types of tests we want to run are nicely laid out the quadrant diagram created by Brian Marick, below:</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Once we have continuous integration and test automation in place, we create a deployment pipeline (the key pattern in continuous delivery). In the deployment pipeline pattern, every change runs a build that a) creates packages that can be deployed to any environment and b) runs unit tests (and possibly other tasks such as static analysis), giving feedback to developers in the space of a few minutes. Packages that pass this set of tests have more comprehensive automated acceptance tests run against them. Once we have packages that pass all the automated tests, they are available for self-service deplyment to other environments for activities such as exploratory testing, usability testing, and ultimately release. Complex products and services may have sophisticated deployment pipelines; a simple, linear pipeline is shown below:</p>
+<!-- raw HTML omitted -->
+<p>In the deployment pipeline, every change is effectively a release candidate. The job of the deployment pipeline is to catch known issues. If we can’t detect any known problems, we should feel totally comfortable releasing any packages that have gone through it. If we aren’t, or if we discover defects later, it means we need to improve our pipeline, perhaps adding or updating some tests.</p>
+<p>Our goal should be to find problems as soon as possible, and make the lead time from check-in to release as short as possible. Thus we want to parallelize the activities in the deployment pipeline, not have many stages executing in series. There is also a feedback process: if we discover bugs in exploratory testing, we should be looking to improve our automated tests. If we discover a defect in the acceptance tests, we should be looking to improve our unit tests (most of our defects should be discovered through unit testing).</p>
+<p>Get started by building a skeleton deployment pipeline—create a single unit test, a single acceptance test, an automated deployment script that stands up an exploratory testing envrionment, and thread them together. Then increase test coverage and extend your deployment pipeline as your product or service evolves.</p>
+<h4 id="resources">Resources</h4>
+<p>A <!-- raw HTML omitted -->1h video<!-- raw HTML omitted --> in which Badri Janakiraman and I discuss how to create maintainable suites of automated acceptance test</p>
+<p>Lisa Crispin and Janet Gregory have two great books on agile testing: Agile Testing and More Agile Testing</p>
+<p>Elisabeth Hendrickson has written an excellent book on exploratory testing, Explore It!. I recorded an interview with her where we discuss the role of testers, acceptance test driven development, and the impact of continuous delivery on testing. Watch her awesome 30m talk On the Care and Feeding of Feedback Cycles.</p>
+<p>Gojko Adzic’s Specification By Example has a series of interviews with successful teams worldwide and is a good distillation of effective patterns for specifying requirements and tests.</p>
+<p>Think that “a few minutes” is optimistic for running automated tests? Read Dan Bodart’s blog post <!-- raw HTML omitted -->Crazy fast build times<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->Martin Fowler discusses the Test Pyramid and its evil twin, the ice cream cone on his blog.<!-- raw HTML omitted --></p>
+<h4 id="faq">FAQ</h4>
+<p>Does continuous delivery mean firing all our testers?</p>
+<p>No. Testers have a unique perspective on the system—they understand how users interact with it. I recommend having testers pair alongside developers (in person) to help them create and evolve the suites of automated tests. This way, developers get to understand the testers’ perspective, and testers can start to learn test automation. Testers should also be performing exploratory testing continuously as part of their work. Certainly, testers will have to learn new skills—but that is true of anybody working in our industry.</p>
+<p>Should we be automating all of our tests?</p>
+<p>No. As shown in the quadrant diagram, there are still important manual activities such as exploratory testing and usability testing (although automation can help with these activities, it can’t replace people). We should be aiming to bring all test activities, including security testing, into the development process and performing them continually from the beginning of the software delivery lifecycle for every product and service we build.</p>
+<p>Should I stop and automate all of my manual tests right now?</p>
+<p>No. Start by writing a couple of automated tests—the ones that validate the most important functionality in the system. Get those running on every commit. Then the rule is to add new tests to cover new functionality that is added, and functionality that is being changed. Over time, you will evolve a comprehensive suite of automated tests. In general, it’s better to have 20 tests that run quickly and are trusted by the team than 2,000 tests that are flaky and constantly failing and which are ignored by the team.</p>
+<p>Who is responsible for the automated tests?</p>
+<p>The whole team. In particular, developers should be involved in creating and maintaining the automated tests, and should stop what they are doing and fix them whenever there is a failure. This is essential because it teaches developers how to write testable software. When automated tests are created and maintained by a different group from the developers, there is no force acting on the developers to help them write software that is easy to test. Retrofitting automated tests onto such systems is painful and expensive, and poorly designed software that is hard to test is a major factor contributing to automated test suites that are expensive to maintain.</p>
+<p><em>This blog was originally published by Jez Humble at <a href="https://continuousdelivery.com">https://continuousdelivery.com</a></em></p>
+<p><em>All content licensed under the <!-- raw HTML omitted -->Creative Commons Attribution-Share Alike 3.0 United States<!-- raw HTML omitted --> License (CC BY-SA 3.0 US).</em></p>
+
+                        </div>
+
+                        <br/>
+                        <div class="sharethis-inline-share-buttons"></div>
+
+                        
+                        
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "lambdastack-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Search</h3>
+    </div>
+
+    <div class="panel-body">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" role="search">
+            <div class="input-group">
+                <input type="search" name="q" class="form-control" placeholder="Search">
+                <input type="hidden" name="sitesearch" value="http://lambdastack.io/">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Categories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            
+            <li>
+                <a href="/categories/agile">agile (3)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/architectures">architectures (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/aws">aws (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/ceph">ceph (13)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/chef">chef (3)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/cicd">cicd (4)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/code">code (2)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/drives">drives (2)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/erasure-coding">erasure-coding (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/hardware">hardware (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/infrastructure">infrastructure (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/license">license (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/load-balancers">load-balancers (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/misc">misc (2)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/networking">networking (2)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/open">open (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/opensource">opensource (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/performance">performance (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/presentations">presentations (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/redhat">redhat (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/reviews">reviews (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/rust">rust (3)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/s3">s3 (6)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/sla">sla (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/storage">storage (3)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/team">team (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/vm">vm (1)</a>
+            </li>
+            
+            <li>
+                <a href="/categories/web">web (2)</a>
+            </li>
+            
+        </ul>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="panel sidebar-menu">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            
+            <li>
+                <a href="/tags/agile"><i class="fas fa-tags"></i> agile</a>
+            </li>
+            
+            <li>
+                <a href="/tags/api"><i class="fas fa-tags"></i> api</a>
+            </li>
+            
+            <li>
+                <a href="/tags/architectures"><i class="fas fa-tags"></i> architectures</a>
+            </li>
+            
+            <li>
+                <a href="/tags/aws"><i class="fas fa-tags"></i> aws</a>
+            </li>
+            
+            <li>
+                <a href="/tags/block-storage"><i class="fas fa-tags"></i> block-storage</a>
+            </li>
+            
+            <li>
+                <a href="/tags/ceph"><i class="fas fa-tags"></i> ceph</a>
+            </li>
+            
+            <li>
+                <a href="/tags/chef"><i class="fas fa-tags"></i> chef</a>
+            </li>
+            
+            <li>
+                <a href="/tags/cicd"><i class="fas fa-tags"></i> cicd</a>
+            </li>
+            
+            <li>
+                <a href="/tags/code"><i class="fas fa-tags"></i> code</a>
+            </li>
+            
+            <li>
+                <a href="/tags/drives"><i class="fas fa-tags"></i> drives</a>
+            </li>
+            
+            <li>
+                <a href="/tags/erasure-coding"><i class="fas fa-tags"></i> erasure-coding</a>
+            </li>
+            
+            <li>
+                <a href="/tags/hardware"><i class="fas fa-tags"></i> hardware</a>
+            </li>
+            
+            <li>
+                <a href="/tags/infrastructure"><i class="fas fa-tags"></i> infrastructure</a>
+            </li>
+            
+            <li>
+                <a href="/tags/license"><i class="fas fa-tags"></i> license</a>
+            </li>
+            
+            <li>
+                <a href="/tags/load-balancers"><i class="fas fa-tags"></i> load-balancers</a>
+            </li>
+            
+            <li>
+                <a href="/tags/msic"><i class="fas fa-tags"></i> msic</a>
+            </li>
+            
+            <li>
+                <a href="/tags/networking"><i class="fas fa-tags"></i> networking</a>
+            </li>
+            
+            <li>
+                <a href="/tags/open"><i class="fas fa-tags"></i> open</a>
+            </li>
+            
+            <li>
+                <a href="/tags/opensource"><i class="fas fa-tags"></i> opensource</a>
+            </li>
+            
+            <li>
+                <a href="/tags/performance"><i class="fas fa-tags"></i> performance</a>
+            </li>
+            
+            <li>
+                <a href="/tags/presentations"><i class="fas fa-tags"></i> presentations</a>
+            </li>
+            
+            <li>
+                <a href="/tags/redhat"><i class="fas fa-tags"></i> redhat</a>
+            </li>
+            
+            <li>
+                <a href="/tags/redis"><i class="fas fa-tags"></i> redis</a>
+            </li>
+            
+            <li>
+                <a href="/tags/reviews"><i class="fas fa-tags"></i> reviews</a>
+            </li>
+            
+            <li>
+                <a href="/tags/rust"><i class="fas fa-tags"></i> rust</a>
+            </li>
+            
+            <li>
+                <a href="/tags/s3"><i class="fas fa-tags"></i> s3</a>
+            </li>
+            
+            <li>
+                <a href="/tags/sla"><i class="fas fa-tags"></i> sla</a>
+            </li>
+            
+            <li>
+                <a href="/tags/storage"><i class="fas fa-tags"></i> storage</a>
+            </li>
+            
+            <li>
+                <a href="/tags/tcp"><i class="fas fa-tags"></i> tcp</a>
+            </li>
+            
+            <li>
+                <a href="/tags/team"><i class="fas fa-tags"></i> team</a>
+            </li>
+            
+            <li>
+                <a href="/tags/vm"><i class="fas fa-tags"></i> vm</a>
+            </li>
+            
+            <li>
+                <a href="/tags/web"><i class="fas fa-tags"></i> web</a>
+            </li>
+            
+        </ul>
+    </div>
+
+</div>
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        <footer id="footer">
+    <div class="container">
+        
+        <div class="col-md-4 col-sm-6">
+            <h4>About</h4>
+            <p>The LambdaStack Project is a collection of OSS (Open Source Software) Micro-Services projects. Each of the Micro-Services range from a powerful Hybrid Web Stack to full Software-Defined-Storage management.</p>
+            <hr class="hidden-md hidden-lg hidden-sm">
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-6">
+             
+            <h4>Recent posts</h4>
+            <div class="blog-entries">
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="http://lambdastack.io/blog/">
+                          
+                            <img src="http://lambdastack.io/img/placeholder.png" class="img-responsive" alt="">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="http://lambdastack.io/blog/">Blogs</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/">
+                          
+                            <img src="http://lambdastack.io/img/ceph-github.png" class="img-responsive" alt="">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/">Hardware Sizing - Ceph Radosgw (RGW)</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/">
+                          
+                            <img src="http://lambdastack.io/img/aws-s3-worksheet.png" class="img-responsive" alt="">
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/">AWS S3 vs On-Premises</a></h5>
+                    </div>
+                </div>
+                
+            </div>
+            <hr class="hidden-md hidden-lg">
+             
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-6">
+            <h4>Contact</h4>
+            <p><strong>Hans Chris Jones</strong>
+        <br>New York
+        <br>
+        <div style="float: left;">
+            <a href="https://twitter.com/hanscj1"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+            <a href="https://github.com/lambdastackio"><i class="fa fa-github fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+            <a href="https://linkedin.com/in/cjones303"><i class="fa fa-linkedin fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+        </div>
+      </p>
+      
+            
+            <hr class="hidden-md hidden-lg hidden-sm">
+        </div>
+        
+        
+    </div>
+    
+</footer>
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left"><p>Copyright (c) 2017, Hans Chris Jones; all rights reserved. All comments and views are my own and not my employer's.</p><p>All content originating from Hans Chris Jones is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Attribution-ShareAlike 4.0 International</a></p><p><a href="https://www.linkedin.com/in/cjones303/">Click here to contact me.</a></p></p>
+            
+            <p class="pull-right">
+            </p>
+        </div>
+    </div>
+</div>
+
+<div align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-2914530565022048"
+         data-ad-slot="1429395047"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+
+    </div>
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-84702578-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+<script src="http://lambdastack.io/js/front.js"></script>
+
+
+<script src="http://lambdastack.io/js/owl.carousel.min.js"></script>
+
+
+  </body>
+</html>

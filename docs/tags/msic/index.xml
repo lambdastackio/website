@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>msic on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/msic/</link>
+    <description>Recent content in msic on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Feb 2017 13:00:20 +0200</lastBuildDate>
+    
+	<atom:link href="http://lambdastack.io/tags/msic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo vs WordPress</title>
+      <link>http://lambdastack.io/blog/2017/02/01/hugo/</link>
+      <pubDate>Wed, 01 Feb 2017 13:00:20 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/02/01/hugo/</guid>
+      <description>Hugo vs WordPress We all know that WordPress is a Content Management System (CMS). For years, people have been using WordPress to help them manage their content and for the most part it works - sort of. WordPress is a very old tech code base. It&amp;rsquo;s written in PHP (who uses that anymore?) using Apache/NGINX and it uses MySQL as it SQL backend. None of those are bad on their own (except PHP) but the way that WordPress is organized and Architected makes it very prone to scalability issues and it&amp;rsquo;s an anti-pattern of Microservices.</description>
+    </item>
+    
+  </channel>
+</rss>

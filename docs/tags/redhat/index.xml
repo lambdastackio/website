@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RedHat on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/redhat/</link>
+    <description>Recent content in RedHat on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Feb 2017 18:56:27 -0400</lastBuildDate>
+    
+	<atom:link href="http://lambdastack.io/tags/redhat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Red Hat Ceph Object Store</title>
+      <link>http://lambdastack.io/videos/redhat-objectstore/</link>
+      <pubDate>Wed, 15 Feb 2017 18:56:27 -0400</pubDate>
+      
+      <guid>http://lambdastack.io/videos/redhat-objectstore/</guid>
+      <description>Ceph Object Store NB: Disclaimer - This is video from Red Hat - not me
+This video does a good job talking about Object Store. It&amp;rsquo;s also from Red Hat.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis on The LambdaStack Project</title>
+    <link>http://lambdastack.io/tags/redis/</link>
+    <description>Recent content in redis on The LambdaStack Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Jan 2017 15:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://lambdastack.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Klaus - Hybrid WebStack</title>
+      <link>http://lambdastack.io/blog/2017/01/15/klaus/</link>
+      <pubDate>Sun, 15 Jan 2017 15:00:00 +0200</pubDate>
+      
+      <guid>http://lambdastack.io/blog/2017/01/15/klaus/</guid>
+      <description>There are very good Web Servers on the market, Apache and NGINX to name a few. However, to interface your backend code you need to use Apache modules or WSGI/FastCGI with NGINX (depending on your language of choice). To actually use a fully integrated environment you need to use something like Django or Tornado for Python. For GO there is a small built-in web server that allows you to build up a more robust environment around it.</description>
+    </item>
+    
+  </channel>
+</rss>
