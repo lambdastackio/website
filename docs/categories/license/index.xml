@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>license on The LambdaStack Project</title>
-    <link>http://lambdastack.io/categories/license/</link>
-    <description>Recent content in license on The LambdaStack Project</description>
+    <title>license on LambdaStack</title>
+    <link>https://lambdastack.io/categories/license/</link>
+    <description>Recent content in license on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 23 Feb 2017 06:00:00 +0200</lastBuildDate>
     
-	<atom:link href="http://lambdastack.io/categories/license/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lambdastack.io/categories/license/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Which open source software license should I use?</title>
-      <link>http://lambdastack.io/blog/2017/02/23/opensource-license/</link>
+      <link>https://lambdastack.io/blog/2017/02/23/opensource-license/</link>
       <pubDate>Thu, 23 Feb 2017 06:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/02/23/opensource-license/</guid>
+      <guid>https://lambdastack.io/blog/2017/02/23/opensource-license/</guid>
       <description>NB: This article is from Opensource.com. I also use Apache 2 for my projects.
 I’ve recently been involved in several discussions that are variations on, &amp;ldquo;Which open source or free software license should I choose for my project?&amp;rdquo; Here is my way of looking at the large and growing collection of licenses in the wild. First, let&amp;rsquo;s make sure we all understand that I Am Not A Lawyer. This is not legal advice.</description>
     </item>

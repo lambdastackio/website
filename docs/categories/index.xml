@@ -1,265 +1,265 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on The LambdaStack Project</title>
-    <link>http://lambdastack.io/categories/</link>
-    <description>Recent content in Categories on The LambdaStack Project</description>
+    <title>Categories on LambdaStack</title>
+    <link>https://lambdastack.io/categories/</link>
+    <description>Recent content in Categories on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 18 Mar 2017 01:00:00 +0200</lastBuildDate>
     
-	<atom:link href="http://lambdastack.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lambdastack.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ceph</title>
-      <link>http://lambdastack.io/categories/ceph/</link>
+      <link>https://lambdastack.io/categories/ceph/</link>
       <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/ceph/</guid>
+      <guid>https://lambdastack.io/categories/ceph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hardware</title>
-      <link>http://lambdastack.io/categories/hardware/</link>
+      <link>https://lambdastack.io/categories/hardware/</link>
       <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/hardware/</guid>
+      <guid>https://lambdastack.io/categories/hardware/</guid>
       <description></description>
     </item>
     
     <item>
       <title>storage</title>
-      <link>http://lambdastack.io/categories/storage/</link>
+      <link>https://lambdastack.io/categories/storage/</link>
       <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/storage/</guid>
+      <guid>https://lambdastack.io/categories/storage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>aws</title>
-      <link>http://lambdastack.io/categories/aws/</link>
+      <link>https://lambdastack.io/categories/aws/</link>
       <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/aws/</guid>
+      <guid>https://lambdastack.io/categories/aws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>s3</title>
-      <link>http://lambdastack.io/categories/s3/</link>
+      <link>https://lambdastack.io/categories/s3/</link>
       <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/s3/</guid>
+      <guid>https://lambdastack.io/categories/s3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vm</title>
-      <link>http://lambdastack.io/categories/vm/</link>
+      <link>https://lambdastack.io/categories/vm/</link>
       <pubDate>Sun, 05 Mar 2017 01:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/vm/</guid>
+      <guid>https://lambdastack.io/categories/vm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cicd</title>
-      <link>http://lambdastack.io/categories/cicd/</link>
+      <link>https://lambdastack.io/categories/cicd/</link>
       <pubDate>Tue, 28 Feb 2017 01:30:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/categories/cicd/</guid>
+      <guid>https://lambdastack.io/categories/cicd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>infrastructure</title>
-      <link>http://lambdastack.io/categories/infrastructure/</link>
+      <link>https://lambdastack.io/categories/infrastructure/</link>
       <pubDate>Tue, 28 Feb 2017 01:30:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/categories/infrastructure/</guid>
+      <guid>https://lambdastack.io/categories/infrastructure/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sla</title>
-      <link>http://lambdastack.io/categories/sla/</link>
+      <link>https://lambdastack.io/categories/sla/</link>
       <pubDate>Mon, 27 Feb 2017 01:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/sla/</guid>
+      <guid>https://lambdastack.io/categories/sla/</guid>
       <description></description>
     </item>
     
     <item>
       <title>web</title>
-      <link>http://lambdastack.io/categories/web/</link>
+      <link>https://lambdastack.io/categories/web/</link>
       <pubDate>Mon, 27 Feb 2017 01:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/web/</guid>
+      <guid>https://lambdastack.io/categories/web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>erasure-coding</title>
-      <link>http://lambdastack.io/categories/erasure-coding/</link>
+      <link>https://lambdastack.io/categories/erasure-coding/</link>
       <pubDate>Sun, 26 Feb 2017 11:27:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/categories/erasure-coding/</guid>
+      <guid>https://lambdastack.io/categories/erasure-coding/</guid>
       <description></description>
     </item>
     
     <item>
       <title>license</title>
-      <link>http://lambdastack.io/categories/license/</link>
+      <link>https://lambdastack.io/categories/license/</link>
       <pubDate>Thu, 23 Feb 2017 06:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/license/</guid>
+      <guid>https://lambdastack.io/categories/license/</guid>
       <description></description>
     </item>
     
     <item>
       <title>opensource</title>
-      <link>http://lambdastack.io/categories/opensource/</link>
+      <link>https://lambdastack.io/categories/opensource/</link>
       <pubDate>Thu, 23 Feb 2017 06:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/opensource/</guid>
+      <guid>https://lambdastack.io/categories/opensource/</guid>
       <description></description>
     </item>
     
     <item>
       <title>open</title>
-      <link>http://lambdastack.io/categories/open/</link>
+      <link>https://lambdastack.io/categories/open/</link>
       <pubDate>Wed, 22 Feb 2017 15:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/open/</guid>
+      <guid>https://lambdastack.io/categories/open/</guid>
       <description></description>
     </item>
     
     <item>
       <title>team</title>
-      <link>http://lambdastack.io/categories/team/</link>
+      <link>https://lambdastack.io/categories/team/</link>
       <pubDate>Wed, 22 Feb 2017 15:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/team/</guid>
+      <guid>https://lambdastack.io/categories/team/</guid>
       <description></description>
     </item>
     
     <item>
       <title>code</title>
-      <link>http://lambdastack.io/categories/code/</link>
+      <link>https://lambdastack.io/categories/code/</link>
       <pubDate>Mon, 20 Feb 2017 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/code/</guid>
+      <guid>https://lambdastack.io/categories/code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rust</title>
-      <link>http://lambdastack.io/categories/rust/</link>
+      <link>https://lambdastack.io/categories/rust/</link>
       <pubDate>Mon, 20 Feb 2017 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/rust/</guid>
+      <guid>https://lambdastack.io/categories/rust/</guid>
       <description></description>
     </item>
     
     <item>
       <title>drives</title>
-      <link>http://lambdastack.io/categories/drives/</link>
+      <link>https://lambdastack.io/categories/drives/</link>
       <pubDate>Sun, 19 Feb 2017 18:56:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/categories/drives/</guid>
+      <guid>https://lambdastack.io/categories/drives/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reviews</title>
-      <link>http://lambdastack.io/categories/reviews/</link>
+      <link>https://lambdastack.io/categories/reviews/</link>
       <pubDate>Sun, 19 Feb 2017 18:56:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/categories/reviews/</guid>
+      <guid>https://lambdastack.io/categories/reviews/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RedHat</title>
-      <link>http://lambdastack.io/categories/redhat/</link>
+      <link>https://lambdastack.io/categories/redhat/</link>
       <pubDate>Wed, 15 Feb 2017 18:56:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/categories/redhat/</guid>
+      <guid>https://lambdastack.io/categories/redhat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>misc</title>
-      <link>http://lambdastack.io/categories/misc/</link>
+      <link>https://lambdastack.io/categories/misc/</link>
       <pubDate>Wed, 01 Feb 2017 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/misc/</guid>
+      <guid>https://lambdastack.io/categories/misc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>load balancers</title>
-      <link>http://lambdastack.io/categories/load-balancers/</link>
+      <link>https://lambdastack.io/categories/load-balancers/</link>
       <pubDate>Fri, 20 Jan 2017 11:54:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/load-balancers/</guid>
+      <guid>https://lambdastack.io/categories/load-balancers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>networking</title>
-      <link>http://lambdastack.io/categories/networking/</link>
+      <link>https://lambdastack.io/categories/networking/</link>
       <pubDate>Fri, 20 Jan 2017 11:54:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/networking/</guid>
+      <guid>https://lambdastack.io/categories/networking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>architectures</title>
-      <link>http://lambdastack.io/categories/architectures/</link>
+      <link>https://lambdastack.io/categories/architectures/</link>
       <pubDate>Sun, 01 Jan 2017 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/architectures/</guid>
+      <guid>https://lambdastack.io/categories/architectures/</guid>
       <description></description>
     </item>
     
     <item>
       <title>agile</title>
-      <link>http://lambdastack.io/categories/agile/</link>
+      <link>https://lambdastack.io/categories/agile/</link>
       <pubDate>Fri, 30 Dec 2016 15:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/agile/</guid>
+      <guid>https://lambdastack.io/categories/agile/</guid>
       <description></description>
     </item>
     
     <item>
       <title>performance</title>
-      <link>http://lambdastack.io/categories/performance/</link>
+      <link>https://lambdastack.io/categories/performance/</link>
       <pubDate>Sat, 15 Oct 2016 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/performance/</guid>
+      <guid>https://lambdastack.io/categories/performance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>chef</title>
-      <link>http://lambdastack.io/categories/chef/</link>
+      <link>https://lambdastack.io/categories/chef/</link>
       <pubDate>Sat, 01 Oct 2016 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/categories/chef/</guid>
+      <guid>https://lambdastack.io/categories/chef/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Presentations</title>
-      <link>http://lambdastack.io/categories/presentations/</link>
+      <link>https://lambdastack.io/categories/presentations/</link>
       <pubDate>Thu, 20 Aug 2015 13:00:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/categories/presentations/</guid>
+      <guid>https://lambdastack.io/categories/presentations/</guid>
       <description></description>
     </item>
     

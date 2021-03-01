@@ -3,491 +3,491 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://lambdastack.io/blog/</loc>
+    <loc>https://lambdastack.io/blog/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/</loc>
+    <loc>https://lambdastack.io/categories/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/ceph/</loc>
+    <loc>https://lambdastack.io/tags/ceph/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/ceph/</loc>
+    <loc>https://lambdastack.io/categories/ceph/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/hardware/</loc>
+    <loc>https://lambdastack.io/tags/hardware/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/hardware/</loc>
+    <loc>https://lambdastack.io/categories/hardware/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</loc>
+    <loc>https://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/storage/</loc>
+    <loc>https://lambdastack.io/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/storage/</loc>
+    <loc>https://lambdastack.io/tags/storage/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/</loc>
+    <loc>https://lambdastack.io/categories/storage/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/</loc>
+    <loc>https://lambdastack.io/tags/</loc>
     <lastmod>2017-03-18T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/aws/</loc>
+    <loc>https://lambdastack.io/tags/aws/</loc>
     <lastmod>2017-03-09T20:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/aws/</loc>
+    <loc>https://lambdastack.io/categories/aws/</loc>
     <lastmod>2017-03-09T20:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</loc>
+    <loc>https://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</loc>
     <lastmod>2017-03-09T20:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/s3/</loc>
+    <loc>https://lambdastack.io/tags/s3/</loc>
     <lastmod>2017-03-09T20:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/s3/</loc>
+    <loc>https://lambdastack.io/categories/s3/</loc>
     <lastmod>2017-03-09T20:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/03/05/hci/</loc>
+    <loc>https://lambdastack.io/blog/2017/03/05/hci/</loc>
     <lastmod>2017-03-05T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/vm/</loc>
+    <loc>https://lambdastack.io/tags/vm/</loc>
     <lastmod>2017-03-05T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/vm/</loc>
+    <loc>https://lambdastack.io/categories/vm/</loc>
     <lastmod>2017-03-05T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/02/28/risk/</loc>
+    <loc>https://lambdastack.io/blog/2017/02/28/risk/</loc>
     <lastmod>2017-02-28T01:30:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/cicd/</loc>
+    <loc>https://lambdastack.io/tags/cicd/</loc>
     <lastmod>2017-02-28T01:30:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/cicd/</loc>
+    <loc>https://lambdastack.io/categories/cicd/</loc>
     <lastmod>2017-02-28T01:30:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/infrastructure/</loc>
+    <loc>https://lambdastack.io/tags/infrastructure/</loc>
     <lastmod>2017-02-28T01:30:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/infrastructure/</loc>
+    <loc>https://lambdastack.io/categories/infrastructure/</loc>
     <lastmod>2017-02-28T01:30:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/api/</loc>
+    <loc>https://lambdastack.io/tags/api/</loc>
     <lastmod>2017-02-27T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/sla/</loc>
+    <loc>https://lambdastack.io/tags/sla/</loc>
     <lastmod>2017-02-27T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/sla/</loc>
+    <loc>https://lambdastack.io/categories/sla/</loc>
     <lastmod>2017-02-27T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/02/27/sla/</loc>
+    <loc>https://lambdastack.io/blog/2017/02/27/sla/</loc>
     <lastmod>2017-02-27T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/web/</loc>
+    <loc>https://lambdastack.io/tags/web/</loc>
     <lastmod>2017-02-27T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/web/</loc>
+    <loc>https://lambdastack.io/categories/web/</loc>
     <lastmod>2017-02-27T01:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/02/26/erasure-coding/</loc>
+    <loc>https://lambdastack.io/blog/2017/02/26/erasure-coding/</loc>
     <lastmod>2017-02-26T11:27:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/erasure-coding/</loc>
+    <loc>https://lambdastack.io/tags/erasure-coding/</loc>
     <lastmod>2017-02-26T11:27:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/erasure-coding/</loc>
+    <loc>https://lambdastack.io/categories/erasure-coding/</loc>
     <lastmod>2017-02-26T11:27:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/license/</loc>
+    <loc>https://lambdastack.io/tags/license/</loc>
     <lastmod>2017-02-23T06:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/license/</loc>
+    <loc>https://lambdastack.io/categories/license/</loc>
     <lastmod>2017-02-23T06:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/opensource/</loc>
+    <loc>https://lambdastack.io/tags/opensource/</loc>
     <lastmod>2017-02-23T06:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/opensource/</loc>
+    <loc>https://lambdastack.io/categories/opensource/</loc>
     <lastmod>2017-02-23T06:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/02/23/opensource-license/</loc>
+    <loc>https://lambdastack.io/blog/2017/02/23/opensource-license/</loc>
     <lastmod>2017-02-23T06:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/open/</loc>
+    <loc>https://lambdastack.io/tags/open/</loc>
     <lastmod>2017-02-22T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/open/</loc>
+    <loc>https://lambdastack.io/categories/open/</loc>
     <lastmod>2017-02-22T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/02/22/open_org/</loc>
+    <loc>https://lambdastack.io/blog/2017/02/22/open_org/</loc>
     <lastmod>2017-02-22T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/team/</loc>
+    <loc>https://lambdastack.io/tags/team/</loc>
     <lastmod>2017-02-22T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/team/</loc>
+    <loc>https://lambdastack.io/categories/team/</loc>
     <lastmod>2017-02-22T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/code/</loc>
+    <loc>https://lambdastack.io/tags/code/</loc>
     <lastmod>2017-02-20T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/code/</loc>
+    <loc>https://lambdastack.io/categories/code/</loc>
     <lastmod>2017-02-20T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/code/</loc>
+    <loc>https://lambdastack.io/code/</loc>
     <lastmod>2017-02-20T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/rust/</loc>
+    <loc>https://lambdastack.io/tags/rust/</loc>
     <lastmod>2017-02-20T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/rust/</loc>
+    <loc>https://lambdastack.io/categories/rust/</loc>
     <lastmod>2017-02-20T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/02/20/rust/</loc>
+    <loc>https://lambdastack.io/blog/2017/02/20/rust/</loc>
     <lastmod>2017-02-20T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/code/rust/</loc>
+    <loc>https://lambdastack.io/code/rust/</loc>
     <lastmod>2017-02-20T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/drives/</loc>
+    <loc>https://lambdastack.io/tags/drives/</loc>
     <lastmod>2017-02-19T18:56:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/drives/</loc>
+    <loc>https://lambdastack.io/categories/drives/</loc>
     <lastmod>2017-02-19T18:56:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/reviews/</loc>
+    <loc>https://lambdastack.io/tags/reviews/</loc>
     <lastmod>2017-02-19T18:56:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/reviews/</loc>
+    <loc>https://lambdastack.io/categories/reviews/</loc>
     <lastmod>2017-02-19T18:56:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/videos/seagate/</loc>
+    <loc>https://lambdastack.io/videos/seagate/</loc>
     <lastmod>2017-02-19T18:56:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/videos/</loc>
+    <loc>https://lambdastack.io/videos/</loc>
     <lastmod>2017-02-19T18:56:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/videos/redhat-objectstore/</loc>
+    <loc>https://lambdastack.io/videos/redhat-objectstore/</loc>
     <lastmod>2017-02-15T18:56:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/redhat/</loc>
+    <loc>https://lambdastack.io/tags/redhat/</loc>
     <lastmod>2017-02-15T18:56:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/redhat/</loc>
+    <loc>https://lambdastack.io/categories/redhat/</loc>
     <lastmod>2017-02-15T18:56:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/02/13/smr/</loc>
+    <loc>https://lambdastack.io/blog/2017/02/13/smr/</loc>
     <lastmod>2017-02-13T11:27:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/02/01/hugo/</loc>
+    <loc>https://lambdastack.io/blog/2017/02/01/hugo/</loc>
     <lastmod>2017-02-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/misc/</loc>
+    <loc>https://lambdastack.io/categories/misc/</loc>
     <lastmod>2017-02-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/msic/</loc>
+    <loc>https://lambdastack.io/tags/msic/</loc>
     <lastmod>2017-02-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/load-balancers/</loc>
+    <loc>https://lambdastack.io/tags/load-balancers/</loc>
     <lastmod>2017-01-20T11:54:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/load-balancers/</loc>
+    <loc>https://lambdastack.io/categories/load-balancers/</loc>
     <lastmod>2017-01-20T11:54:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/networking/</loc>
+    <loc>https://lambdastack.io/tags/networking/</loc>
     <lastmod>2017-01-20T11:54:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/networking/</loc>
+    <loc>https://lambdastack.io/categories/networking/</loc>
     <lastmod>2017-01-20T11:54:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/tcp/</loc>
+    <loc>https://lambdastack.io/tags/tcp/</loc>
     <lastmod>2017-01-20T11:54:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</loc>
+    <loc>https://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</loc>
     <lastmod>2017-01-20T11:54:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2017/01/15/klaus/</loc>
+    <loc>https://lambdastack.io/blog/2017/01/15/klaus/</loc>
     <lastmod>2017-01-15T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/redis/</loc>
+    <loc>https://lambdastack.io/tags/redis/</loc>
     <lastmod>2017-01-15T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/architectures/</loc>
+    <loc>https://lambdastack.io/architectures/</loc>
     <lastmod>2017-01-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/architectures/</loc>
+    <loc>https://lambdastack.io/tags/architectures/</loc>
     <lastmod>2017-01-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/architectures/</loc>
+    <loc>https://lambdastack.io/categories/architectures/</loc>
     <lastmod>2017-01-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/architectures/objectstore/</loc>
+    <loc>https://lambdastack.io/architectures/objectstore/</loc>
     <lastmod>2017-01-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/agile/</loc>
+    <loc>https://lambdastack.io/tags/agile/</loc>
     <lastmod>2016-12-30T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/agile/</loc>
+    <loc>https://lambdastack.io/categories/agile/</loc>
     <lastmod>2016-12-30T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2016/12/30/cicd-principles/</loc>
+    <loc>https://lambdastack.io/blog/2016/12/30/cicd-principles/</loc>
     <lastmod>2016-12-30T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2016/12/15/cdtesting/</loc>
+    <loc>https://lambdastack.io/blog/2016/12/15/cdtesting/</loc>
     <lastmod>2016-12-15T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2016/11/15/cd/</loc>
+    <loc>https://lambdastack.io/blog/2016/11/15/cd/</loc>
     <lastmod>2016-11-15T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2016/10/15/lbs/</loc>
+    <loc>https://lambdastack.io/blog/2016/10/15/lbs/</loc>
     <lastmod>2016-10-15T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/performance/</loc>
+    <loc>https://lambdastack.io/tags/performance/</loc>
     <lastmod>2016-10-15T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/performance/</loc>
+    <loc>https://lambdastack.io/categories/performance/</loc>
     <lastmod>2016-10-15T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2016/10/05/s3lsio_s3/</loc>
+    <loc>https://lambdastack.io/blog/2016/10/05/s3lsio_s3/</loc>
     <lastmod>2016-10-05T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/block-storage/</loc>
+    <loc>https://lambdastack.io/tags/block-storage/</loc>
     <lastmod>2016-10-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</loc>
+    <loc>https://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</loc>
     <lastmod>2016-10-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/chef/</loc>
+    <loc>https://lambdastack.io/tags/chef/</loc>
     <lastmod>2016-10-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/chef/</loc>
+    <loc>https://lambdastack.io/categories/chef/</loc>
     <lastmod>2016-10-01T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</loc>
+    <loc>https://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</loc>
     <lastmod>2016-09-20T15:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/blog/2016/09/05/ceph-rust/</loc>
+    <loc>https://lambdastack.io/blog/2016/09/05/ceph-rust/</loc>
     <lastmod>2016-09-05T11:27:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/about/</loc>
+    <loc>https://lambdastack.io/about/</loc>
     <lastmod>2016-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/videos/openstack-austin/</loc>
+    <loc>https://lambdastack.io/videos/openstack-austin/</loc>
     <lastmod>2016-04-15T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/videos/cephday-nyc/</loc>
+    <loc>https://lambdastack.io/videos/cephday-nyc/</loc>
     <lastmod>2016-01-20T13:00:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/videos/cephday-chicago/</loc>
+    <loc>https://lambdastack.io/videos/cephday-chicago/</loc>
     <lastmod>2015-08-20T13:00:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/tags/presentations/</loc>
+    <loc>https://lambdastack.io/tags/presentations/</loc>
     <lastmod>2015-08-20T13:00:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/categories/presentations/</loc>
+    <loc>https://lambdastack.io/categories/presentations/</loc>
     <lastmod>2015-08-20T13:00:27-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/contact/</loc>
+    <loc>https://lambdastack.io/contact/</loc>
   </url>
   
   <url>
-    <loc>http://lambdastack.io/faq/</loc>
+    <loc>https://lambdastack.io/faq/</loc>
   </url>
   
 </urlset>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The LambdaStack Project</title>
-    <link>http://lambdastack.io/</link>
-    <description>Recent content on The LambdaStack Project</description>
+    <title>LambdaStack</title>
+    <link>https://lambdastack.io/</link>
+    <description>Recent content on LambdaStack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 18 Mar 2017 01:00:00 +0200</lastBuildDate>
     
-	<atom:link href="http://lambdastack.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lambdastack.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hardware Sizing - Ceph Radosgw (RGW)</title>
-      <link>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</link>
+      <link>https://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</link>
       <pubDate>Sat, 18 Mar 2017 01:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</guid>
+      <guid>https://lambdastack.io/blog/2017/03/18/hardware-sizing-ceph-rgw/</guid>
       <description>Hardware Sizing - Ceph Radosgw (RGW) I&amp;rsquo;m often asked, &amp;ldquo;what&amp;rsquo;s the best hardware to use for Ceph?&amp;rdquo; The answer is simple - it depends. With Ceph there are many moving parts such as:
  Ceph Monitor Nodes
   Ceph RGW Nodes
@@ -28,135 +28,135 @@
     
     <item>
       <title>AWS S3 vs On-Premises</title>
-      <link>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</link>
+      <link>https://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</link>
       <pubDate>Thu, 09 Mar 2017 20:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</guid>
+      <guid>https://lambdastack.io/blog/2017/03/09/aws-vs-onprem/</guid>
       <description>AWS S3 vs On-Premises When you own Enterprise Storage or are asked to build enterprise class storage you find yourself more frequently having to cost justify against outside Cloud Storage vendors like AWS S3, GCE or Azure. So, how will you do that since you have to make capital expenditures vs OpEx that these providers discuss so much?
 When you break down the pricing of AWS S3 and others you find that the actual storage cost is not too bad (depending on amount of stored data).</description>
     </item>
     
     <item>
       <title>Hyper-Converged Infrastructure (HCI) - Truth</title>
-      <link>http://lambdastack.io/blog/2017/03/05/hci/</link>
+      <link>https://lambdastack.io/blog/2017/03/05/hci/</link>
       <pubDate>Sun, 05 Mar 2017 01:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/03/05/hci/</guid>
+      <guid>https://lambdastack.io/blog/2017/03/05/hci/</guid>
       <description>Hyper-Converged Infrastructure (HCI) - Truth I happened to just stumble upon a few marketing oriented whitepapers from VMWare today (odd use of my time). All three were centered around Hyper-Converged Infrastructure (HCI). At Bloomberg, we run VMWare and OpenStack clusters. Our OpenStack clusters are currently fully Hyper-Converged. I have even given talks on them http://lambdastack.io/videos/openstack-austin/. If you look at the video and the presentation you will see why we no longer believe in this model for us.</description>
     </item>
     
     <item>
       <title>CI/CD Risk</title>
-      <link>http://lambdastack.io/blog/2017/02/28/risk/</link>
+      <link>https://lambdastack.io/blog/2017/02/28/risk/</link>
       <pubDate>Tue, 28 Feb 2017 01:30:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/02/28/risk/</guid>
+      <guid>https://lambdastack.io/blog/2017/02/28/risk/</guid>
       <description>CI/CD Risk Portions of this content are from Randy Bias @ cloudscaling.com under creative commons
 In the DevOps mythos or worldview, continuous delivery (“CD”) is considered one of the holy mantras. Unfortunately, many take CD to an extreme that is unwarranted and not even reflected in how the DevOps originators (e.g. Amazon, Google) operate. This is one of those situations where folks are extrapolating and providing an interpretation of DevOps that isn’t really accurate.</description>
     </item>
     
     <item>
       <title>SLA - Availability or Durability</title>
-      <link>http://lambdastack.io/blog/2017/02/27/sla/</link>
+      <link>https://lambdastack.io/blog/2017/02/27/sla/</link>
       <pubDate>Mon, 27 Feb 2017 01:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/02/27/sla/</guid>
+      <guid>https://lambdastack.io/blog/2017/02/27/sla/</guid>
       <description>SLA - Availability or Durability I seem to be getting more questions lately like, &amp;ldquo;how many 9s is your object store?&amp;rdquo; or &amp;ldquo;how do you calculate 9s?&amp;rdquo;. The questions need to be narrowed down since those are very broad. For example, when dealing with storage like an object store, there are two types of &amp;ldquo;9s&amp;rdquo;. One for durability and one for availability. If you look at AWS S3, they put on their primary site 11 9s of durability which is very good.</description>
     </item>
     
     <item>
       <title>Erasure Coding vs Replica</title>
-      <link>http://lambdastack.io/blog/2017/02/26/erasure-coding/</link>
+      <link>https://lambdastack.io/blog/2017/02/26/erasure-coding/</link>
       <pubDate>Sun, 26 Feb 2017 11:27:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/02/26/erasure-coding/</guid>
+      <guid>https://lambdastack.io/blog/2017/02/26/erasure-coding/</guid>
       <description>Erasure Coding vs Replica Ceph RadosGW (RGW), Ceph&amp;rsquo;s S3 Object Store, supports both Replica and Erasure Coding. Most all examples of using RGW show replicas because that&amp;rsquo;s the easiest to setup, manage and get your head around. Replicas simply means that a default of 3 means that RGW stores the original plus two more copies spread out within the cluster based on the Crush Map, Ceph&amp;rsquo;s way of calculating where to store objects.</description>
     </item>
     
     <item>
       <title>Which open source software license should I use?</title>
-      <link>http://lambdastack.io/blog/2017/02/23/opensource-license/</link>
+      <link>https://lambdastack.io/blog/2017/02/23/opensource-license/</link>
       <pubDate>Thu, 23 Feb 2017 06:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/02/23/opensource-license/</guid>
+      <guid>https://lambdastack.io/blog/2017/02/23/opensource-license/</guid>
       <description>NB: This article is from Opensource.com. I also use Apache 2 for my projects.
 I’ve recently been involved in several discussions that are variations on, &amp;ldquo;Which open source or free software license should I choose for my project?&amp;rdquo; Here is my way of looking at the large and growing collection of licenses in the wild. First, let&amp;rsquo;s make sure we all understand that I Am Not A Lawyer. This is not legal advice.</description>
     </item>
     
     <item>
       <title>Open Organizations</title>
-      <link>http://lambdastack.io/blog/2017/02/22/open_org/</link>
+      <link>https://lambdastack.io/blog/2017/02/22/open_org/</link>
       <pubDate>Wed, 22 Feb 2017 15:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/02/22/open_org/</guid>
+      <guid>https://lambdastack.io/blog/2017/02/22/open_org/</guid>
       <description>Open Organizations I have been asked recently a number of times about how best to bring teams together (not physically) and get buy-in on important projects especially when the org structure is more Matrix. Of course, there is no silver bullet to speak of in this case. Each organization has it&amp;rsquo;s own political structure that may have to be navigated which is so unfortunate because most people are not comfortable with change.</description>
     </item>
     
     <item>
       <title>Rust</title>
-      <link>http://lambdastack.io/blog/2017/02/20/rust/</link>
+      <link>https://lambdastack.io/blog/2017/02/20/rust/</link>
       <pubDate>Mon, 20 Feb 2017 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/02/20/rust/</guid>
+      <guid>https://lambdastack.io/blog/2017/02/20/rust/</guid>
       <description>Rust Programming A programming language from Heaven! Unlike the language of sorcerers, Ruby, Rust is a real language that gives you all of the speed and power benefits of C/C++, functional model of some scripting languages and true safety that only Rust can provide.
 C/C++ and Python I cut my teeth on C and C++ many years ago. I actually won many awards for writing Best C/C++ Middleware from Database Advisor Magazine (dating myself).</description>
     </item>
     
     <item>
       <title>Rust</title>
-      <link>http://lambdastack.io/code/rust/</link>
+      <link>https://lambdastack.io/code/rust/</link>
       <pubDate>Mon, 20 Feb 2017 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/code/rust/</guid>
+      <guid>https://lambdastack.io/code/rust/</guid>
       <description>Rust Programming A programming language from Heaven! Unlike the language of sorcerers, Ruby, Rust is a real language that gives you all of the speed and power benefits of C/C++, functional model of some scripting languages and true safety that only Rust can provide.
 C/C++ and Python I cut my teeth on C and C++ many years ago. I actually won many awards for writing Best C/C++ Middleware from Database Advisor Magazine (dating myself).</description>
     </item>
     
     <item>
       <title>Seagate ISE 8TB</title>
-      <link>http://lambdastack.io/videos/seagate/</link>
+      <link>https://lambdastack.io/videos/seagate/</link>
       <pubDate>Sun, 19 Feb 2017 18:56:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/videos/seagate/</guid>
+      <guid>https://lambdastack.io/videos/seagate/</guid>
       <description>Seagate 8TB ISE HDD NB: Disclaimer - This is not a review. Interesting drive for &amp;ldquo;deep and cheap&amp;rdquo; storage
 I have experience with many drive types. I have had some actually catch on fire in my data center before. When I see an interesting drive I will often review it or simply post about it for future reference for myself. In this case, a future possible reference for self-encrypting drives.</description>
     </item>
     
     <item>
       <title>Red Hat Ceph Object Store</title>
-      <link>http://lambdastack.io/videos/redhat-objectstore/</link>
+      <link>https://lambdastack.io/videos/redhat-objectstore/</link>
       <pubDate>Wed, 15 Feb 2017 18:56:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/videos/redhat-objectstore/</guid>
+      <guid>https://lambdastack.io/videos/redhat-objectstore/</guid>
       <description>Ceph Object Store NB: Disclaimer - This is video from Red Hat - not me
 This video does a good job talking about Object Store. It&amp;rsquo;s also from Red Hat.</description>
     </item>
     
     <item>
       <title>Ceph and SMR Drives - NO</title>
-      <link>http://lambdastack.io/blog/2017/02/13/smr/</link>
+      <link>https://lambdastack.io/blog/2017/02/13/smr/</link>
       <pubDate>Mon, 13 Feb 2017 11:27:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/02/13/smr/</guid>
+      <guid>https://lambdastack.io/blog/2017/02/13/smr/</guid>
       <description>Don&amp;rsquo;t use Ceph with SMR Drives! A while back at Ceph Day in NYC I saw a representative from a drive manufacturer talk about SMR drives. SMR stands for Shingled Magnetic Recordingand the analogy given was &amp;lsquo;think about the shingles on a house&amp;rsquo;. It sounded very interesting but they were not on the market at the time.
 A very active community member, Wido den Hollander, posted his findings here. The net result was DO NOT USE SMR DRIVES!</description>
     </item>
     
     <item>
       <title>Hugo vs WordPress</title>
-      <link>http://lambdastack.io/blog/2017/02/01/hugo/</link>
+      <link>https://lambdastack.io/blog/2017/02/01/hugo/</link>
       <pubDate>Wed, 01 Feb 2017 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/02/01/hugo/</guid>
+      <guid>https://lambdastack.io/blog/2017/02/01/hugo/</guid>
       <description>Hugo vs WordPress We all know that WordPress is a Content Management System (CMS). For years, people have been using WordPress to help them manage their content and for the most part it works - sort of. WordPress is a very old tech code base. It&amp;rsquo;s written in PHP (who uses that anymore?) using Apache/NGINX and it uses MySQL as it SQL backend. None of those are bad on their own (except PHP) but the way that WordPress is organized and Architected makes it very prone to scalability issues and it&amp;rsquo;s an anti-pattern of Microservices.</description>
     </item>
     
     <item>
       <title>TCP and Load Balancers</title>
-      <link>http://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</link>
+      <link>https://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</link>
       <pubDate>Fri, 20 Jan 2017 11:54:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</guid>
+      <guid>https://lambdastack.io/blog/2017/01/20/tcp_and_load_balancers/</guid>
       <description>Why do I get a TCP RST return when I try to PUT or GET S3 objects? I have a colleague that has made the following statement:
 &amp;quot;The data is sacred but, the requests are not!&amp;quot;  This holds very true when dealing with HTTP calls such as S3 GETs and PUTs.
 Recently, we noticed that a client was doing a massive amounts of PUTs and then issuing corresponding GETs on the same S3 objects.</description>
@@ -164,19 +164,19 @@ Recently, we noticed that a client was doing a massive amounts of PUTs and then 
     
     <item>
       <title>Klaus - Hybrid WebStack</title>
-      <link>http://lambdastack.io/blog/2017/01/15/klaus/</link>
+      <link>https://lambdastack.io/blog/2017/01/15/klaus/</link>
       <pubDate>Sun, 15 Jan 2017 15:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2017/01/15/klaus/</guid>
+      <guid>https://lambdastack.io/blog/2017/01/15/klaus/</guid>
       <description>There are very good Web Servers on the market, Apache and NGINX to name a few. However, to interface your backend code you need to use Apache modules or WSGI/FastCGI with NGINX (depending on your language of choice). To actually use a fully integrated environment you need to use something like Django or Tornado for Python. For GO there is a small built-in web server that allows you to build up a more robust environment around it.</description>
     </item>
     
     <item>
       <title>Ceph Object Store for Development</title>
-      <link>http://lambdastack.io/architectures/objectstore/</link>
+      <link>https://lambdastack.io/architectures/objectstore/</link>
       <pubDate>Sun, 01 Jan 2017 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/architectures/objectstore/</guid>
+      <guid>https://lambdastack.io/architectures/objectstore/</guid>
       <description>Ceph.comtalks about several Reference Architectures. The default Reference Architecture defined in Chef-BCSshows how to build out a Ceph Object Store similar to the one we built at Bloomberg. The default Vagrant/VirtualBox version represents the following:
  3 RGW (Radosgw - S3) Nodes
   3 Ceph Mon Nodes
@@ -187,10 +187,10 @@ Recently, we noticed that a client was doing a massive amounts of PUTs and then 
     
     <item>
       <title>Continuous Delivery - Principles</title>
-      <link>http://lambdastack.io/blog/2016/12/30/cicd-principles/</link>
+      <link>https://lambdastack.io/blog/2016/12/30/cicd-principles/</link>
       <pubDate>Fri, 30 Dec 2016 15:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2016/12/30/cicd-principles/</guid>
+      <guid>https://lambdastack.io/blog/2016/12/30/cicd-principles/</guid>
       <description>Principles There are five principles at the heart of continuous delivery:
   Build quality in
   Work in small batches
@@ -202,19 +202,19 @@ Recently, we noticed that a client was doing a massive amounts of PUTs and then 
     
     <item>
       <title>Continuous Testing</title>
-      <link>http://lambdastack.io/blog/2016/12/15/cdtesting/</link>
+      <link>https://lambdastack.io/blog/2016/12/15/cdtesting/</link>
       <pubDate>Thu, 15 Dec 2016 15:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2016/12/15/cdtesting/</guid>
+      <guid>https://lambdastack.io/blog/2016/12/15/cdtesting/</guid>
       <description>Continuous Testing The key to building quality into our software is making sure we can get fast feedback on the impact of changes. Traditionally, extensive use was made of manual inspection of code changes and manual testing (testers following documentation describing the steps required to test the various functions of the system) in order to demonstrate the correctness of the system. This type of testing was normally done in a phase following “dev complete”.</description>
     </item>
     
     <item>
       <title>Continuous Delivery</title>
-      <link>http://lambdastack.io/blog/2016/11/15/cd/</link>
+      <link>https://lambdastack.io/blog/2016/11/15/cd/</link>
       <pubDate>Tue, 15 Nov 2016 15:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2016/11/15/cd/</guid>
+      <guid>https://lambdastack.io/blog/2016/11/15/cd/</guid>
       <description>What is Continuous Delivery? Continuous Delivery is the ability to get changes of all types—including new features, configuration changes, bug fixes and experiments—into production, or into the hands of users, safely and quickly in a sustainable way.
 Our goal is to make deployments—whether of a large-scale distributed system, a complex production environment, an embedded system, or an app—predictable, routine affairs that can be performed on demand.
 We achieve all this by ensuring our code is always in a deployable state, even in the face of teams of thousands of developers making changes on a daily basis.</description>
@@ -222,58 +222,58 @@ We achieve all this by ensuring our code is always in a deployable state, even i
     
     <item>
       <title>Load Balancers</title>
-      <link>http://lambdastack.io/blog/2016/10/15/lbs/</link>
+      <link>https://lambdastack.io/blog/2016/10/15/lbs/</link>
       <pubDate>Sat, 15 Oct 2016 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2016/10/15/lbs/</guid>
+      <guid>https://lambdastack.io/blog/2016/10/15/lbs/</guid>
       <description>Load Balancers - HAProxy vs Other Load Balancers are very import tools for scalability, depending on the protocol. For HTTP(S), load balancers are a must unless you&amp;rsquo;re good with having only one web server exposed. Recently, I was asked to do performance tests of our HAProxy servers that front our Ceph RGW (S3) nodes and do the same for a very popular hardware load balancer.
 The name of the hardware load balancer vendors will not be released to protect the innocent - ME :)</description>
     </item>
     
     <item>
       <title>S3LSIO - S3 Utility</title>
-      <link>http://lambdastack.io/blog/2016/10/05/s3lsio_s3/</link>
+      <link>https://lambdastack.io/blog/2016/10/05/s3lsio_s3/</link>
       <pubDate>Wed, 05 Oct 2016 15:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2016/10/05/s3lsio_s3/</guid>
+      <guid>https://lambdastack.io/blog/2016/10/05/s3lsio_s3/</guid>
       <description>The initial release of s3lsio has been released for both MacOSX and Linux (RHEL/Fedora/CentOS). Ubuntu will be released soon. In theory Windows should work but OpenSSL can cause initial setup of the Rust build environment for s3lsio.
 There are constant enhancements being made on a weekly basis. S3lsio is a command line tool that can work within a script, called from an app or ran stand alone to easily manipulate your AWS S3 and Ceph Rados Gateway (S3) environments.</description>
     </item>
     
     <item>
       <title>Building Large Ceph Clusters</title>
-      <link>http://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</link>
+      <link>https://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</link>
       <pubDate>Sat, 01 Oct 2016 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</guid>
+      <guid>https://lambdastack.io/blog/2016/10/01/building_large_ceph_clusters/</guid>
       <description>Ceph is a very complex distributed storage system that provides an Object Store, Block Storage Devices and Distributed File System. It has a built-in installation program called Ceph-Deploy but it&amp;rsquo;s design is for very simple and small installations. There are two official automated installation and maintenance systems for Ceph, Ceph-Ansible and Ceph-Chef. As the name implies, Ceph-Ansible is built for the Ansible while Ceph-Chef is built for Chef. I will focus on Ceph-Chef for the Chef environment.</description>
     </item>
     
     <item>
       <title>Rust AWS S3 SDK</title>
-      <link>http://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</link>
+      <link>https://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</link>
       <pubDate>Tue, 20 Sep 2016 15:00:00 +0200</pubDate>
       
-      <guid>http://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</guid>
+      <guid>https://lambdastack.io/blog/2016/09/20/rust_aws_s3_sdk/</guid>
       <description>The aws-sdk-rust library is officially released which allows both V2 and V4 API signatures. This is import for those that wish to use the SDK to access storage products that implement the S3 Interface such as Ceph&amp;rsquo;s Rados Gateway (RGW). Ceph Hammer release only uses V2 while the Jewel and higher releases support V4.
 Enterprise level proxy support has also been added. So, if http_proxy, https_proxy and no_proxy environment variables are in use, aws-sdk-rust will use them to access the S3 resource.</description>
     </item>
     
     <item>
       <title>Ceph Librados for Rust</title>
-      <link>http://lambdastack.io/blog/2016/09/05/ceph-rust/</link>
+      <link>https://lambdastack.io/blog/2016/09/05/ceph-rust/</link>
       <pubDate>Mon, 05 Sep 2016 11:27:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/blog/2016/09/05/ceph-rust/</guid>
+      <guid>https://lambdastack.io/blog/2016/09/05/ceph-rust/</guid>
       <description>Offical Ceph Rust Librados Library The official Ceph librados Rust API has been released called ceph-rust. Ceph-rust can be found at crates.io and at https://github.com/ceph/ceph-rust. Ceph-rust is a very thin layer above the C librados library that drives Ceph. In addition, it has some higher level APIs that wrap the low-level C interface with Rust specific protection. Working with Ceph is now fast and safe.</description>
     </item>
     
     <item>
       <title>LambdaStack</title>
-      <link>http://lambdastack.io/about/</link>
+      <link>https://lambdastack.io/about/</link>
       <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://lambdastack.io/about/</guid>
+      <guid>https://lambdastack.io/about/</guid>
       <description>The LambdaStack Project Working projects of Hans Chris Jones:
  http://ceph.com/team/#chris-jones
   https://github.com/hanscj1
@@ -287,46 +287,46 @@ Enterprise level proxy support has also been added. So, if http_proxy, https_pro
     
     <item>
       <title>OpenStack Summit - Austin TX</title>
-      <link>http://lambdastack.io/videos/openstack-austin/</link>
+      <link>https://lambdastack.io/videos/openstack-austin/</link>
       <pubDate>Fri, 15 Apr 2016 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/videos/openstack-austin/</guid>
+      <guid>https://lambdastack.io/videos/openstack-austin/</guid>
       <description>Talk at OpenStack Summit in Austin TX. I discussed our new Architecture for our Object Store. I also go into (just a little) why a fully hyper-converged Compute/Storage is not a good idea for large installations.</description>
     </item>
     
     <item>
       <title>Ceph Day in NYC</title>
-      <link>http://lambdastack.io/videos/cephday-nyc/</link>
+      <link>https://lambdastack.io/videos/cephday-nyc/</link>
       <pubDate>Wed, 20 Jan 2016 13:00:20 +0200</pubDate>
       
-      <guid>http://lambdastack.io/videos/cephday-nyc/</guid>
+      <guid>https://lambdastack.io/videos/cephday-nyc/</guid>
       <description>This talk was with Chris Morgan and myself at Ceph Day in NYC. We talk about what we&amp;rsquo;re doing with Ceph and OpenStack and our new multi-petabyte Object Store called BCS (Bloomberg Cloud Storage).</description>
     </item>
     
     <item>
       <title>Ceph Day - Chicago</title>
-      <link>http://lambdastack.io/videos/cephday-chicago/</link>
+      <link>https://lambdastack.io/videos/cephday-chicago/</link>
       <pubDate>Thu, 20 Aug 2015 13:00:27 -0400</pubDate>
       
-      <guid>http://lambdastack.io/videos/cephday-chicago/</guid>
+      <guid>https://lambdastack.io/videos/cephday-chicago/</guid>
       <description>Ceph Day - Chicago Ceph Day in Chicago presentation from SlideShare.</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>http://lambdastack.io/contact/</link>
+      <link>https://lambdastack.io/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://lambdastack.io/contact/</guid>
+      <guid>https://lambdastack.io/contact/</guid>
       <description>We are here to help you </description>
     </item>
     
     <item>
       <title>FAQ</title>
-      <link>http://lambdastack.io/faq/</link>
+      <link>https://lambdastack.io/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://lambdastack.io/faq/</guid>
+      <guid>https://lambdastack.io/faq/</guid>
       <description>I try to keep the FAQs concerning The LambdaStack Project and other projects updated so keep checking.
 1. What is the best way of reaching you? LinkedIn. You can send me InMail request by clicking here.2. Are all projects built in Rust? For the most part, yes. However, there are a few projects that used as part of some projects that are written in C. We also use Chef and Ansible in part of Cepheus and they are written in Ruby and Python respectfully.</description>
     </item>

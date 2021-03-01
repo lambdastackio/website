@@ -1,5 +1,5 @@
-baseurl = "http://lambdastack.io/"
-title = "The LambdaStack Project"
+baseurl = "https://lambdastack.io/"
+title = "LambdaStack"
 theme = "hugo-universal-theme"
 languageCode = "en-us"
 # Enable comments by entering your Disqus shortname
@@ -13,7 +13,7 @@ paginate = 10
 [params]
     viewMorePostLink = "/blog/"
     author = "Hans Chris Jones"
-    description = "Personal website and blog for Hans Chris Jones on Ceph, AWS S3, Object Storage and Block Storage"
+    description = "Personal website and blog for Hans Chris Jones"
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
     style = "green"
@@ -33,8 +33,8 @@ paginate = 10
     # Enable the contact form by entering your Formspree.io email
     # email = "your@email.com"
 
-    about_us = "<p>The LambdaStack Project is a collection of OSS (Open Source Software) Micro-Services projects. Each of the Micro-Services range from a powerful Hybrid Web Stack to full Software-Defined-Storage management.</p>"
-    copyright = "<p>Copyright (c) 2017, Hans Chris Jones; all rights reserved. All comments and views are my own and not my employer's.</p><p>All content originating from Hans Chris Jones is licensed under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Attribution-ShareAlike 4.0 International</a></p><p><a href=\"https://www.linkedin.com/in/cjones303/\">Click here to contact me.</a></p>"
+    about_us = "<p>The LambdaStack Project is a collection of OSS (Open Source Software) Microservices projects. Each of the Microservices range from a powerful Hybrid Web Stack to full Software-Defined-Storage management.</p>"
+    copyright = "<p>Copyright (c) 2021, Hans Chris Jones; all rights reserved. All comments and views are my own and not my employer's.</p><p>All content originating from Hans Chris Jones is licensed under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">Attribution-ShareAlike 4.0 International</a></p><p><a href=\"https://www.linkedin.com/in/hanscj1/\">Click here to contact me.</a></p>"
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
@@ -46,7 +46,7 @@ paginate = 10
         <div style="float: left;">
             <a href="https://twitter.com/hanscj1"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
             <a href="https://github.com/lambdastackio"><i class="fa fa-github fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
-            <a href="https://linkedin.com/in/cjones303"><i class="fa fa-linkedin fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
+            <a href="https://linkedin.com/in/hanscj1"><i class="fa fa-linkedin fa-3x" style="margin-left: 10px;" aria-hidden="true"></i></a>
         </div>
       </p>
       """
@@ -99,7 +99,7 @@ paginate = 10
     enable = true
     # All carousel items are defined in their own files. You can find example items
     # at 'exampleSite/data/carousel'.
-    # For more informtion take a look at the README.
+    # For more information take a look at the README.
 
 [params.features]
     enable = false
@@ -115,7 +115,7 @@ paginate = 10
     # at 'exampleSite/data/testimonials'.
     # For more information take a look at the README.
     title = "Some of my Projects"
-    subtitle = "All of the projects follow a Micro-Services Architecture."
+    subtitle = "All of the projects follow a Microservices Architecture."
 
 [params.see_more]
     enable = false
